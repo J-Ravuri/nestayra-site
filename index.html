@@ -4,41 +4,26 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Nestayra – Furnished Short & Mid-Term Lets</title>
-    <meta name="description" content="Nestayra: fully furnished homes for short and mid-term stays. Apartments and houses for professionals, families, relocations." />
-
-    <!-- Open Graph / Social Share -->
-    <meta property="og:title" content="Nestayra Property Lets" />
-    <meta property="og:description" content="Furnished homes for short & mid-term lets. Comfortable flats and houses for professionals, families & relocations." />
-    <meta property="og:type" content="website" />
-    <!-- Add <meta property="og:image" content="/path/to/og-image.jpg" /> when you have a share image -->
-
-    <!-- Favicon -->
-    <!-- <link rel="icon" href="/favicon.ico" /> -->
+    <meta name="description" content="Nestayra: fully furnished homes for short and mid-term stays. Apartments and houses for professionals, families, and relocations." />
 
     <style>
         :root {
-          --color-primary: #0b63a6;
-          --color-light: #ffffff;
-          --color-text: #111;
-          --color-muted: #555;
-          --max-width: 1000px;
+          --primary: #0b63a6;
+          --bg: #f9f9f9;
+          --text: #111;
+          --muted: #666;
+          --max-width: 1100px;
         }
-        *, *::before, *::after {
-          box-sizing: border-box;
-        }
+        * { box-sizing: border-box; }
         body {
           margin: 0;
-          font-family: system-ui, -apple-system, Roboto, "Segoe UI", sans-serif;
+          font-family: system-ui, -apple-system, Roboto, sans-serif;
+          background: var(--bg);
+          color: var(--text);
           line-height: 1.6;
-          color: var(--color-text);
-          background: #f9f9f9;
-        }
-        a {
-          color: var(--color-primary);
-          text-decoration: none;
         }
         header {
-          background: var(--color-light);
+          background: #fff;
           padding: 1rem 0;
           box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
@@ -47,21 +32,18 @@
           max-width: var(--max-width);
           margin: 0 auto;
         }
-        nav {
-          display: flex;
-          gap: 1rem;
+        nav a {
+          margin-left: 1rem;
+          color: var(--text);
+          text-decoration: none;
+          font-weight: 500;
         }
-        nav a:hover {
-          text-decoration: underline;
-        }
+        nav a:hover { text-decoration: underline; }
         .hero {
           text-align: center;
-          padding: 2rem 0;
+          padding: 2.5rem 1rem;
         }
-        .hero h1 {
-          margin: 0 0 0.5rem;
-          font-size: 2rem;
-        }
+        .hero h1 { margin-bottom: 0.5rem; font-size: 2rem; }
         .grid {
           display: grid;
           gap: 1.5rem;
@@ -69,112 +51,124 @@
           margin-bottom: 2rem;
         }
         .card {
-          background: var(--color-light);
+          background: #fff;
           padding: 1.5rem;
-          border-radius: 8px;
+          border-radius: 10px;
           box-shadow: 0 4px 12px rgba(0,0,0,0.04);
         }
         .button {
           display: inline-block;
           padding: 0.6rem 1.2rem;
-          background: var(--color-primary);
-          color: var(--color-light);
-          border: none;
+          background: var(--primary);
+          color: #fff;
           border-radius: 6px;
-          font: inherit;
-          cursor: pointer;
           text-decoration: none;
+          cursor: pointer;
         }
-        .button:hover {
-          background: #095292;
+        .button:hover { background: #094f87; }
+        form input, form textarea {
+          width: 100%;
+          padding: 0.6rem;
+          border-radius: 6px;
+          border: 1px solid #ccc;
+          margin-top: 0.3rem;
+          font: inherit;
         }
+        form textarea { resize: vertical; }
         footer {
-          background: var(--color-light);
-          padding: 1.5rem 0;
-          font-size: 0.9rem;
-          color: var(--color-muted);
-          border-top: 1px solid #e6e6e6;
           text-align: center;
-        }
-        @media (min-width: 768px) {
-          .hero h1 {
-            font-size: 2.5rem;
-          }
+          font-size: 0.9rem;
+          padding: 1.5rem 0;
+          margin-top: 2rem;
+          color: var(--muted);
+          background: #fff;
+          border-top: 1px solid #eee;
         }
     </style>
 </head>
+
 <body>
-<header role="banner">
-    <div class="container" style="display:flex; align-items:center; justify-content:space-between;">
-        <div>
-            <strong>Nestayra</strong>
-        </div>
-        <nav role="navigation" aria-label="Main menu">
+
+<!-- HEADER -->
+<header>
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;">
+        <strong style="font-size:1.2rem;">Nestayra</strong>
+        <nav>
             <a href="#properties">Properties</a>
             <a href="#contact">Contact</a>
         </nav>
     </div>
 </header>
 
-<main class="container" role="main">
-    <section class="hero">
-        <h1>Furnished Short & Mid-Term Lets</h1>
-        <p style="color: var(--color-muted); max-width:600px; margin:0 auto;">
-            Stylish, fully furnished apartments and houses perfect for professionals, families, and relocation stays — ready to move in.
-        </p>
-    </section>
+<!-- HERO -->
+<section class="hero container">
+    <h1>Furnished Short & Mid-Term Lets</h1>
+    <p style="color:var(--muted); max-width:600px; margin:0 auto;">
+        Modern, fully furnished apartments and houses perfect for professionals, families, and relocation stays — ready to move in.
+    </p>
+</section>
 
+<!-- PROPERTIES -->
+<main class="container">
     <section id="properties">
         <div class="grid">
+
             <div class="card">
                 <h2>Featured Property</h2>
-                <p>Modern 1-bedroom apartment — open plan kitchen, close to amenities & transport. Ideal for business stay or short relocation.</p>
+                <p>
+                    Stylish 1-bedroom apartment — bright, modern, open-plan kitchen, and close to amenities & transport.
+                    Ideal for business travel or short relocations.
+                </p>
                 <a href="#contact" class="button">Enquire Now</a>
             </div>
+
             <div class="card">
                 <h2>Our Services</h2>
                 <ul>
-                    <li><strong>Short-Term Lets</strong> — turnkey furnished homes for stays under 3 months</li>
-                    <li><strong>Mid-Term Rentals</strong> — flexible 3–12 month lets for professionals & families</li>
-                    <li><strong>Family Houses (3-bed)</strong> — spacious, comfortable homes for groups or families</li>
+                    <li><strong>Short-Term Lets</strong> — fully furnished, move-in ready stays</li>
+                    <li><strong>Mid-Term Rentals</strong> — flexible 3–12 month stays for professionals</li>
+                    <li><strong>3-Bed Family Homes</strong> — spacious houses for families & groups</li>
                 </ul>
             </div>
+
         </div>
     </section>
 
+    <!-- CONTACT -->
     <section id="contact">
         <div class="card">
             <h2>Contact Us</h2>
-            <p>Email us at <a href="mailto:info@nestayra.co.uk">info@nestayra.co.uk</a></p>
+            <p>Email: <a href="mailto:info@nestayra.co.uk">info@nestayra.co.uk</a></p>
 
-            <!-- Optional contact form (uncomment & configure) -->
-            <!--
-            <form action="https://formspree.io/f/YOUR-FORMID" method="POST">
-              <label>
-                Name<br />
-                <input type="text" name="name" required />
-              </label><br />
-              <label>
-                Email<br />
-                <input type="email" name="_replyto" required />
-              </label><br />
-              <label>
-                Message<br />
-                <textarea name="message" rows="4" required></textarea>
-              </label><br />
-              <button type="submit" class="button">Send Message</button>
+            <!-- SIMPLE MAILTO CONTACT FORM -->
+            <form action="mailto:info@nestayra.co.uk" method="POST" enctype="text/plain">
+
+                <label>Name</label>
+                <input type="text" name="Name" required>
+
+                <label>Email</label>
+                <input type="email" name="Email" required>
+
+                <label>Message</label>
+                <textarea name="Message" rows="4" required></textarea>
+
+                <br>
+                <button type="submit" class="button">Send Message</button>
             </form>
-            -->
+
         </div>
     </section>
 </main>
 
+<!-- FOOTER -->
 <footer>
-    © <span id="year"></span> Nestayra. All rights reserved. · Email: <a href="mailto:info@nestayra.co.uk">info@nestayra.co.uk</a>
+    © <span id="year"></span> Nestayra. All rights reserved.
+    · Email: <a href="mailto:info@nestayra.co.uk">info@nestayra.co.uk</a>
 </footer>
 
 <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
 </script>
+
 </body>
 </html>
