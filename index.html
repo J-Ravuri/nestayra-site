@@ -1,174 +1,162 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Nestayra – Furnished Short & Mid-Term Lets</title>
-    <meta name="description" content="Nestayra: fully furnished homes for short and mid-term stays. Apartments and houses for professionals, families, and relocations." />
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nestayra – Premium Serviced Stays</title>
     <style>
-        :root {
-          --primary: #0b63a6;
-          --bg: #f9f9f9;
-          --text: #111;
-          --muted: #666;
-          --max-width: 1100px;
-        }
-        * { box-sizing: border-box; }
         body {
           margin: 0;
-          font-family: system-ui, -apple-system, Roboto, sans-serif;
-          background: var(--bg);
-          color: var(--text);
-          line-height: 1.6;
+          font-family: Arial, sans-serif;
+          background: #f8f9fc;
+          color: #222;
         }
         header {
-          background: #fff;
-          padding: 1rem 0;
-          box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+          background: white;
+          padding: 20px 40px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
-        .container {
-          width: 90%;
-          max-width: var(--max-width);
-          margin: 0 auto;
+        .logo {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        }
+        .logo img {
+          height: 48px;
         }
         nav a {
-          margin-left: 1rem;
-          color: var(--text);
+          margin-left: 20px;
           text-decoration: none;
-          font-weight: 500;
+          color: #333;
+          font-weight: 600;
         }
-        nav a:hover { text-decoration: underline; }
         .hero {
+          padding: 120px 40px;
           text-align: center;
-          padding: 2.5rem 1rem;
+          background: linear-gradient(135deg, #2f3a8c, #0a112f);
+          color: white;
         }
-        .hero h1 { margin-bottom: 0.5rem; font-size: 2rem; }
+        .hero h1 {
+          font-size: 48px;
+          margin-bottom: 20px;
+        }
+        .hero p {
+          font-size: 22px;
+          max-width: 700px;
+          margin: auto;
+          opacity: 0.9;
+        }
+
+        .section {
+          padding: 80px 40px;
+          max-width: 1000px;
+          margin: auto;
+        }
+        .section h2 {
+          text-align: center;
+          margin-bottom: 40px;
+          font-size: 34px;
+          color: #2f3a8c;
+        }
+
         .grid {
           display: grid;
-          gap: 1.5rem;
           grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-          margin-bottom: 2rem;
+          gap: 30px;
         }
+
         .card {
+          background: white;
+          padding: 30px;
+          border-radius: 16px;
+          box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+        }
+
+        .contact {
           background: #fff;
-          padding: 1.5rem;
-          border-radius: 10px;
-          box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+          padding: 60px;
+          border-radius: 20px;
+          box-shadow: 0 4px 18px rgba(0,0,0,0.08);
         }
-        .button {
-          display: inline-block;
-          padding: 0.6rem 1.2rem;
-          background: var(--primary);
-          color: #fff;
-          border-radius: 6px;
-          text-decoration: none;
-          cursor: pointer;
-        }
-        .button:hover { background: #094f87; }
-        form input, form textarea {
+
+        input, textarea {
           width: 100%;
-          padding: 0.6rem;
-          border-radius: 6px;
+          padding: 14px;
+          margin-top: 10px;
+          border-radius: 10px;
           border: 1px solid #ccc;
-          margin-top: 0.3rem;
-          font: inherit;
         }
-        form textarea { resize: vertical; }
-        footer {
-          text-align: center;
-          font-size: 0.9rem;
-          padding: 1.5rem 0;
-          margin-top: 2rem;
-          color: var(--muted);
-          background: #fff;
-          border-top: 1px solid #eee;
+        button {
+          background: #2f3a8c;
+          color: white;
+          padding: 14px 30px;
+          border: none;
+          border-radius: 10px;
+          margin-top: 20px;
+          cursor: pointer;
+          font-size: 16px;
         }
     </style>
 </head>
-
 <body>
 
-<!-- HEADER -->
 <header>
-    <div class="container" style="display:flex;justify-content:space-between;align-items:center;">
-        <strong style="font-size:1.2rem;">Nestayra</strong>
-        <nav>
-            <a href="#properties">Properties</a>
-            <a href="#contact">Contact</a>
-        </nav>
+    <div class="logo">
+        <img src="logo.png" alt="Nestayra Logo" />
+        <strong>NESTAYRA</strong>
     </div>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
 </header>
 
-<!-- HERO -->
-<section class="hero container">
-    <h1>Furnished Short & Mid-Term Lets</h1>
-    <p style="color:var(--muted); max-width:600px; margin:0 auto;">
-        Modern, fully furnished apartments and houses perfect for professionals, families, and relocation stays — ready to move in.
-    </p>
+<section class="hero">
+    <h1>Premium Short Stays & Serviced Living</h1>
+    <p>Experience comfort, flexibility and style — whether you're staying for a week, a month, or longer. Nestayra offers beautifully furnished homes designed for work, relaxation and effortless living.</p>
 </section>
 
-<!-- PROPERTIES -->
-<main class="container">
-    <section id="properties">
-        <div class="grid">
+<section class="section" id="about">
+    <h2>About Nestayra</h2>
+    <p>We provide high‑quality serviced accommodation for business travellers, relocations, families and leisure stays. Our properties are carefully selected and professionally managed to deliver a hotel‑level experience with the privacy of a home.</p>
+</section>
 
-            <div class="card">
-                <h2>Featured Property</h2>
-                <p>
-                    Stylish 1-bedroom apartment — bright, modern, open-plan kitchen, and close to amenities & transport.
-                    Ideal for business travel or short relocations.
-                </p>
-                <a href="#contact" class="button">Enquire Now</a>
-            </div>
-
-            <div class="card">
-                <h2>Our Services</h2>
-                <ul>
-                    <li><strong>Short-Term Lets</strong> — fully furnished, move-in ready stays</li>
-                    <li><strong>Mid-Term Rentals</strong> — flexible 3–12 month stays for professionals</li>
-                    <li><strong>3-Bed Family Homes</strong> — spacious houses for families & groups</li>
-                </ul>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact">
+<section class="section" id="services">
+    <h2>Our Services</h2>
+    <div class="grid">
         <div class="card">
-            <h2>Contact Us</h2>
-            <p>Email: <a href="mailto:info@nestayra.co.uk">info@nestayra.co.uk</a></p>
-
-            <!-- SIMPLE MAILTO CONTACT FORM -->
-            <form action="mailto:info@nestayra.co.uk" method="POST" enctype="text/plain">
-
-                <label>Name</label>
-                <input type="text" name="Name" required>
-
-                <label>Email</label>
-                <input type="email" name="Email" required>
-
-                <label>Message</label>
-                <textarea name="Message" rows="4" required></textarea>
-
-                <br>
-                <button type="submit" class="button">Send Message</button>
-            </form>
-
+            <h3>Short Stays (1 Week+)</h3>
+            <p>Perfect for corporate stays, relocations or temporary stays. Enjoy fully furnished, stylish spaces designed for comfort.</p>
         </div>
-    </section>
-</main>
+        <div class="card">
+            <h3>Serviced Accommodation</h3>
+            <p>Weekly cleaning, fresh linen, high‑speed Wi‑Fi and dedicated support — all included in your stay.</p>
+        </div>
+        <div class="card">
+            <h3>Luxury Standards</h3>
+            <p>Beautiful interiors, premium bedding, modern amenities and professional housekeeping ensure a 5‑star experience.</p>
+        </div>
+    </div>
+</section>
 
-<!-- FOOTER -->
-<footer>
-    © <span id="year"></span> Nestayra. All rights reserved.
-    · Email: <a href="mailto:info@nestayra.co.uk">info@nestayra.co.uk</a>
-</footer>
-
-<script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+<section class="section" id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact">
+        <form action="mailto:stay@nestayra.co.uk" method="post" enctype="text/plain">
+            <label>Name</label>
+            <input type="text" name="name" required />
+            <label>Email</label>
+            <input type="email" name="email" required />
+            <label>Message</label>
+            <textarea name="message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</section>
 
 </body>
 </html>
