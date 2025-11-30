@@ -1,51 +1,112 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Nestayra Property Lettings — short and mid-term furnished homes for professionals and families." />
     <title>Nestayra Property Lettings</title>
-    <tyle.css
-            script.js</script>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Nestayra Property Lettings" />
+    <meta property="og:description" content="Fully furnished homes for short and mid-term stays. Stylish apartments and 3-bedroom houses." />
+    <meta property="og:type" content="website" />
+
+    <!-- Put your favicon at /favicon.ico -->
+    <!-- <link rel="icon" href="/favicon.ico"> -->
+
+    <style>
+        /* Minimal modern styling - responsive and accessible */
+        :root{--maxw:1100px;--muted:#666;--accent:#0b63a6}
+        *{box-sizing:border-box}
+        body{font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;line-height:1.5;margin:0;color:#111}
+        header,main,footer{padding:1.5rem}
+        .container{max-width:var(--maxw);margin:0 auto;padding:0 1rem}
+        header{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+        h1{font-size:1.5rem;margin:0}
+        .hero{padding:2rem 0}
+        .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+        .card{border-radius:12px;padding:1rem;border:1px solid #e6e6e6;background:#fff;box-shadow:0 6px 18px rgba(10,10,10,0.03)}
+        .muted{color:var(--muted)}
+        .cta{display:inline-block;padding:.6rem 1rem;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none}
+        form{display:grid;gap:.5rem}
+        input,textarea{width:100%;padding:.6rem;border:1px solid #ddd;border-radius:8px;font:inherit}
+        footer{font-size:.9rem;color:var(--muted);border-top:1px solid #f0f0f0;margin-top:2rem;padding-top:1rem}
+        @media (min-width:900px){ h1{font-size:1.75rem} }
+    </style>
 </head>
 <body>
-<!-- Hero Section -->
-<header class="hero">
-    <div class="hero-content">
-        <h1>Your Trusted Lettings Partner</h1>
-        <p>Fully furnished homes for short and mid-term stays. Stylish apartments and spacious 3-bedroom houses for professionals, families, and relocations.</p>
-        <a href="mailto:info@nestayra.co.uk" class       </div>
+<header class="container" role="banner">
+    <h1>Nestayra Property Lettings</h1>
+    <nav aria-label="Main">
+        <a class="muted" href="#properties">Properties</a>
+        <a class="muted" href="#contact" style="margin-left:1rem">Contact</a>
+    </nav>
 </header>
 
-<!-- Featured Property -->
-<section class="featured">
-    <h2>Featured Property</h2>
-    <p><strong>Bright 1-Bedroom Apartment near Milton Keynes Central</strong> – Modern design, open-plan kitchen, and walking distance to station, dining, and shopping. Perfect for business stays or city breaks.</p>
-</section>
+<main class="container" role="main">
+    <section class="hero">
+        <div class="card">
+            <h2>Your Trusted Lettings Partner</h2>
+            <p class="muted">Fully furnished homes for short and mid-term stays. Stylish apartments and spacious 3-bedroom houses for professionals, families, and relocations.</p>
+        </div>
+    </section>
 
-<!-- Services -->
-<section class="services">
-    <h2>Our Letting Options</h2>
-    <div class="service-grid">
-        <div class="service-card">
-            <h3>Short-Term Lets</h3>
-            <p>Ideal for holidays, relocations, or temporary stays. Fully furnished and ready to move in.</p>
+    <section id="properties" class="grid" aria-labelledby="featured-title">
+        <div class="card" role="article" aria-labelledby="featured-title">
+            <h3 id="featured-title">Featured Property</h3>
+            <p>Bright 1-Bedroom Apartment near Milton Keynes Central – Modern design, open-plan kitchen, and walking distance to station, dining, and shopping. Perfect for business stays or city breaks.</p>
+            <a class="cta" href="#contact">Enquire</a>
         </div>
-        <div class="service-card">
-            <h3>Mid-Term Rentals</h3>
-            <p>Flexible rental periods for professionals and families needing 1–6 months.</p>
+
+        <div class="card">
+            <h3>Our Letting Options</h3>
+            <h4>Short-Term Lets</h4>
+            <p class="muted">Ideal for holidays, relocations, or temporary stays. Fully furnished and ready to move in.</p>
+
+            <h4>Mid-Term Rentals</h4>
+            <p class="muted">Flexible rental periods for professionals and families needing 1–6 months.</p>
+
+            <h4>3-Bed Houses</h4>
+            <p class="muted">Spacious homes for families or groups, available for short or mid-term stays.</p>
         </div>
-        <div class="service-card">
-            <h3>3-Bed Houses</h3>
-            <p>Spacious homes for families or groups, available for short or mid-term stays.</p>
+    </section>
+
+    <section id="contact" style="margin-top:1.25rem">
+        <div class="card">
+            <h3>Contact</h3>
+            <p class="muted">Email us at <a href="mailto:info@nestayra.co.uk">info@nestayra.co.uk</a></p>
+
+            <!-- Optional: simple form using Formspree (replace YOUR_FORMSPREE_ENDPOINT) -->
+            <!-- To use: sign up at https://formspree.io and get your endpoint or use your backend -->
+            <form action="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT" method="POST" aria-label="Contact form">
+                <label>
+                    <span class="muted">Name</span>
+                    <input type="text" name="name" required />
+                </label>
+                <label>
+                    <span class="muted">Email</span>
+                    <input type="email" name="_replyto" required />
+                </label>
+                <label>
+                    <span class="muted">Message</span>
+                    <textarea name="message" rows="4" required></textarea>
+                </label>
+                <button type="submit" class="cta">Send</button>
+            </form>
         </div>
+    </section>
+</main>
+
+<footer class="container" role="contentinfo">
+    <div class="card" style="display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap">
+        <div>© <span id="year"></span> Nestayra Property Lettings. All rights reserved.</div>
+        <div class="muted">Email: <a href="mailto:info@nestayra.co.uk">info@nestayra.co.uk</a></div>
     </div>
-</section>
-
-<!-- Footer -->
-<footer>
-    <p>&copy; 2025 Nestayra Property Lettings. All rights reserved.</p>
-    <p>Email: mailto:info@nestayra.co.ukinfo@nestayra.co.uk</a></p>
 </footer>
+
+<script>
+    // Update year
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
