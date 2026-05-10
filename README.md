@@ -266,3 +266,13 @@ Total selected Maths questions included:
 ## Live page cleanup
 
 The PDF setup note has been removed from the live webpage. PDF rendering instructions remain in this README only.
+
+
+## Game-style front page
+
+The password page has been redesigned as a kid-friendly Galaxy Obby landing screen. The old plain heading text has been removed from the visible page.
+
+
+## Premium Roblox-style landing
+
+The locked front page has been upgraded into a kid-friendly game landing screen with obby preview, challenge preview, reward cards, avatar previews and a stronger gaming look and feel.
