@@ -485,3 +485,28 @@ The parent summary card contains only:
 - Key points
 
 It is shown before the child writes their own summary, so the parent can check whether the child understood the passage.
+
+
+## Parent summary only version
+
+The English comprehension section now contains only parent summaries and key points.
+
+Removed from the English summary game:
+- rendered comprehension pages
+- answer marking
+- question game flow
+- summary text boxes
+- Mistake Lab
+
+Kept:
+- protected access
+- simple navigation by paper
+- Understanding
+- Short summary
+- Key points
+
+Main file:
+
+```text
+education-game/english/full-comprehension-pro.html
+```

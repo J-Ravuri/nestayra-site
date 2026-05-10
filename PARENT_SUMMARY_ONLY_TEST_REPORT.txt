@@ -1,0 +1,17 @@
+PARENT SUMMARY ONLY TESTS: 15/15 passed
+
+PASS - summary guide game exists
+PASS - game is protected
+PASS - only summary guide wording
+PASS - has Understanding
+PASS - has Short summary
+PASS - has Key points
+PASS - 11 summary entries preserved
+PASS - all 8 papers represented
+PASS - second passages represented
+PASS - removed rendered pages folder
+PASS - removed answer game data
+PASS - homepage updated
+PASS - homepage still points to same English file
+PASS - maths preserved
+PASS - password preserved
