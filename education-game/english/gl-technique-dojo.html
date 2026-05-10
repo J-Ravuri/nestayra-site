@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>GL 11+ Comprehension Technique Dojo</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,Arial,sans-serif;background:#07031a;color:#fff;min-height:100vh}
+body:before{content:"";position:fixed;inset:0;background:radial-gradient(circle at 12% 10%,rgba(124,58,237,.35),transparent 28%),radial-gradient(circle at 88% 20%,rgba(6,182,212,.25),transparent 30%),linear-gradient(135deg,#07031a,#111827 55%,#1e1b4b);z-index:-2}
+body:after{content:"";position:fixed;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:42px 42px;z-index:-1}
+.wrap{max-width:1120px;margin:0 auto;padding:22px}.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:18px;align-items:center}.card{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16);border-radius:28px;padding:24px;box-shadow:0 24px 70px rgba(0,0,0,.24)}
+h1{font-size:clamp(2.2rem,6vw,5rem);line-height:.92;margin:0 0 12px;letter-spacing:-.06em}p{color:#dbeafe;font-weight:700;line-height:1.55}.badge{display:inline-flex;padding:8px 12px;border-radius:999px;background:rgba(6,182,212,.16);color:#a5f3fc;font-weight:900;text-transform:uppercase;letter-spacing:.08em;font-size:.78rem;margin-bottom:12px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0}.skill{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.16);border-radius:20px;padding:14px}.skill b{display:block;font-size:1.05rem;margin-bottom:5px}.skill span{color:#cbd5e1;font-size:.88rem;font-weight:700}
+.quiz{margin-top:18px}.q{background:#fff;color:#0f172a;border-radius:26px;padding:22px}.q h2{font-size:1.5rem;margin:0 0 12px}.options{display:grid;gap:10px}.opt{border:2px solid #e2e8f0;background:#f8fafc;border-radius:16px;padding:14px;text-align:left;font-weight:900;color:#0f172a;cursor:pointer}.opt:hover{border-color:#7c3aed}.opt.good{background:#dcfce7;border-color:#22c55e;color:#166534}.opt.bad{background:#fee2e2;border-color:#ef4444;color:#991b1b}.feed{margin-top:14px;border-radius:16px;padding:14px;font-weight:900;display:none}.feed.on{display:block}.feed.good{background:#dcfce7;color:#166534}.feed.bad{background:#fee2e2;color:#991b1b}.stats{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.pill{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:9px 12px;font-weight:900}.btn{border:0;border-radius:999px;padding:12px 16px;background:linear-gradient(135deg,#06b6d4,#f59e0b);font-weight:1000;color:#07111f;cursor:pointer}.tool{display:grid;gap:10px}.tool div{background:rgba(0,0,0,.22);border-radius:16px;padding:12px;color:#e0f2fe;font-weight:800}.tool code{color:#fde68a}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.grid{grid-template-columns:1fr}.wrap{padding:12px}.card{padding:18px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hero">
+    <section class="card">
+      <div class="badge">GL 11+ Technique Dojo</div>
+      <h1>Read Like a Detective</h1>
+      <p>Practise the exact thinking habits children need in GL-style English comprehension: read the question first, scan for evidence, infer from clues, and choose the best-supported answer.</p>
+      <div class="stats">
+        <div class="pill">⭐ Score: <span id="score">0</span></div>
+        <div class="pill">🔥 Streak: <span id="streak">0</span></div>
+        <div class="pill">🧠 Skill: <span id="skill">Retrieval</span></div>
+      </div>
+      <button class="btn" onclick="nextQ()">Next Challenge</button>
+    </section>
+    <aside class="card tool">
+      <div><b>1. Retrieval</b><br><code>Find it. Underline it. Check it.</code></div>
+      <div><b>2. Inference</b><br><code>Clue + own knowledge = answer.</code></div>
+      <div><b>3. Vocabulary</b><br><code>Read before and after the word.</code></div>
+      <div><b>4. Writer’s effect</b><br><code>What feeling does the word create?</code></div>
+      <div><b>5. Evidence</b><br><code>The right answer must be proven by the text.</code></div>
+    </aside>
+  </div>
+  <div class="grid">
+    <div class="skill"><b>🔎 Retrieval</b><span>Locate exact facts without guessing.</span></div>
+    <div class="skill"><b>🧠 Inference</b><span>Work out what is suggested.</span></div>
+    <div class="skill"><b>📚 Vocabulary</b><span>Use context and word roots.</span></div>
+    <div class="skill"><b>✨ Writer’s Effect</b><span>Explain why language was chosen.</span></div>
+    <div class="skill"><b>🎭 Tone & Mood</b><span>Spot atmosphere and attitude.</span></div>
+    <div class="skill"><b>🧱 Structure</b><span>Track openings, shifts and endings.</span></div>
+    <div class="skill"><b>🎯 Main Idea</b><span>Find what the whole section is about.</span></div>
+    <div class="skill"><b>📝 Evidence</b><span>Always prove the answer from the text.</span></div>
+  </div>
+  <section class="quiz">
+    <div class="q">
+      <div class="badge" id="qtag">Retrieval</div>
+      <h2 id="qtext"></h2>
+      <div class="options" id="opts"></div>
+      <div class="feed" id="feed"></div>
+    </div>
+  </section>
+</div>
+<script>
+if (sessionStorage.getItem("nestayraEducationUnlocked") !== "true") {
+  document.documentElement.innerHTML = '<body style="margin:0;background:#07031a;color:white;font-family:Arial,sans-serif;display:grid;place-items:center;min-height:100vh"><div style="max-width:620px;padding:30px;text-align:center;background:rgba(255,255,255,.1);border-radius:26px"><h1>🔒 Locked</h1><p>Please unlock the Education page first.</p><p><a style="color:#67e8f9;font-weight:900" href="../../#education">Return to unlock</a></p></div></body>';
+  throw new Error("locked");
+}
+const qs=[
+{skill:"Retrieval",q:"A question asks: ‘What did the character pick up before leaving?’ What should you do first?",o:["Guess from the title","Scan the paragraph for the exact action","Choose the longest answer","Use your own opinion"],a:1,e:"Retrieval means the answer is stated. Scan for the exact action and check the words match."},
+{skill:"Inference",q:"The text says: ‘Maya forced a smile and looked at the floor.’ What is most likely?",o:["She is excited","She is hiding uncomfortable feelings","She is reading a sign","She is very hungry"],a:1,e:"Forced smile + looking down are clues. They suggest embarrassment, sadness or discomfort."},
+{skill:"Vocabulary",q:"You do not know the word ‘reluctant’. What is the best strategy?",o:["Ignore the sentence","Look at the words before and after it","Always choose a negative answer","Pick the shortest option"],a:1,e:"Context is your strongest clue. Read around the word and test each option in the sentence."},
+{skill:"Writer’s Effect",q:"Why might a writer describe rain as ‘needles of ice’?",o:["To show it is gentle","To make it sound sharp, cold and painful","To show it is colourful","To explain the water cycle"],a:1,e:"Writer’s effect asks what feeling or image the words create."},
+{skill:"Main Idea",q:"A paragraph gives three examples of a dog helping its owner. What is probably the main idea?",o:["The dog is useful and loyal","Dogs are always noisy","The owner dislikes pets","The story is set in winter"],a:0,e:"Main idea covers the whole paragraph, not one tiny detail."},
+{skill:"Evidence",q:"Two answers seem possible. What should decide your final choice?",o:["Which one you like more","Which one has direct support in the passage","Which one sounds fancy","Which one is option C"],a:1,e:"In GL comprehension, the best answer is the one that can be proved from the text."},
+{skill:"Tone",q:"Words like ‘gloomy’, ‘silent’ and ‘shadowy’ create what mood?",o:["Cheerful","Mysterious or uneasy","Silly","Celebratory"],a:1,e:"Tone and mood come from repeated word choices."},
+{skill:"Structure",q:"A passage begins calmly, then suddenly uses short sentences during danger. Why?",o:["To slow the story down","To build speed and tension","To change the topic to grammar","To describe the weather"],a:1,e:"Short sentences can increase pace and tension."}
+];
+let i=0,score=0,streak=0,done=false;
+function render(){done=false;let x=qs[i];document.getElementById("skill").textContent=x.skill;document.getElementById("qtag").textContent=x.skill;document.getElementById("qtext").textContent=x.q;let o=document.getElementById("opts");o.innerHTML="";x.o.forEach((v,n)=>{let b=document.createElement("button");b.className="opt";b.textContent=String.fromCharCode(65+n)+". "+v;b.onclick=()=>ans(n,b);o.appendChild(b)});let f=document.getElementById("feed");f.className="feed";f.textContent=""}
+function ans(n,b){if(done)return;done=true;let x=qs[i];document.querySelectorAll(".opt").forEach((el,k)=>{if(k===x.a)el.classList.add("good")});let f=document.getElementById("feed");if(n===x.a){score++;streak++;b.classList.add("good");f.className="feed good on";f.textContent="Correct! "+x.e}else{streak=0;b.classList.add("bad");f.className="feed bad on";f.textContent="Good try. "+x.e}document.getElementById("score").textContent=score;document.getElementById("streak").textContent=streak}
+function nextQ(){i=(i+1)%qs.length;render()}render();
+</script>
+</body>
+</html>

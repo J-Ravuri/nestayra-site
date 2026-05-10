@@ -1,0 +1,2785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>11+ English — Your Study Companion</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Lora:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f0f4ff;
+  --card: #ffffff;
+  --navy: #1e2a4a;
+  --blue: #3b5bdb;
+  --teal: #0ca678;
+  --coral: #f03e3e;
+  --amber: #f59f00;
+  --lavender: #7950f2;
+  --pink: #e64980;
+  --light-blue: #dbe4ff;
+  --light-teal: #c3fae8;
+  --light-amber: #fff3bf;
+  --light-coral: #ffe3e3;
+  --shadow: 0 4px 20px rgba(30,42,74,0.10);
+  --radius: 18px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Nunito', sans-serif;
+  background: var(--bg);
+  color: var(--navy);
+  min-height: 100vh;
+}
+
+/* NAV */
+.top-bar {
+  background: var(--navy);
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.top-bar h1 {
+  font-size: 1.1rem;
+  color: white;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+}
+.stars-display {
+  margin-left: auto;
+  background: var(--amber);
+  color: var(--navy);
+  font-weight: 800;
+  font-size: 0.85rem;
+  padding: 5px 14px;
+  border-radius: 20px;
+}
+
+/* HOME */
+#home {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 32px 20px;
+}
+.welcome-banner {
+  background: linear-gradient(135deg, var(--blue) 0%, var(--lavender) 100%);
+  border-radius: var(--radius);
+  padding: 36px 32px;
+  color: white;
+  margin-bottom: 32px;
+  position: relative;
+  overflow: hidden;
+}
+.welcome-banner::after {
+  content: '📚';
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 5rem;
+  opacity: 0.3;
+}
+.welcome-banner h2 {
+  font-size: 1.8rem;
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+.welcome-banner p {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+.section-title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 14px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+/* TOPIC CARDS */
+.topic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.topic-card {
+  background: white;
+  border-radius: var(--radius);
+  padding: 24px 20px;
+  cursor: pointer;
+  border: 2.5px solid transparent;
+  box-shadow: var(--shadow);
+  transition: all 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.topic-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(30,42,74,0.15);
+}
+.topic-card .emoji { font-size: 2rem; margin-bottom: 10px; display: block; }
+.topic-card h3 { font-size: 1rem; font-weight: 800; margin-bottom: 4px; }
+.topic-card p { font-size: 0.78rem; color: #666; line-height: 1.5; }
+.topic-card .badge {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+.tc-comp { border-color: #dbe4ff; }
+.tc-comp .badge { background: var(--light-blue); color: var(--blue); }
+.tc-comp:hover { border-color: var(--blue); }
+.tc-vocab { border-color: #c3fae8; }
+.tc-vocab .badge { background: var(--light-teal); color: var(--teal); }
+.tc-vocab:hover { border-color: var(--teal); }
+.tc-gram { border-color: #fff3bf; }
+.tc-gram .badge { background: var(--light-amber); color: #e67700; }
+.tc-gram:hover { border-color: var(--amber); }
+.tc-spell { border-color: #ffe3e3; }
+.tc-spell .badge { background: var(--light-coral); color: var(--coral); }
+.tc-spell:hover { border-color: var(--coral); }
+.tc-punct { border-color: #f3d9fa; }
+.tc-punct .badge { background: #f3d9fa; color: var(--lavender); }
+.tc-punct:hover { border-color: var(--lavender); }
+.tc-lf { border-color: #ffd6e7; }
+.tc-lf .badge { background: #ffd6e7; color: var(--pink); }
+.tc-lf:hover { border-color: var(--pink); }
+
+/* LESSON VIEW */
+#lesson {
+  display: none;
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 24px 20px 60px;
+}
+.back-btn {
+  background: white;
+  border: 2px solid var(--light-blue);
+  color: var(--blue);
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 8px 18px;
+  border-radius: 30px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: all 0.2s;
+}
+.back-btn:hover { background: var(--light-blue); }
+
+.lesson-header {
+  border-radius: var(--radius);
+  padding: 28px 28px 24px;
+  color: white;
+  margin-bottom: 24px;
+}
+.lesson-header .topic-emoji { font-size: 2.5rem; }
+.lesson-header h2 { font-size: 1.4rem; font-weight: 900; margin: 8px 0 4px; }
+.lesson-header p { font-size: 0.88rem; opacity: 0.9; }
+
+/* LESSON STEPS */
+.lesson-step {
+  background: white;
+  border-radius: var(--radius);
+  padding: 24px 26px;
+  margin-bottom: 18px;
+  box-shadow: var(--shadow);
+  animation: slideIn 0.3s ease both;
+}
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.step-label {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+.step-learn { background: var(--light-blue); color: var(--blue); }
+.step-tip { background: var(--light-teal); color: var(--teal); }
+.step-trick { background: var(--light-amber); color: #e67700; }
+.step-watch { background: var(--light-coral); color: var(--coral); }
+
+.lesson-step h3 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+.lesson-step p, .lesson-step li {
+  font-size: 0.88rem;
+  line-height: 1.75;
+  color: #3a4060;
+}
+.lesson-step ul { padding-left: 20px; }
+.lesson-step li { margin-bottom: 6px; }
+
+.highlight-box {
+  background: var(--bg);
+  border-left: 4px solid var(--blue);
+  border-radius: 0 10px 10px 0;
+  padding: 12px 16px;
+  margin: 12px 0;
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+.highlight-box.teal { border-color: var(--teal); background: var(--light-teal); }
+.highlight-box.amber { border-color: var(--amber); background: var(--light-amber); }
+.highlight-box.coral { border-color: var(--coral); background: var(--light-coral); }
+
+.example-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 12px 0;
+}
+.ex-wrong, .ex-right {
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 0.83rem;
+  font-weight: 700;
+}
+.ex-wrong { background: var(--light-coral); color: var(--coral); }
+.ex-wrong::before { content: '✗ '; }
+.ex-right { background: var(--light-teal); color: var(--teal); }
+.ex-right::before { content: '✓ '; }
+
+/* QUIZ inside lesson */
+.quiz-section {
+  background: var(--navy);
+  border-radius: var(--radius);
+  padding: 24px 26px;
+  margin-bottom: 18px;
+  color: white;
+}
+.quiz-section h3 {
+  font-size: 1rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+  color: var(--amber);
+}
+.quiz-section .qtext {
+  font-size: 0.88rem;
+  line-height: 1.65;
+  margin-bottom: 16px;
+  opacity: 0.9;
+}
+.quiz-opts {
+  display: grid;
+  gap: 8px;
+}
+.qopt {
+  background: rgba(255,255,255,0.08);
+  border: 2px solid rgba(255,255,255,0.15);
+  color: white;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 11px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.15s;
+}
+.qopt:hover:not(:disabled) { background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.4); }
+.qopt.correct { background: var(--teal); border-color: var(--teal); }
+.qopt.wrong { background: var(--coral); border-color: var(--coral); text-decoration: line-through; opacity: 0.7; }
+.q-feedback {
+  margin-top: 14px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 0.82rem;
+  line-height: 1.65;
+  display: none;
+}
+.q-feedback.show { display: block; animation: slideIn 0.3s ease both; }
+.q-feedback .correct-word { color: #69db7c; font-weight: 800; }
+
+/* PROGRESS DOTS */
+.progress-dots {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+.pdot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #d0d5ee;
+  transition: background 0.3s;
+}
+.pdot.done { background: var(--teal); }
+
+/* NAV BUTTONS */
+.lesson-nav {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+.btn-primary {
+  background: var(--blue);
+  color: white;
+  border: none;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 800;
+  padding: 12px 28px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-primary:hover { background: #2f4ac0; transform: translateY(-1px); }
+.btn-secondary {
+  background: white;
+  color: var(--navy);
+  border: 2.5px solid #d0d5ee;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 800;
+  padding: 12px 28px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-secondary:hover { border-color: var(--blue); color: var(--blue); }
+
+/* COMPLETE SCREEN */
+.complete-card {
+  background: white;
+  border-radius: var(--radius);
+  padding: 36px 32px;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+.complete-card .big-emoji { font-size: 4rem; margin-bottom: 12px; display: block; }
+.complete-card h2 { font-size: 1.5rem; font-weight: 900; margin-bottom: 8px; }
+.complete-card p { font-size: 0.9rem; color: #555; line-height: 1.7; margin-bottom: 24px; }
+.score-row {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+.score-pill {
+  padding: 10px 22px;
+  border-radius: 30px;
+  font-weight: 800;
+  font-size: 0.9rem;
+}
+.score-pill.green { background: var(--light-teal); color: var(--teal); }
+.score-pill.blue { background: var(--light-blue); color: var(--blue); }
+
+@media (max-width: 500px) {
+  .example-pair { grid-template-columns: 1fr; }
+  .topic-grid { grid-template-columns: 1fr 1fr; }
+  .welcome-banner h2 { font-size: 1.3rem; }
+}
+
+/* ===== GAME PROMO ===== */
+.game-promo {
+  background: linear-gradient(135deg, #1e2a4a 0%, #2d1b69 100%);
+  border-radius: var(--radius);
+  padding: 28px 28px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: var(--shadow);
+  margin-bottom: 40px;
+  color: white;
+}
+.game-promo:hover { transform: translateY(-3px); box-shadow: 0 10px 40px rgba(30,42,74,0.25); }
+.gp-left { flex: 1; }
+.gp-badge {
+  display: inline-block;
+  background: var(--amber);
+  color: var(--navy);
+  font-size: 0.65rem;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+.gp-left h3 { font-size: 1.4rem; font-weight: 900; margin-bottom: 8px; }
+.gp-left p { font-size: 0.83rem; opacity: 0.85; line-height: 1.6; margin-bottom: 14px; }
+.gp-pills { display: flex; gap: 8px; flex-wrap: wrap; }
+.gp-pills span {
+  background: rgba(255,255,255,0.12);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+.gp-right { font-size: 5rem; opacity: 0.6; flex-shrink: 0; }
+
+/* ===== GAME VIEWS ===== */
+#game { min-height: 100vh; background: #0f172a; }
+.game-topbar {
+  background: #1e293b;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.game-stat-row { display: flex; gap: 10px; margin-left: auto; flex-wrap: wrap; }
+.game-stat {
+  background: rgba(255,255,255,0.08);
+  color: white;
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-weight: 800;
+  font-size: 0.85rem;
+}
+.gst-score { background: rgba(59,91,219,0.35); color: #93c5fd; }
+.gst-streak { background: rgba(245,159,0,0.25); color: #fcd34d; }
+
+.g-screen { max-width: 640px; margin: 0 auto; padding: 24px 16px 60px; }
+
+/* INTRO CARD */
+.g-intro-card {
+  background: #1e293b;
+  border-radius: 24px;
+  padding: 36px 28px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+.g-big-emoji { font-size: 4rem; margin-bottom: 12px; display: block; animation: bounce 1s infinite alternate; }
+@keyframes bounce { from { transform: translateY(0); } to { transform: translateY(-10px); } }
+.g-intro-card h2 { font-size: 1.8rem; font-weight: 900; margin-bottom: 10px; }
+.g-intro-card p { font-size: 0.88rem; line-height: 1.7; opacity: 0.8; margin-bottom: 20px; }
+
+.g-character-parade {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+.g-parade-char {
+  background: rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 8px 10px;
+  font-size: 1.4rem;
+  cursor: default;
+  transition: transform 0.2s;
+}
+.g-parade-char:hover { transform: scale(1.2); }
+
+.g-mode-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.g-mode-card {
+  background: rgba(255,255,255,0.07);
+  border: 2px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 16px 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: white;
+  text-align: center;
+}
+.g-mode-card:hover {
+  background: rgba(59,91,219,0.3);
+  border-color: rgba(59,91,219,0.6);
+  transform: translateY(-2px);
+}
+.g-mode-card span { font-size: 1.8rem; display: block; margin-bottom: 6px; }
+.g-mode-card strong { font-size: 0.85rem; display: block; margin-bottom: 3px; }
+.g-mode-card small { font-size: 0.7rem; opacity: 0.6; }
+
+/* RESCUE ZONE */
+.g-rescue-zone {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 16px;
+  min-height: 90px;
+}
+.g-character-bubble {
+  background: #1e293b;
+  border: 2.5px solid rgba(255,255,255,0.15);
+  border-radius: 20px;
+  padding: 10px 16px;
+  text-align: center;
+  transition: all 0.5s;
+  color: white;
+}
+.g-character-bubble.rescued {
+  background: rgba(12,166,120,0.25);
+  border-color: #0ca678;
+  animation: popIn 0.4s cubic-bezier(0.175,0.885,0.32,1.275) both;
+}
+.g-character-bubble.lost {
+  background: rgba(240,62,62,0.2);
+  border-color: var(--coral);
+  animation: shake 0.4s both;
+}
+@keyframes popIn {
+  0% { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+@keyframes shake {
+  0%,100% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+}
+#g-char-emoji { font-size: 2rem; display: block; }
+.g-char-name { font-size: 0.72rem; font-weight: 700; opacity: 0.7; margin-top: 4px; }
+.g-rope { display: flex; flex-direction: column; align-items: center; }
+.g-rope-line { width: 3px; height: 40px; background: linear-gradient(to bottom, #fbbf24, #f59f00); border-radius: 3px; }
+.g-hook { font-size: 1.2rem; }
+
+/* TIMER */
+.g-timer-wrap {
+  background: rgba(255,255,255,0.08);
+  border-radius: 8px;
+  height: 8px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.g-timer-bar {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to right, #0ca678, #51cf66);
+  border-radius: 8px;
+  transition: width 0.1s linear, background 0.5s;
+}
+.g-timer-bar.warn { background: linear-gradient(to right, var(--amber), #fd7e14); }
+.g-timer-bar.danger { background: linear-gradient(to right, var(--coral), #e03131); }
+
+.g-qnum { color: rgba(255,255,255,0.4); font-size: 0.72rem; font-weight: 700; text-align: center; margin-bottom: 12px; letter-spacing: 0.08em; }
+
+/* QUESTION CARD */
+.g-question-card {
+  background: #1e293b;
+  border-radius: 18px;
+  padding: 20px 22px;
+  margin-bottom: 14px;
+  color: white;
+}
+.g-qlabel {
+  font-size: 0.6rem;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  color: var(--amber);
+  margin-bottom: 8px;
+}
+.g-qtext {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  font-weight: 600;
+}
+.g-qtext .wrong-word { color: var(--coral); text-decoration: underline wavy; font-weight: 900; }
+.g-qtext .blank { color: var(--amber); font-weight: 900; font-size: 1.1em; }
+
+/* OPTIONS */
+.g-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.g-opt {
+  background: #1e293b;
+  border: 2.5px solid rgba(255,255,255,0.12);
+  color: white;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 13px 14px;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.15s;
+  text-align: center;
+}
+.g-opt:hover:not(:disabled) {
+  background: rgba(59,91,219,0.25);
+  border-color: rgba(59,91,219,0.6);
+  transform: translateY(-1px);
+}
+.g-opt.g-correct {
+  background: rgba(12,166,120,0.3);
+  border-color: #0ca678;
+  color: #6ee7b7;
+}
+.g-opt.g-wrong {
+  background: rgba(240,62,62,0.2);
+  border-color: var(--coral);
+  color: #fca5a5;
+}
+
+/* FEEDBACK */
+.g-feedback {
+  text-align: center;
+  font-weight: 800;
+  font-size: 1rem;
+  min-height: 28px;
+  transition: all 0.2s;
+  color: white;
+}
+
+/* STREAK POPUP */
+.streak-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background: var(--amber);
+  color: var(--navy);
+  font-size: 1.5rem;
+  font-weight: 900;
+  padding: 16px 32px;
+  border-radius: 30px;
+  z-index: 1000;
+  pointer-events: none;
+  animation: popStreak 1s cubic-bezier(0.175,0.885,0.32,1.275) forwards;
+}
+@keyframes popStreak {
+  0% { transform: translate(-50%,-50%) scale(0); opacity: 0; }
+  30% { transform: translate(-50%,-60%) scale(1.1); opacity: 1; }
+  70% { transform: translate(-50%,-60%) scale(1); opacity: 1; }
+  100% { transform: translate(-50%,-80%) scale(0.8); opacity: 0; }
+}
+
+/* END SCREEN */
+.g-end-stats {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin: 20px 0;
+}
+.g-end-stat {
+  background: rgba(255,255,255,0.06);
+  border-radius: 14px;
+  padding: 14px 18px;
+  min-width: 80px;
+}
+.g-end-num { font-size: 1.8rem; font-weight: 900; color: var(--amber); }
+.g-end-label { font-size: 0.7rem; opacity: 0.6; margin-top: 4px; }
+.g-rescued-parade {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 8px;
+}
+.g-rescued-char {
+  font-size: 1.6rem;
+  animation: popIn 0.4s cubic-bezier(0.175,0.885,0.32,1.275) both;
+}
+
+@media (max-width: 480px) {
+  .g-mode-grid { grid-template-columns: 1fr; }
+  .g-options { grid-template-columns: 1fr; }
+  .gp-right { display: none; }
+}
+
+/* ===================================================
+   READQUEST PROMO CARD
+=================================================== */
+.rb-promo {
+  position: relative;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  border-radius: var(--radius);
+  padding: 28px 28px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 8px 40px rgba(120,80,255,0.3);
+  margin-bottom: 40px;
+  color: white;
+  overflow: hidden;
+}
+.rb-promo:hover { transform: translateY(-3px); box-shadow: 0 14px 50px rgba(120,80,255,0.45); }
+.rb-promo-glow {
+  position: absolute; top: -40px; right: -40px;
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, rgba(139,92,246,0.4), transparent 70%);
+  pointer-events: none;
+}
+.rb-promo-badge {
+  display: inline-block;
+  background: linear-gradient(90deg, #f59f00, #ff6b35);
+  color: white;
+  font-size: 0.65rem;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  padding: 3px 12px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+.rb-promo-left { flex: 1; }
+.rb-promo-left h3 { font-size: 1.5rem; font-weight: 900; margin-bottom: 8px; }
+.rb-promo-left p { font-size: 0.83rem; opacity: 0.85; line-height: 1.65; margin-bottom: 14px; }
+.rb-promo-scene { position: relative; width: 100px; height: 100px; flex-shrink: 0; }
+.rb-float {
+  position: absolute;
+  font-size: 1.8rem;
+  animation: floatAround 3s ease-in-out infinite;
+}
+.rb-f1 { top: 0; left: 20px; animation-delay: 0s; }
+.rb-f2 { top: 30px; right: 0; animation-delay: 0.7s; }
+.rb-f3 { bottom: 10px; left: 0; animation-delay: 1.4s; }
+.rb-f4 { bottom: 0; right: 20px; animation-delay: 2.1s; }
+@keyframes floatAround {
+  0%,100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(10deg); }
+}
+
+/* ===================================================
+   READQUEST MAIN STYLES
+=================================================== */
+#readquest { min-height: 100vh; background: #0a0a1a; font-family: 'Nunito', sans-serif; }
+.rq-view { max-width: 720px; margin: 0 auto; padding: 20px 16px 80px; }
+
+/* TOP BAR */
+.rq-topbar {
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  position: sticky; top: 0; z-index: 100;
+}
+.rq-back-btn {
+  background: rgba(255,255,255,0.08);
+  border: 1.5px solid rgba(255,255,255,0.15);
+  color: white;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 7px 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.rq-back-btn:hover { background: rgba(255,255,255,0.15); }
+.rq-brand {
+  font-size: 1rem;
+  font-weight: 900;
+  color: white;
+  letter-spacing: -0.3px;
+}
+.rq-hud { display: flex; gap: 8px; margin-left: auto; flex-wrap: wrap; }
+.rq-hud-pill {
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: white;
+}
+.rq-xp-pill { background: rgba(139,92,246,0.4); border: 1px solid rgba(139,92,246,0.6); }
+.rq-gem-pill { background: rgba(6,182,212,0.3); border: 1px solid rgba(6,182,212,0.5); }
+.rq-lvl-pill { background: rgba(245,158,11,0.3); border: 1px solid rgba(245,158,11,0.5); }
+
+/* WORLD MAP */
+.rq-map-bg {
+  background: radial-gradient(ellipse at 30% 20%, rgba(139,92,246,0.15) 0%, transparent 60%),
+              radial-gradient(ellipse at 70% 80%, rgba(6,182,212,0.1) 0%, transparent 60%),
+              #0a0a1a;
+  border-radius: 24px;
+  padding: 28px 24px;
+  min-height: 80vh;
+}
+.rq-map-title { text-align: center; color: white; margin-bottom: 32px; }
+.rq-map-title h2 { font-size: 1.6rem; font-weight: 900; margin-bottom: 6px; }
+.rq-map-title p { font-size: 0.85rem; opacity: 0.6; }
+.rq-zones { display: flex; flex-direction: column; gap: 16px; position: relative; }
+
+/* Zone path connector */
+.rq-zones::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 60px;
+  bottom: 60px;
+  width: 3px;
+  background: linear-gradient(to bottom, rgba(139,92,246,0.3), rgba(6,182,212,0.3));
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.rq-zone-card {
+  position: relative;
+  z-index: 1;
+  border-radius: 20px;
+  padding: 20px 22px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  transition: all 0.25s;
+  border: 2px solid transparent;
+}
+.rq-zone-card.unlocked {
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(255,255,255,0.12);
+}
+.rq-zone-card.unlocked:hover {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 8px 30px rgba(139,92,246,0.25);
+}
+.rq-zone-card.completed {
+  background: rgba(16,185,129,0.1);
+  border-color: rgba(16,185,129,0.4);
+}
+.rq-zone-card.locked {
+  background: rgba(255,255,255,0.02);
+  border-color: rgba(255,255,255,0.05);
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.rq-zone-icon {
+  font-size: 2.5rem;
+  min-width: 56px;
+  text-align: center;
+  filter: drop-shadow(0 0 8px rgba(139,92,246,0.5));
+}
+.rq-zone-card.locked .rq-zone-icon { filter: grayscale(1); }
+.rq-zone-info { flex: 1; }
+.rq-zone-tag {
+  font-size: 0.6rem;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.rq-zone-name { font-size: 1rem; font-weight: 900; color: white; margin-bottom: 2px; }
+.rq-zone-sub { font-size: 0.75rem; color: rgba(255,255,255,0.5); }
+.rq-zone-rewards { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+.rq-zone-reward-pill {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.7);
+}
+.rq-zone-status { font-size: 1.4rem; min-width: 32px; text-align: center; }
+.rq-zone-stars { display: flex; gap: 2px; }
+.rq-zone-stars span { font-size: 1rem; }
+
+/* ZONE BADGES */
+.rq-badges-row { margin-top: 32px; }
+.rq-badge-title { color: rgba(255,255,255,0.4); font-size: 0.7rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 12px; text-align: center; }
+.rq-badges { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.rq-badge-item {
+  background: rgba(255,255,255,0.05);
+  border: 1.5px solid rgba(255,255,255,0.1);
+  border-radius: 14px;
+  padding: 10px 14px;
+  text-align: center;
+  min-width: 80px;
+}
+.rq-badge-item.earned { background: rgba(245,158,11,0.15); border-color: rgba(245,158,11,0.4); }
+.rq-badge-item.earned .rb-bdg-e { filter: none; }
+.rb-bdg-e { font-size: 1.6rem; display: block; filter: grayscale(1) opacity(0.3); margin-bottom: 4px; }
+.rb-bdg-n { font-size: 0.65rem; color: rgba(255,255,255,0.5); font-weight: 700; }
+.rq-badge-item.earned .rb-bdg-n { color: rgba(245,158,11,0.9); }
+
+/* ZONE INTRO */
+.rq-zone-intro-card {
+  border-radius: 24px;
+  padding: 36px 28px;
+  text-align: center;
+  color: white;
+}
+.rq-zone-badge { font-size: 5rem; margin-bottom: 16px; animation: bounce 1.2s ease-in-out infinite alternate; }
+.rq-zone-intro-card h2 { font-size: 1.7rem; font-weight: 900; margin-bottom: 10px; }
+.rq-zone-intro-card p { font-size: 0.88rem; opacity: 0.8; line-height: 1.7; margin-bottom: 18px; max-width: 480px; margin-left: auto; margin-right: auto; }
+.rq-zi-rewards {
+  display: flex; gap: 12px; justify-content: center; margin-bottom: 16px; flex-wrap: wrap;
+}
+.rq-zi-rewards span {
+  background: rgba(255,255,255,0.1);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+.rq-zi-tip {
+  background: rgba(255,255,255,0.07);
+  border-left: 3px solid rgba(139,92,246,0.7);
+  border-radius: 0 12px 12px 0;
+  padding: 12px 16px;
+  font-size: 0.82rem;
+  line-height: 1.65;
+  text-align: left;
+  color: rgba(255,255,255,0.75);
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* PASSAGE READER */
+.rq-passage-wrap {
+  background: #111827;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+.rq-passage-header {
+  padding: 24px 28px 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.rq-pass-zone-tag {
+  font-size: 0.6rem;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.rq-passage-header h2 { font-size: 1.3rem; font-weight: 900; color: white; margin-bottom: 10px; }
+.rq-reading-timer-row { display: flex; align-items: center; gap: 10px; }
+.rq-read-tip { font-size: 0.75rem; color: rgba(255,255,255,0.4); font-style: italic; }
+.rq-passage-scroll { max-height: 55vh; overflow-y: auto; padding: 24px 28px; }
+.rq-passage-scroll::-webkit-scrollbar { width: 4px; }
+.rq-passage-scroll::-webkit-scrollbar-thumb { background: rgba(139,92,246,0.4); border-radius: 4px; }
+.rq-passage-text {
+  font-size: 0.9rem;
+  line-height: 1.9;
+  color: rgba(255,255,255,0.82);
+}
+.rq-passage-text h4 { color: white; font-size: 0.95rem; margin: 16px 0 6px; font-weight: 800; }
+.rq-passage-text p { margin-bottom: 12px; }
+.rq-passage-text .rq-line-num { color: rgba(255,255,255,0.25); font-size: 0.72rem; margin-right: 8px; user-select: none; }
+.rq-pass-foot {
+  padding: 20px 28px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  text-align: center;
+}
+
+/* BATTLE */
+.rq-battle-top {
+  background: rgba(0,0,0,0.4);
+  border-radius: 20px;
+  padding: 18px 20px;
+  margin-bottom: 16px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.rq-battle-vs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.rq-player-side, .rq-enemy-side { text-align: center; flex: 1; }
+.rq-player-avatar, .rq-enemy-avatar {
+  font-size: 2.8rem;
+  display: block;
+  margin-bottom: 6px;
+  filter: drop-shadow(0 0 10px rgba(139,92,246,0.6));
+}
+.rq-enemy-avatar { filter: drop-shadow(0 0 10px rgba(239,68,68,0.5)); }
+.rq-hp-bar-wrap {
+  background: rgba(255,255,255,0.1);
+  border-radius: 8px;
+  height: 8px;
+  overflow: hidden;
+  margin-bottom: 4px;
+}
+.rq-hp-bar { height: 100%; border-radius: 8px; background: linear-gradient(to right, #10b981, #34d399); transition: width 0.5s ease; }
+.rq-enemy-hp-bar { background: linear-gradient(to right, #ef4444, #f87171); }
+.rq-hp-label { font-size: 0.65rem; color: rgba(255,255,255,0.5); font-weight: 700; }
+.rq-vs-text {
+  font-size: 1rem;
+  font-weight: 900;
+  color: rgba(255,255,255,0.4);
+  flex-shrink: 0;
+}
+.rq-battle-progress {
+  background: rgba(255,255,255,0.06);
+  border-radius: 6px;
+  height: 6px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+.rq-bp-fill { height: 100%; background: linear-gradient(to right, #8b5cf6, #06b6d4); border-radius: 6px; transition: width 0.4s ease; }
+.rq-battle-qnum { font-size: 0.68rem; color: rgba(255,255,255,0.35); text-align: center; font-weight: 700; letter-spacing: 0.08em; }
+
+/* BATTLE CARD */
+.rq-battle-card {
+  background: #111827;
+  border-radius: 20px;
+  padding: 22px 22px 18px;
+  margin-bottom: 12px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.rq-battle-qtag {
+  font-size: 0.6rem;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #8b5cf6;
+  margin-bottom: 8px;
+}
+.rq-battle-question {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: white;
+  line-height: 1.65;
+  margin-bottom: 14px;
+}
+.rq-hint-btn-row { margin-bottom: 8px; }
+.rq-hint-btn {
+  background: rgba(245,158,11,0.12);
+  border: 1px solid rgba(245,158,11,0.3);
+  color: #fbbf24;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.rq-hint-btn:hover { background: rgba(245,158,11,0.2); }
+.rq-hint-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+.rq-hint-box {
+  background: rgba(245,158,11,0.1);
+  border-left: 3px solid #f59f00;
+  border-radius: 0 10px 10px 0;
+  padding: 10px 14px;
+  font-size: 0.8rem;
+  color: #fcd34d;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+.rq-battle-opts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.rq-opt {
+  background: rgba(255,255,255,0.05);
+  border: 2px solid rgba(255,255,255,0.1);
+  color: white;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.83rem;
+  font-weight: 700;
+  padding: 12px 14px;
+  border-radius: 14px;
+  cursor: pointer;
+  text-align: left;
+  line-height: 1.4;
+  transition: all 0.15s;
+}
+.rq-opt:hover:not(:disabled) {
+  background: rgba(139,92,246,0.2);
+  border-color: rgba(139,92,246,0.6);
+}
+.rq-opt.rq-correct { background: rgba(16,185,129,0.25); border-color: #10b981; color: #6ee7b7; }
+.rq-opt.rq-wrong { background: rgba(239,68,68,0.2); border-color: #ef4444; color: #fca5a5; }
+
+/* BATTLE FEEDBACK */
+.rq-battle-feedback {
+  text-align: center;
+  min-height: 40px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: white;
+  line-height: 1.5;
+  padding: 0 8px;
+}
+.rq-attack-anim {
+  text-align: center;
+  font-size: 2rem;
+  min-height: 40px;
+  animation: attackFly 0.6s ease both;
+}
+@keyframes attackFly {
+  0% { transform: scale(0) translateX(-40px); opacity: 0; }
+  50% { transform: scale(1.4) translateX(0); opacity: 1; }
+  100% { transform: scale(0) translateX(40px); opacity: 0; }
+}
+.rq-dmg-popup {
+  position: fixed;
+  font-size: 1.6rem;
+  font-weight: 900;
+  pointer-events: none;
+  z-index: 999;
+  animation: dmgFloat 0.9s ease forwards;
+}
+@keyframes dmgFloat {
+  0% { transform: translateY(0) scale(1); opacity: 1; }
+  100% { transform: translateY(-60px) scale(1.3); opacity: 0; }
+}
+
+/* ZONE COMPLETE */
+.rq-complete-card {
+  background: #111827;
+  border-radius: 24px;
+  padding: 36px 28px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+.rq-complete-stars { font-size: 2.5rem; margin-bottom: 12px; letter-spacing: 4px; }
+.rq-complete-card h2 { font-size: 1.5rem; font-weight: 900; margin-bottom: 8px; }
+.rq-complete-card p { font-size: 0.88rem; color: rgba(255,255,255,0.7); line-height: 1.7; margin-bottom: 20px; }
+.rq-complete-rewards {
+  display: flex; gap: 14px; justify-content: center; margin-bottom: 24px; flex-wrap: wrap;
+}
+.rq-cr-pill {
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: 800;
+  font-size: 0.9rem;
+}
+.rq-cr-xp { background: rgba(139,92,246,0.25); color: #c4b5fd; border: 1px solid rgba(139,92,246,0.4); }
+.rq-cr-gem { background: rgba(6,182,212,0.2); color: #67e8f9; border: 1px solid rgba(6,182,212,0.4); }
+.rq-cr-badge { background: rgba(245,158,11,0.2); color: #fcd34d; border: 1px solid rgba(245,158,11,0.4); }
+
+/* REVIEW */
+.rq-review-section {
+  background: rgba(255,255,255,0.04);
+  border-radius: 16px;
+  padding: 16px 18px;
+  margin-bottom: 4px;
+  text-align: left;
+}
+.rq-review-title { font-size: 0.75rem; font-weight: 800; color: rgba(255,255,255,0.5); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 12px; }
+.rq-review-item { display: flex; gap: 10px; margin-bottom: 10px; align-items: flex-start; font-size: 0.8rem; line-height: 1.5; }
+.rq-review-icon { font-size: 1rem; flex-shrink: 0; }
+.rq-review-text { color: rgba(255,255,255,0.75); }
+.rq-review-text strong { color: white; }
+
+/* RQ BUTTONS */
+.rq-btn-pri {
+  background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+  color: white;
+  border: none;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 800;
+  padding: 13px 30px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 20px rgba(139,92,246,0.4);
+}
+.rq-btn-pri:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(139,92,246,0.5); }
+.rq-btn-sec {
+  background: rgba(255,255,255,0.08);
+  color: white;
+  border: 1.5px solid rgba(255,255,255,0.15);
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 800;
+  padding: 13px 30px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.rq-btn-sec:hover { background: rgba(255,255,255,0.14); }
+
+/* XP Level Up popup */
+.rq-levelup {
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%) scale(0);
+  background: linear-gradient(135deg, #8b5cf6, #06b6d4);
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 900;
+  padding: 20px 40px;
+  border-radius: 30px;
+  z-index: 1000;
+  pointer-events: none;
+  text-align: center;
+  animation: levelUpAnim 1.8s cubic-bezier(0.175,0.885,0.32,1.275) forwards;
+  box-shadow: 0 0 60px rgba(139,92,246,0.6);
+}
+@keyframes levelUpAnim {
+  0% { transform: translate(-50%,-50%) scale(0); opacity: 0; }
+  25% { transform: translate(-50%,-55%) scale(1.1); opacity: 1; }
+  70% { transform: translate(-50%,-55%) scale(1); opacity: 1; }
+  100% { transform: translate(-50%,-70%) scale(0.7); opacity: 0; }
+}
+
+@media (max-width: 500px) {
+  .rq-battle-opts { grid-template-columns: 1fr; }
+  .rq-battle-vs { gap: 6px; }
+  .rq-player-avatar, .rq-enemy-avatar { font-size: 2rem; }
+  .rb-promo-scene { display: none; }
+}
+</style>
+</head>
+<body>
+
+<script>
+  if (sessionStorage.getItem("nestayraEducationUnlocked") !== "true") {
+    document.documentElement.innerHTML = '<head><title>Education Locked</title><meta name="viewport" content="width=device-width, initial-scale=1.0"><style>body{margin:0;font-family:Arial,sans-serif;background:#0a0010;color:white;display:grid;place-items:center;min-height:100vh;padding:24px}.box{max-width:620px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);border-radius:28px;padding:32px;text-align:center}a{color:#67e8f9;font-weight:900}</style></head><body><div class="box"><h1>🔒 English Learning Locked</h1><p>Please unlock the Education page first.</p><p><a href="../../#education">Return to Education unlock</a></p></div></body>';
+    throw new Error("English learning locked");
+  }
+</script>
+
+
+<div class="top-bar">
+  <h1>⭐ 11+ English Tutor</h1>
+  <div class="stars-display" id="stars-display">⭐ 0 stars earned</div>
+</div>
+
+<!-- HOME -->
+<div id="home">
+  <div class="welcome-banner">
+    <h2>Hey! Ready to smash the 11+? 🎯</h2>
+    <p>I've looked at your practice papers and know <em>exactly</em> what comes up. Pick a topic below and we'll go through it together — with tips, examples, and mini quizzes. Let's do this!</p>
+  </div>
+
+  <p class="section-title">Choose a topic to study</p>
+  <div class="topic-grid">
+    <div class="topic-card tc-comp" onclick="openLesson('comprehension')">
+      <span class="emoji">📖</span>
+      <h3>Comprehension</h3>
+      <p>How to read a passage and answer questions like a detective</p>
+      <span class="badge">Qs 1–16 in every paper</span>
+    </div>
+    <div class="topic-card tc-vocab" onclick="openLesson('vocabulary')">
+      <span class="emoji">🔍</span>
+      <h3>Vocabulary & Word Meaning</h3>
+      <p>Working out what tricky words mean from context</p>
+      <span class="badge">Qs 17–18 in every paper</span>
+    </div>
+    <div class="topic-card tc-gram" onclick="openLesson('grammar')">
+      <span class="emoji">🔧</span>
+      <h3>Parts of Speech (SPAG)</h3>
+      <p>Nouns, verbs, adjectives, adverbs — spot them in any sentence</p>
+      <span class="badge">Qs 19–20 in every paper</span>
+    </div>
+    <div class="topic-card tc-punct" onclick="openLesson('punctuation')">
+      <span class="emoji">✏️</span>
+      <h3>Punctuation & Capitals</h3>
+      <p>Find the mistake — apostrophes, speech marks, commas and more</p>
+      <span class="badge">Qs 21–32 in Paper 1 & 3</span>
+    </div>
+    <div class="topic-card tc-spell" onclick="openLesson('spelling')">
+      <span class="emoji">🔡</span>
+      <h3>Spelling</h3>
+      <p>Spot the mis-spelled word on each line — common traps revealed!</p>
+      <span class="badge">Qs 33–44 in every paper</span>
+    </div>
+    <div class="topic-card tc-lf" onclick="openLesson('grammar-cloze')">
+      <span class="emoji">🧩</span>
+      <h3>Grammar Cloze (Fill the Gap)</h3>
+      <p>Pick the right word or phrase to complete a passage correctly</p>
+      <span class="badge">Qs 45–56 in every paper</span>
+    </div>
+  </div>
+
+  <p class="section-title">🎮 Play &amp; Learn</p>
+  <div class="game-promo" onclick="openGame()">
+    <div class="gp-left">
+      <div class="gp-badge">NEW GAME</div>
+      <h3>Word Rescue! 🚀</h3>
+      <p>The characters from your reading passages are in trouble! Answer spelling, grammar &amp; punctuation questions to rescue them before the timer runs out. Can you save them all?</p>
+      <div class="gp-pills">
+        <span>⚡ Fast-paced</span>
+        <span>❤️ 3 lives</span>
+        <span>🔥 Streaks</span>
+        <span>🏆 High score</span>
+      </div>
+    </div>
+    <div class="gp-right">🚀</div>
+  </div>
+
+  <div class="rb-promo" onclick="window.open ? (document.getElementById('readquest').style.display='none', openRoblox()) : openRoblox()">
+    <div class="rb-promo-glow"></div>
+    <div class="rb-promo-left">
+      <div class="rb-promo-badge">🌟 COMPREHENSION WORLD</div>
+      <h3>ReadQuest 🗺️</h3>
+      <p>A Roblox-style adventure world! Each <strong>zone</strong> has a real 11+ story to read, then battle through questions to unlock the next area. Earn XP, gems and badges while becoming incredible at comprehension!</p>
+      <div class="gp-pills">
+        <span>🗺️ World Map</span><span>💎 Gems</span><span>⚡ XP & Levels</span><span>🏅 Badges</span><span>4 Zones</span>
+      </div>
+    </div>
+    <div class="rb-promo-scene">
+      <div class="rb-float rb-f1">🗺️</div>
+      <div class="rb-float rb-f2">💎</div>
+      <div class="rb-float rb-f3">⚔️</div>
+      <div class="rb-float rb-f4">🏆</div>
+    </div>
+  </div>
+</div>
+
+<!-- GAME VIEW -->
+<div id="game" style="display:none">
+  <div class="game-topbar">
+    <button class="back-btn" style="margin:0" onclick="exitGame()">← Back</button>
+    <div class="game-stat-row">
+      <div class="game-stat" id="g-lives">❤️❤️❤️</div>
+      <div class="game-stat gst-score" id="g-score">Score: 0</div>
+      <div class="game-stat gst-streak" id="g-streak">🔥 0</div>
+    </div>
+  </div>
+  <div id="g-intro" class="g-screen">
+    <div class="g-intro-card">
+      <div class="g-big-emoji">🚀</div>
+      <h2>Word Rescue!</h2>
+      <p>The characters from your 11+ stories are trapped! Each correct answer rescues one. Get it wrong and lose a life ❤️. Chain correct answers for a 🔥 streak bonus!</p>
+      <div class="g-character-parade" id="g-parade"></div>
+      <div class="g-mode-grid">
+        <div class="g-mode-card" onclick="startGame('spelling')">
+          <span>🔡</span><strong>Spelling</strong><small>Spot the mistake</small>
+        </div>
+        <div class="g-mode-card" onclick="startGame('grammar')">
+          <span>🔧</span><strong>Grammar</strong><small>Right word / form</small>
+        </div>
+        <div class="g-mode-card" onclick="startGame('mixed')">
+          <span>⚡</span><strong>Mixed Blitz</strong><small>All topics — bonus stars!</small>
+        </div>
+      </div>
+      <p style="font-size:0.78rem;color:#888;margin-top:16px">High score: <strong id="g-hi">0</strong></p>
+    </div>
+  </div>
+  <div id="g-play" class="g-screen" style="display:none">
+    <div class="g-play-inner">
+      <div class="g-rescue-zone">
+        <div class="g-character-bubble" id="g-char-bubble">
+          <span id="g-char-emoji">🐺</span>
+          <div class="g-char-name" id="g-char-name">Wolf</div>
+        </div>
+        <div class="g-rope" id="g-rope">
+          <div class="g-rope-line"></div>
+          <div class="g-hook">🪝</div>
+        </div>
+      </div>
+      <div class="g-timer-wrap"><div class="g-timer-bar" id="g-timer-bar"></div></div>
+      <div class="g-qnum" id="g-qnum">Question 1 of 10</div>
+      <div class="g-question-card" id="g-qcard">
+        <div class="g-qlabel" id="g-qlabel">SPELLING</div>
+        <p class="g-qtext" id="g-qtext"></p>
+      </div>
+      <div class="g-options" id="g-options"></div>
+      <div class="g-feedback" id="g-feedback"></div>
+    </div>
+  </div>
+  <div id="g-end" class="g-screen" style="display:none">
+    <div class="g-intro-card">
+      <div class="g-big-emoji" id="g-end-emoji">🏆</div>
+      <h2 id="g-end-title">Well done!</h2>
+      <div class="g-end-stats">
+        <div class="g-end-stat"><div class="g-end-num" id="g-end-score">0</div><div class="g-end-label">Score</div></div>
+        <div class="g-end-stat"><div class="g-end-num" id="g-end-rescued">0</div><div class="g-end-label">Rescued 🎉</div></div>
+        <div class="g-end-stat"><div class="g-end-num" id="g-end-best">0</div><div class="g-end-label">Best streak 🔥</div></div>
+      </div>
+      <p id="g-end-msg" style="font-size:0.88rem;color:#555;margin-bottom:24px;line-height:1.7"></p>
+      <div class="g-rescued-parade" id="g-rescued-parade"></div>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px">
+        <button class="btn-secondary" onclick="showIntro()">🔄 Play Again</button>
+        <button class="btn-primary" onclick="exitGame()">🏠 Back to Study</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- READQUEST COMPREHENSION WORLD -->
+<div id="readquest" style="display:none">
+
+  <!-- RQ TOP BAR -->
+  <div class="rq-topbar">
+    <button class="rq-back-btn" onclick="exitRoblox()">← Exit World</button>
+    <div class="rq-brand">📖 ReadQuest</div>
+    <div class="rq-hud">
+      <div class="rq-hud-pill rq-xp-pill">⚡ XP: <span id="rq-xp-display">0</span></div>
+      <div class="rq-hud-pill rq-gem-pill">💎 <span id="rq-gem-display">0</span></div>
+      <div class="rq-hud-pill rq-lvl-pill">Lv.<span id="rq-lvl-display">1</span></div>
+    </div>
+  </div>
+
+  <!-- WORLD MAP -->
+  <div id="rq-map" class="rq-view">
+    <div class="rq-map-bg">
+      <div class="rq-map-title">
+        <h2>Choose Your Zone!</h2>
+        <p>Complete each zone to unlock the next. Read the passage, answer questions, earn rewards!</p>
+      </div>
+      <div class="rq-zones" id="rq-zones"></div>
+      <div class="rq-badges-row" id="rq-badges-row">
+        <div class="rq-badge-title">🏅 Your Badges</div>
+        <div class="rq-badges" id="rq-badges"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ZONE INTRO -->
+  <div id="rq-zone-intro" class="rq-view" style="display:none">
+    <div class="rq-zone-intro-card" id="rq-zone-intro-card">
+      <div class="rq-zone-badge" id="rq-zi-badge"></div>
+      <h2 id="rq-zi-title"></h2>
+      <p id="rq-zi-desc"></p>
+      <div class="rq-zi-rewards">
+        <span id="rq-zi-xp"></span>
+        <span id="rq-zi-gems"></span>
+      </div>
+      <div class="rq-zi-tip" id="rq-zi-tip"></div>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px">
+        <button class="rq-btn-sec" onclick="exitRoblox(); openRoblox();">🗺️ World Map</button>
+        <button class="rq-btn-pri" id="rq-zi-start-btn">📖 Read the Story →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PASSAGE READER -->
+  <div id="rq-passage" class="rq-view" style="display:none">
+    <div class="rq-passage-wrap">
+      <div class="rq-passage-header" id="rq-pass-header">
+        <div class="rq-pass-zone-tag" id="rq-pass-zone-tag"></div>
+        <h2 id="rq-pass-title"></h2>
+        <div class="rq-reading-timer-row">
+          <span class="rq-read-tip">📖 Read carefully — your answers are hidden in here!</span>
+        </div>
+      </div>
+      <div class="rq-passage-scroll">
+        <div class="rq-passage-text" id="rq-passage-text"></div>
+      </div>
+      <div class="rq-pass-foot">
+        <button class="rq-btn-pri" onclick="startBattle()">⚔️ Start the Battle! →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- BATTLE (questions) -->
+  <div id="rq-battle" class="rq-view" style="display:none">
+    <div class="rq-battle-top">
+      <div class="rq-battle-vs">
+        <div class="rq-player-side">
+          <div class="rq-player-avatar" id="rq-player-avatar">🧙</div>
+          <div class="rq-hp-bar-wrap"><div class="rq-hp-bar" id="rq-player-hp"></div></div>
+          <div class="rq-hp-label">You</div>
+        </div>
+        <div class="rq-vs-text">VS</div>
+        <div class="rq-enemy-side">
+          <div class="rq-enemy-avatar" id="rq-enemy-avatar">👾</div>
+          <div class="rq-hp-bar-wrap"><div class="rq-hp-bar rq-enemy-hp-bar" id="rq-enemy-hp"></div></div>
+          <div class="rq-hp-label" id="rq-enemy-name">Boss</div>
+        </div>
+      </div>
+      <div class="rq-battle-progress">
+        <div class="rq-bp-fill" id="rq-bp-fill"></div>
+      </div>
+      <div class="rq-battle-qnum" id="rq-battle-qnum">Question 1 of 6</div>
+    </div>
+
+    <div class="rq-battle-card">
+      <div class="rq-battle-qtag" id="rq-battle-qtag">RETRIEVAL</div>
+      <div class="rq-battle-question" id="rq-battle-question"></div>
+      <div class="rq-hint-btn-row">
+        <button class="rq-hint-btn" id="rq-hint-btn" onclick="useHint()">💡 Use Hint (-5 XP)</button>
+      </div>
+      <div class="rq-hint-box" id="rq-hint-box" style="display:none"></div>
+      <div class="rq-battle-opts" id="rq-battle-opts"></div>
+    </div>
+
+    <div class="rq-battle-feedback" id="rq-battle-feedback"></div>
+    <div class="rq-attack-anim" id="rq-attack-anim"></div>
+  </div>
+
+  <!-- ZONE COMPLETE -->
+  <div id="rq-zone-complete" class="rq-view" style="display:none">
+    <div class="rq-complete-card">
+      <div class="rq-complete-stars" id="rq-complete-stars"></div>
+      <h2 id="rq-complete-title"></h2>
+      <p id="rq-complete-msg"></p>
+      <div class="rq-complete-rewards" id="rq-complete-rewards"></div>
+      <div class="rq-review-section" id="rq-review-section"></div>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px">
+        <button class="rq-btn-sec" onclick="showRqMap()">🗺️ World Map</button>
+        <button class="rq-btn-pri" id="rq-next-zone-btn">Next Zone →</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- LESSON VIEW -->
+<div id="lesson">
+  <button class="back-btn" onclick="goHome()">← Back to Topics</button>
+  <div id="lesson-content"></div>
+</div>
+
+<script>
+let totalStars = 0;
+let currentLesson = null;
+let currentStep = 0;
+let quizAnswered = {};
+
+function updateStars() {
+  document.getElementById('stars-display').textContent = `⭐ ${totalStars} stars earned`;
+}
+
+function goHome() {
+  document.getElementById('home').style.display = 'block';
+  document.getElementById('lesson').style.display = 'none';
+  document.getElementById('game').style.display = 'none';
+  document.getElementById('readquest').style.display = 'none';
+  quizAnswered = {};
+}
+
+function openLesson(id) {
+  currentLesson = id;
+  currentStep = 0;
+  quizAnswered = {};
+  document.getElementById('home').style.display = 'none';
+  document.getElementById('lesson').style.display = 'block';
+  renderLesson();
+  window.scrollTo(0, 0);
+}
+
+const lessons = {
+
+  comprehension: {
+    title: "Comprehension",
+    emoji: "📖",
+    color: "linear-gradient(135deg, #3b5bdb, #4c6ef5)",
+    intro: "This is the biggest part of every paper — 16 questions about a passage. The good news? The answers are always in the text. Let's learn how to find them!",
+    steps: [
+      {
+        type: "learn",
+        title: "The 5 Question Types You'll See",
+        content: `<p>All comprehension questions in your papers fall into these types:</p>
+        <ul>
+          <li><strong>Retrieval</strong> — "Where does X happen?" Just find it in the text.</li>
+          <li><strong>Inference</strong> — "Why did the character do X?" Read between the lines.</li>
+          <li><strong>Writer's effect</strong> — "Why did the writer use this phrase?" Think about the reader's feelings.</li>
+          <li><strong>Vocabulary in context</strong> — "What does 'ferocious' mean here?" Look at surrounding sentences.</li>
+          <li><strong>Structure</strong> — "In which section would you find...?" Look at headings.</li>
+        </ul>
+        <div class="highlight-box">💡 <strong>Top tip:</strong> Always go back and check the passage before choosing your answer. The answer is ALWAYS there!</div>`
+      },
+      {
+        type: "tip",
+        title: "The 'Closest Best Answer' Rule",
+        content: `<p>This is really important. The test asks for the <strong>BEST</strong> answer — not just a right-ish one. Sometimes two answers look almost right. Here's how to choose:</p>
+        <div class="highlight-box teal">Read the question carefully. Then find the part of the passage it's about. Ask: which answer matches what the text <em>actually says</em>, not what you think or guess?</div>
+        <p>Example from your Paper 1 (wolves text):</p>
+        <div class="highlight-box">"Why would wolves be unsuitable as pets?" — Option A says "too big and too dangerous." Option C says "they have to roam free with other wolves." The text says they are <em>pack animals, unhappy away from other wolves</em>. So <strong>C is the best answer</strong> — it matches the text exactly.</div>`
+      },
+      {
+        type: "trick",
+        title: "Inference: Reading Between the Lines",
+        content: `<p>Inference questions ask you to work something out that isn't directly said. Think of it like detective work!</p>
+        <p>From Paper 2 (Dog from Outer Space): <em>"Unaccountably, she had decided to go to the barbeque after all..."</em></p>
+        <div class="highlight-box amber">The text doesn't <em>say</em> Alix fancies Charlie. But the clue is "if Charlie Gubb were there." That's an inference — we figure it out from hints, not direct statements.</div>
+        <p>When you see inference questions, ask: <strong>"What does the writer HINT at, without saying directly?"</strong></p>`
+      },
+      {
+        type: "watch",
+        title: "Watch Out: Writer's Opinion Questions",
+        content: `<p>Questions like "What is the writer's view?" or "How does the author feel?" are tricky. Don't just answer what <em>you</em> think — look for clues in the writer's word choices.</p>
+        <p>From Paper 1 (wolves): The writer uses words like "extraordinary creatures" and "the world would be poorer without them." That tells us the writer <strong>admires wolves</strong> — even if they also say reintroduction is unlikely.</p>
+        <div class="highlight-box coral">Look for: adjectives the writer chooses, how they end the text, and whether they show one side more than the other.</div>`
+      },
+      {
+        type: "quiz",
+        question: `In Paper 1, the wolves text says the native peoples of North America called wolves "brother and sister hunters." What did THEY MEAN by this?`,
+        options: ["They thought they were related to wolves.", "They saw man and wolf as equals — both were hunters.", "They thought all wolves came from one family.", "They thought wolves would hunt their own kind."],
+        correct: 1,
+        feedback: `The answer is B — they saw humans and wolves as equals, both being hunters. The phrase "brother and sister" suggests a relationship of respect and similarity — both were hunting for food. The text says they "respected them," which supports this.`
+      }
+    ]
+  },
+
+  vocabulary: {
+    title: "Vocabulary & Word Meaning",
+    emoji: "🔍",
+    color: "linear-gradient(135deg, #0ca678, #20c997)",
+    intro: "Questions 17 & 18 in every paper ask what a specific word means. You won't always know the word — but you can ALWAYS work it out from the sentence around it!",
+    steps: [
+      {
+        type: "learn",
+        title: "The Context Clue Method",
+        content: `<p>This is the most useful skill for vocabulary questions. Even if you've never seen a word, the sentence around it gives you massive clues.</p>
+        <p>How to do it:</p>
+        <ul>
+          <li>Read the whole sentence the word is in</li>
+          <li>Read the sentence before AND after it too</li>
+          <li>Ask: "What kind of word is this — positive, negative, describing an action...?"</li>
+          <li>Try swapping in each answer option — which one makes sense?</li>
+        </ul>
+        <div class="highlight-box">✨ Example: "A cat, somewhat <strong>dishevelled</strong>, had walked with as much elegance as it could muster..." — The word "somewhat" and "elegance as it could muster" tells us the cat is trying to look dignified but is a bit messy. So dishevelled = <strong>ruffled / untidy</strong>.</div>`
+      },
+      {
+        type: "tip",
+        title: "Root Words Are Your Superpower",
+        content: `<p>Many long words have smaller words hidden inside — these "root words" give away the meaning!</p>
+        <ul>
+          <li><strong>fearsome</strong> = fear + some → something that causes fear ✓</li>
+          <li><strong>domesticated</strong> = domus (Latin: home) → made into a home animal = tamed ✓</li>
+          <li><strong>countless</strong> = count + less → too many to count = very many ✓</li>
+          <li><strong>reliable</strong> = rely + able → able to be relied upon = dependable ✓</li>
+          <li><strong>invincible</strong> = in (not) + vincible (able to be beaten) → unbeatable ✓</li>
+        </ul>
+        <div class="highlight-box teal">These ALL came up in your actual papers! Learn these prefixes: <strong>in-/un-</strong> = not, <strong>-less</strong> = without, <strong>-ful</strong> = full of, <strong>-able</strong> = capable of</div>`
+      },
+      {
+        type: "trick",
+        title: "Beware the 'Close But Wrong' Trap",
+        content: `<p>The test always includes one answer that's close but not quite right. It's designed to catch people who just guess!</p>
+        <div class="highlight-box amber">Example: "appalled" — The options were: cross / frightened / <strong>horrified</strong> / disappointed / panicking.<br><br>Being "cross" is too mild. Being "frightened" is about fear, not shock. Being "disappointed" is too mild. "Panicking" is an action. <strong>Horrified</strong> captures the shock of seeing something terrible — which matches Elsa's reaction to the empty shampoo bottle.</div>
+        <p>Always eliminate obviously wrong answers first, then choose between the remaining ones.</p>`
+      },
+      {
+        type: "quiz",
+        question: `The wolves text uses the word "ravening" to describe a wolf pack: "a hoard of ravening beasts terrorising the countryside." What does ravening most likely mean?`,
+        options: ["sleeping lazily", "fiercely hungry and wild", "moving very quietly", "extremely intelligent"],
+        correct: 1,
+        feedback: `"Ravening" means fiercely hungry and wild. The clue is the word "terrorising" nearby — this is describing the myth of the wolf pack as frightening and out of control. "Ravenous" (meaning very hungry) shares the same root, which is a handy hint!`
+      }
+    ]
+  },
+
+  grammar: {
+    title: "Parts of Speech (SPAG)",
+    emoji: "🔧",
+    color: "linear-gradient(135deg, #f59f00, #fab005)",
+    intro: "Questions 19 and 20 in every paper test whether you can spot nouns, verbs, adjectives, adverbs and proper nouns in a sentence. Once you know the trick, these become free marks!",
+    steps: [
+      {
+        type: "learn",
+        title: "The 5 Word Types — With One Sentence",
+        content: `<p>Let's use a sentence from Paper 1 to show ALL five:</p>
+        <div class="highlight-box"><em>"The very name sends a shiver down the spine."</em></div>
+        <ul>
+          <li>🔵 <strong>NOUN</strong> — a person, place or thing: <em>name, shiver, spine</em></li>
+          <li>🔴 <strong>VERB</strong> — an action or being: <em>sends</em> (the doing word!)</li>
+          <li>🟢 <strong>ADJECTIVE</strong> — describes a noun: in this sentence there isn't one, but "fearsome, savage, dangerous, dark" from line 4 are all adjectives</li>
+          <li>🟡 <strong>ADVERB</strong> — describes a verb or adjective: "very" (it describes how much)</li>
+          <li>🟣 <strong>PROPER NOUN</strong> — a specific name, always with a capital: <em>Elsa, Market Lane, MacTavish, Main Street</em></li>
+        </ul>`
+      },
+      {
+        type: "tip",
+        title: "The Fastest Tests for Each Word Type",
+        content: `<p>Use these quick tests when you're stuck:</p>
+        <ul>
+          <li>🔴 <strong>Verb?</strong> — Can you say "he/she/it ___s"? → "she <em>sends</em>" ✓ "she <em>name</em>" ✗</li>
+          <li>🔵 <strong>Noun?</strong> — Can you put "the" or "a" in front? → "a <em>shiver</em>" ✓ "a <em>dark</em>" feels odd ✗</li>
+          <li>🟢 <strong>Adjective?</strong> — Does it go before a noun? → "a <em>fearsome</em> wolf" ✓</li>
+          <li>🟡 <strong>Adverb?</strong> — Does it answer "how?" or "when?" → "runs <em>quickly</em>" ✓</li>
+          <li>🟣 <strong>Proper noun?</strong> — Does it have a capital letter and name something specific? ✓</li>
+        </ul>
+        <div class="highlight-box teal">Watch out: some words can be both! "Fast" can be an adjective ("a fast car") OR an adverb ("he ran fast"). The sentence decides which one it is.</div>`
+      },
+      {
+        type: "watch",
+        title: "The Verb Trick — It Looks Like Other Things!",
+        content: `<p>The trickiest SPAG questions in your papers ask you to find the verb in a sentence where other options try to fool you.</p>
+        <div class="highlight-box coral">From Paper 2: "The slamming front door <strong>woke</strong> Jack's sister..." — The answer is <strong>woke</strong>. "Slamming" looks like a verb but here it's describing the door (it's acting as an adjective). "Door" is a noun. "Front" is an adjective. <strong>Woke</strong> is the action — something happened because of it.</div>
+        <p>The verb is always the word that describes the MAIN ACTION or STATE in the clause.</p>`
+      },
+      {
+        type: "quiz",
+        question: `From Paper 3: "like a crowd whispering" — how is this best described?`,
+        options: ["A metaphor", "A simile", "A description", "An adverb"],
+        correct: 1,
+        feedback: `It's a SIMILE! A simile uses "like" or "as" to compare two things. Here the sound of the reeds is being compared to a crowd whispering — using the word "like." A metaphor would say "the reeds WERE a crowd whispering" (no "like" or "as"). This came up as Question 19 in Paper 3!`
+      }
+    ]
+  },
+
+  punctuation: {
+    title: "Punctuation & Capital Letters",
+    emoji: "✏️",
+    color: "linear-gradient(135deg, #7950f2, #9775fa)",
+    intro: "In these questions, each line has ONE mistake OR no mistake. You scan four chunks (A, B, C, D) and find the error — or mark N if there's none. Here are the mistakes that come up most!",
+    steps: [
+      {
+        type: "learn",
+        title: "The Most Common Mistakes in Your Papers",
+        content: `<p>From looking at all three papers, these errors come up again and again:</p>
+        <ul>
+          <li>🔴 <strong>Missing apostrophe in contractions:</strong> <em>hadnt, didnt, Ill, its</em> should be <em>hadn't, didn't, I'll, it's</em></li>
+          <li>🔴 <strong>Missing apostrophe for possession:</strong> <em>referees whistle</em> → <em>referee's whistle</em></li>
+          <li>🔴 <strong>Capital letter for names:</strong> <em>anna</em> → <em>Anna</em> (it's a proper noun!)</li>
+          <li>🔴 <strong>Speech marks problems:</strong> Missing capital after opening quote, or missing closing mark</li>
+          <li>🔴 <strong>Question marks:</strong> "Why couldn't she be more reasonable<strong>?</strong>" — missing ?</li>
+          <li>🔴 <strong>Extra/wrong commas:</strong> Don't put a comma between two adjectives before a noun unless they're "coordinate" — e.g. "sparkly, necklace" is WRONG</li>
+        </ul>`
+      },
+      {
+        type: "tip",
+        title: "Apostrophes — The Two Rules",
+        content: `<p>Apostrophes only do TWO things. Once you know this, you'll always get these right:</p>
+        <div class="highlight-box"><strong>Rule 1 — Missing letters (contractions):</strong><br>
+        didn't = did not | it's = it is | I'll = I will | hadn't = had not | who's = who is<br><br>
+        <strong>Rule 2 — Belonging (possession):</strong><br>
+        the referee's whistle (one referee) | the wolves' habitat (many wolves)<br>
+        Oliver's birthday | Jack's sister | the king's subjects</div>
+        <div class="highlight-box coral"><strong>NEVER</strong> use an apostrophe for plurals! "The cat's" (belonging to the cat) ✓ — but "Three cat's" ✗ is WRONG.</div>
+        <p>Common trick: <strong>its vs it's</strong> — "it's" = "it is". "its" = belonging to it. <em>"My friend said its really scary"</em> — this is WRONG because it should be "it's" (it is) really scary.</p>`
+      },
+      {
+        type: "trick",
+        title: "Speech Marks — 4 Things to Check",
+        content: `<p>When there's dialogue in the exercise, check all four of these:</p>
+        <ul>
+          <li>1️⃣ Does the speech open with a capital letter? → <em>'<strong>W</strong>hy haven't you used it?'</em></li>
+          <li>2️⃣ Is there a comma/question mark INSIDE the closing speech mark? → <em>'why' ← This is wrong — needs capital W!</em></li>
+          <li>3️⃣ Does a new speaker get a new line? (not tested in multiple choice, but good to know)</li>
+          <li>4️⃣ Are ALL the speech marks present — both opening and closing?</li>
+        </ul>
+        <div class="highlight-box amber">From Paper 1: <em>'Did you hear what I said? she muttered</em> — the closing speech mark is after "said?" but there should be one before "she muttered" too: <em>'Did you hear what I said?' she muttered</em></div>`
+      },
+      {
+        type: "quiz",
+        question: `Which of these sentences contains a punctuation mistake?`,
+        options: [
+          "'Stop the bus!' the boy yelled, as soon as he realised he had missed his friend's stop.",
+          "Edinburgh is the capital city of scotland; it's a very scenic place.",
+          "'Don't forget Oliver's birthday again,' warned my mother.",
+          "My sister and I bought our cousin a sparkly necklace for her birthday."
+        ],
+        correct: 1,
+        feedback: `Sentence B is wrong! "scotland" should be "Scotland" — it's a proper noun (a specific place name) and always needs a capital letter. This came directly from Paper 3, Question 41. All the other sentences are correctly punctuated.`
+      }
+    ]
+  },
+
+  spelling: {
+    title: "Spelling",
+    emoji: "🔡",
+    color: "linear-gradient(135deg, #f03e3e, #ff6b6b)",
+    intro: "Spelling questions give you four groups of words (A, B, C, D) and ask you to spot the one with a mistake — or mark N for no mistake. Here are the patterns from your actual papers!",
+    steps: [
+      {
+        type: "learn",
+        title: "The Spelling Mistakes From Your Papers",
+        content: `<p>Every single one of these came up in your practice papers. Learn them!</p>
+        <ul>
+          <li>❌ <em>efficeint</em> → ✅ <strong>efficient</strong> (i before e, except after c)</li>
+          <li>❌ <em>finaly</em> → ✅ <strong>finally</strong> (double L)</li>
+          <li>❌ <em>perchased</em> → ✅ <strong>purchased</strong> (pur- not per-)</li>
+          <li>❌ <em>invincable</em> → ✅ <strong>invincible</strong> (-ible not -able)</li>
+          <li>❌ <em>whether vane</em> → ✅ <strong>weather vane</strong> (weather = climate)</li>
+          <li>❌ <em>enhabits</em> → ✅ <strong>inhabits</strong> (in- not en-)</li>
+          <li>❌ <em>accidentle</em> → ✅ <strong>accidentally</strong> (-ally ending)</li>
+          <li>❌ <em>circits</em> → ✅ <strong>circuits</strong> (think: circle → circuit)</li>
+          <li>❌ <em>vegatation</em> → ✅ <strong>vegetation</strong> (vege- like vegetable)</li>
+          <li>❌ <em>comittee</em> → ✅ <strong>committee</strong> (double m, double t, double e!)</li>
+          <li>❌ <em>leanient</em> → ✅ <strong>lenient</strong> (len- not lean-)</li>
+          <li>❌ <em>beleive</em> → ✅ <strong>believe</strong> (i before e: bel-I-Eve)</li>
+          <li>❌ <em>discusting</em> → ✅ <strong>disgusting</strong> (dis-gust-ing)</li>
+          <li>❌ <em>extreamly</em> → ✅ <strong>extremely</strong> (extreme + ly, no A)</li>
+          <li>❌ <em>distence</em> → ✅ <strong>distance</strong> (-ance not -ence here)</li>
+        </ul>`
+      },
+      {
+        type: "tip",
+        title: "4 Spelling Rules That Save You",
+        content: `<p>These rules cover most of the mistakes in your papers:</p>
+        <ul>
+          <li>📌 <strong>-ible vs -able:</strong> After a complete word → -able (comfort<em>able</em>). After a word that can't stand alone → -ible (terr<em>ible</em>, invinc<em>ible</em>)</li>
+          <li>📌 <strong>Double consonants:</strong> committee (mm, tt, ee), occasionally, swimming, running</li>
+          <li>📌 <strong>i before e except after c:</strong> believe, achieve, receive (after c), ceiling (after c)</li>
+          <li>📌 <strong>-ally vs -ly:</strong> Words ending in -al → add -ly: accidental → <em>accidentally</em>. Words ending in -le → swap for -ly: gentle → <em>gently</em></li>
+        </ul>
+        <div class="highlight-box teal">Tricky homophones (sound the same, spelled differently) also come up: <strong>weather</strong> (climate) vs <strong>whether</strong> (if) — make sure you know which is which!</div>`
+      },
+      {
+        type: "watch",
+        title: "How to Scan Efficiently",
+        content: `<p>You have 4 groups of words (A, B, C, D) on each line. Here's how to scan fast:</p>
+        <ul>
+          <li>Don't read every word carefully — run your eye along looking for anything that "looks wrong"</li>
+          <li>If you spot something odd, stop and check it carefully</li>
+          <li>If nothing jumps out, it's probably N (no mistake) — don't second-guess yourself</li>
+          <li>Watch out for words you've learned — efficient, committee, believe etc. immediately flag these</li>
+        </ul>
+        <div class="highlight-box coral">Common trap: the question says N = no mistake. Students sometimes choose a word they're unsure about rather than trust there's no mistake. If all four groups look right — choose N confidently!</div>`
+      },
+      {
+        type: "quiz",
+        question: `Which of these words is spelled CORRECTLY?`,
+        options: ["accidentle", "invincable", "committee", "beleive"],
+        correct: 2,
+        feedback: `"committee" is the correct spelling — double M, double T, double E. The others are all wrong: "accidentally" (not accidentle), "invincible" (not invincable — it's -ible), and "believe" (i before e — beli-E-ve). All of these came up in your practice papers!`
+      }
+    ]
+  },
+
+  'grammar-cloze': {
+    title: "Grammar Cloze (Fill the Gap)",
+    emoji: "🧩",
+    color: "linear-gradient(135deg, #e64980, #f06595)",
+    intro: "These questions (45–56) give you a passage with gaps. You choose the best word or phrase to fill each gap so the text makes sense AND is grammatically correct. These need care!",
+    steps: [
+      {
+        type: "learn",
+        title: "The 6 Grammar Areas Tested",
+        content: `<p>Looking at your papers, these concepts come up again and again in the cloze section:</p>
+        <ul>
+          <li>🔵 <strong>Verb tense:</strong> had known / has known / knew (past perfect, past simple)</li>
+          <li>🔵 <strong>Modal verbs:</strong> should have / would have / could have (NOT "should of"!)</li>
+          <li>🔵 <strong>Conjunctions:</strong> despite / because / although / however — each has a different job</li>
+          <li>🔵 <strong>Relative pronouns:</strong> who / whose / whom / that / which</li>
+          <li>🔵 <strong>Prepositions:</strong> through / beside / round / under — which fits the meaning?</li>
+          <li>🔵 <strong>Noun/verb/adjective forms:</strong> advice (noun) vs advise (verb) | suspicious vs suspected</li>
+        </ul>`
+      },
+      {
+        type: "tip",
+        title: "The Biggest Mistakes — Learn These!",
+        content: `<p>These common errors come up directly in your papers:</p>
+        <div class="example-pair">
+          <div class="ex-wrong">should of / could of / would of</div>
+          <div class="ex-right">should have / could have / would have</div>
+        </div>
+        <div class="example-pair">
+          <div class="ex-wrong">different than</div>
+          <div class="ex-right">different from</div>
+        </div>
+        <div class="example-pair">
+          <div class="ex-wrong">laying face-down</div>
+          <div class="ex-right">lying face-down</div>
+        </div>
+        <div class="example-pair">
+          <div class="ex-wrong">I done all my chores</div>
+          <div class="ex-right">I have done / I did all my chores</div>
+        </div>
+        <div class="highlight-box">💡 "Should of" sounds right when you say it fast, but it's always wrong. The "of" sound comes from "have" being reduced in speech. Always write "should <em>have</em>."</div>`
+      },
+      {
+        type: "trick",
+        title: "Advice vs Advise — and Other Pairs",
+        content: `<p>The cloze section loves testing word pairs that look/sound similar but are different parts of speech:</p>
+        <ul>
+          <li><strong>advice</strong> (noun) vs <strong>advise</strong> (verb): "I need your advice." / "I advise you to..."</li>
+          <li><strong>practice</strong> (noun) vs <strong>practise</strong> (verb): "Go to practice." / "I practise daily."</li>
+          <li><strong>chose</strong> (past tense) vs <strong>chosen</strong> (past participle): "She chose." / "She had chosen."</li>
+          <li><strong>brought</strong> (past of bring) vs <strong>bought</strong> (past of buy): "I brought my lunch." / "I bought a bag."</li>
+        </ul>
+        <div class="highlight-box amber">Quick test: If the word follows "have/had/has", you need the past PARTICIPLE: "had <em>chosen</em>" not "had chose". "Have <em>brought</em>" not "have bring".</div>`
+      },
+      {
+        type: "watch",
+        title: "Conjunctions — They All Mean Different Things",
+        content: `<p>One of the trickiest cloze types is choosing the right joining word. Here's what each one does:</p>
+        <ul>
+          <li><strong>despite / although</strong> — contrast: "Despite being tired, she ran fast."</li>
+          <li><strong>because / since</strong> — reason: "He left because he was bored."</li>
+          <li><strong>however / yet</strong> — unexpected contrast: "He tried hard; however, he failed."</li>
+          <li><strong>so</strong> — result: "It rained, so we stayed inside."</li>
+        </ul>
+        <div class="highlight-box coral">From Paper 1: "...got into difficulties, _____ being a strong swimmer." The answer is DESPITE — because he was a strong swimmer but STILL drowned. That's a contrast, so you need "despite."</div>`
+      },
+      {
+        type: "quiz",
+        question: `Choose the correct word: "I must ___ you that we have some new evidence."`,
+        options: ["advice", "advised", "advising", "advise"],
+        correct: 3,
+        feedback: `"advise" is correct — it's the VERB form. "I must advise you" = I must give you advice (as an action). "Advice" is the noun (a thing), so you can't say "I must advice you." This came directly from Paper 3, Question 28. Remember: advicE = noun (thing), advIsE = verb (action).`
+      }
+    ]
+  }
+};
+
+let lessonQuizScore = 0;
+let lessonQuizTotal = 0;
+
+function renderLesson() {
+  const l = lessons[currentLesson];
+  const steps = l.steps;
+  let html = '';
+
+  html += `<div class="lesson-header" style="background:${l.color}">
+    <div class="topic-emoji">${l.emoji}</div>
+    <h2>${l.title}</h2>
+    <p>${l.intro}</p>
+  </div>`;
+
+  // Progress dots
+  html += `<div class="progress-dots">`;
+  steps.forEach((_, i) => {
+    html += `<div class="pdot ${i < currentStep ? 'done' : ''}" id="pdot-${i}"></div>`;
+  });
+  html += `</div>`;
+
+  // Render steps up to currentStep
+  steps.slice(0, currentStep + 1).forEach((step, i) => {
+    if (step.type === 'quiz') {
+      html += renderQuizStep(step, i);
+    } else {
+      html += `<div class="lesson-step" style="animation-delay:${i * 0.05}s">
+        <span class="step-label step-${step.type}">${step.type === 'learn' ? '📘 Learn' : step.type === 'tip' ? '💡 Tip' : step.type === 'trick' ? '🎯 Trick' : '⚠️ Watch Out'}</span>
+        <h3>${step.title}</h3>
+        ${step.content}
+      </div>`;
+    }
+  });
+
+  // Nav buttons
+  const isLast = currentStep >= steps.length - 1;
+  html += `<div class="lesson-nav">`;
+  if (currentStep > 0) {
+    html += `<button class="btn-secondary" onclick="prevStep()">← Previous</button>`;
+  }
+  if (!isLast) {
+    // Only show Next if the current step is not an unanswered quiz
+    const curStep = steps[currentStep];
+    if (curStep.type !== 'quiz' || quizAnswered[currentStep]) {
+      html += `<button class="btn-primary" onclick="nextStep()">Next →</button>`;
+    }
+  } else {
+    // Complete
+    html += `<button class="btn-primary" onclick="showComplete()">🎉 Finish Lesson</button>`;
+  }
+  html += `</div>`;
+
+  document.getElementById('lesson-content').innerHTML = html;
+}
+
+function renderQuizStep(step, idx) {
+  const answered = quizAnswered[idx];
+  let optsHtml = step.options.map((o, i) => {
+    let cls = '';
+    if (answered !== undefined) {
+      if (i === step.correct) cls = 'correct';
+      else if (i === answered && answered !== step.correct) cls = 'wrong';
+    }
+    return `<button class="qopt ${cls}" onclick="answerQuiz(${idx}, ${i}, ${step.correct})" ${answered !== undefined ? 'disabled' : ''}>${o}</button>`;
+  }).join('');
+
+  let feedbackHtml = '';
+  if (answered !== undefined) {
+    const correct = answered === step.correct;
+    feedbackHtml = `<div class="q-feedback show">${correct ? '✅ <span class="correct-word">Correct!</span> ' : '❌ Not quite. '} ${step.feedback}</div>`;
+  }
+
+  return `<div class="quiz-section" id="quiz-${idx}">
+    <h3>🧠 Quick Quiz!</h3>
+    <p class="qtext">${step.question}</p>
+    <div class="quiz-opts">${optsHtml}</div>
+    ${feedbackHtml}
+  </div>`;
+}
+
+function answerQuiz(stepIdx, chosen, correct) {
+  quizAnswered[stepIdx] = chosen;
+  if (chosen === correct) {
+    totalStars += 2;
+    updateStars();
+  } else {
+    totalStars = Math.max(0, totalStars);
+  }
+  renderLesson();
+  // Scroll to quiz
+  setTimeout(() => {
+    const el = document.getElementById(`quiz-${stepIdx}`);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }, 100);
+}
+
+function nextStep() {
+  const steps = lessons[currentLesson].steps;
+  if (currentStep < steps.length - 1) {
+    currentStep++;
+    totalStars += 1;
+    updateStars();
+    renderLesson();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+}
+
+function prevStep() {
+  if (currentStep > 0) {
+    currentStep--;
+    renderLesson();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+}
+
+/* ============================================================
+   WORD RESCUE GAME
+   ============================================================ */
+
+const CHARACTERS = [
+  { emoji:'🐺', name:'Wolf' },
+  { emoji:'🐱', name:'MacTavish' },
+  { emoji:'👦', name:'Jack' },
+  { emoji:'👧', name:'Alix' },
+  { emoji:'👑', name:'King Midas' },
+  { emoji:'✂️', name:'The Barber' },
+  { emoji:'⚙️', name:'Harrison' },
+  { emoji:'🐕', name:'Green Dog' },
+  { emoji:'🔱', name:'Apollo' },
+  { emoji:'🎵', name:'Marsyas' },
+  { emoji:'🔍', name:'Inspector' },
+  { emoji:'📖', name:'Tmolus' }
+];
+
+const GAME_QUESTIONS = {
+  spelling: [
+    { q:'Which word is spelled correctly?', opts:['efficeint','efficient','eficient','effisient'], correct:1, label:'SPELLING', explain:'"efficient" — i before e, double f' },
+    { q:'Which word is spelled correctly?', opts:['committe','comittee','committee','commitee'], correct:2, label:'SPELLING', explain:'"committee" — double m, double t, double e!' },
+    { q:'Which word is spelled correctly?', opts:['beleive','beleave','believe','bieleve'], correct:2, label:'SPELLING', explain:'"believe" — i before e (beli-eve)' },
+    { q:'Which word is spelled correctly?', opts:['invincable','invincible','invinsible','invincabul'], correct:1, label:'SPELLING', explain:'"invincible" — the -ible ending after an incomplete root' },
+    { q:'Which word is spelled correctly?', opts:['accidentle','accidentally','accidentaly','accidently'], correct:1, label:'SPELLING', explain:'"accidentally" — accidental + ly = accidentally' },
+    { q:'Which word is spelled correctly?', opts:['discusting','disgusting','distgusting','disgustting'], correct:1, label:'SPELLING', explain:'"disgusting" — dis + gust + ing' },
+    { q:'Which word is spelled correctly?', opts:['perchased','purchased','purchassed','purshased'], correct:1, label:'SPELLING', explain:'"purchased" — pur- not per-' },
+    { q:'Which word is spelled correctly?', opts:['vegatation','vegitation','vegetation','vegetatoin'], correct:2, label:'SPELLING', explain:'"vegetation" — think "vegetable" then add -tion' },
+    { q:'Which word is spelled correctly?', opts:['leanient','leniant','lenient','lienent'], correct:2, label:'SPELLING', explain:'"lenient" — len-i-ent, not lean' },
+    { q:'Spot the misspelled word in this sentence: "He felt invincable at the mountain peak."', opts:['felt','invincable','mountain','peak'], correct:1, label:'SPELLING', explain:'"invincible" not "invincable" — use -ible ending' },
+    { q:'Spot the misspelled word: "The whether vane spun wildly."', opts:['vane','whether','spun','wildly'], correct:1, label:'SPELLING', explain:'"weather" vane — weather = climate. "whether" = if' },
+    { q:'Spot the misspelled word: "She finaly finished the assignment."', opts:['She','finaly','finished','assignment'], correct:1, label:'SPELLING', explain:'"finally" — double l (final + ly)' },
+    { q:'Which is the correctly spelled word for something very disgusting?', opts:['discusting','disgusing','disgusting','disgusting'], correct:2, label:'SPELLING', explain:'"disgusting" — dis-gust-ing. The gust is the same as in "gusty wind"!' },
+    { q:'Spot the mistake: "The comittee met on Tuesday."', opts:['comittee','met','Tuesday','The'], correct:0, label:'SPELLING', explain:'"committee" needs double m, double t AND double e!' },
+  ],
+  grammar: [
+    { q:'Choose the correct form: "The body was found ___ face-down on the beach."', opts:['laying','laid','lying','lain'], correct:2, label:'GRAMMAR', explain:'"lying" — you lie down (no object). "Lay" needs an object: "lay the book down"' },
+    { q:'Choose correctly: "This case was ___ any other he had known."', opts:['different','different from','different than','unlike from'], correct:1, label:'GRAMMAR', explain:'"different from" — always "different FROM" in British English, not "than"' },
+    { q:'Which is correct? "It ___ have been an open-and-shut case."', opts:['should of','could of','would have','might of'], correct:2, label:'GRAMMAR', explain:'"would have" — never "would of"! It only sounds like "of" in speech' },
+    { q:'Choose the correct word: "I must ___ you about the evidence."', opts:['advice','advised','advise','advising'], correct:2, label:'GRAMMAR', explain:'"advise" is the VERB. "Advice" is the noun. "I must advise" = give advice' },
+    { q:'Which is correct? "The twins ___ to ignore his advice."', opts:['choose','chosen','chose','choosed'], correct:2, label:'GRAMMAR', explain:'"chose" — simple past tense. "Chosen" needs "had": had chosen' },
+    { q:'Which word correctly fills: "They ___ our food supplies!"', opts:['bringed','brung','brought','buyed'], correct:2, label:'GRAMMAR', explain:'"brought" — the past tense of bring. "Bring → brought" like "think → thought"' },
+    { q:'Choose correctly: "They have got ___ supplies."', opts:["they'res","there's","theyre's","theirs"], correct:3, label:'GRAMMAR', explain:'"theirs" — belonging to them, no apostrophe needed for possession pronouns' },
+    { q:'Which is correct? "Please ___ down for a minute."', opts:['seat','sat','sit','set'], correct:2, label:'GRAMMAR', explain:'"sit" — you sit yourself down. "Seat" means to place someone else in a seat' },
+    { q:'Choose: "What\'s the ___ way to the river?"', opts:['quickly','most quickest','quickliest','quickest'], correct:3, label:'GRAMMAR', explain:'"quickest" — superlative adjective. Never "most quickest" — that doubles up!' },
+    { q:'Which is correct? "___ voice was it?" (I wasn\'t sure)', opts:['whichever','what','whose','who\'s'], correct:2, label:'GRAMMAR', explain:'"whose" — it\'s asking about belonging. "Who\'s" = who is (contraction)' },
+    { q:'What type of words are: fearsome, savage, dangerous, dark?', opts:['nouns','adjectives','verbs','adverbs'], correct:1, label:'GRAMMAR', explain:'They all describe the wolf — adjectives describe nouns. "A fearsome wolf" ✓' },
+    { q:'"The slamming front door woke Jack\'s sister." Which word is the verb?', opts:['slamming','front','door','woke'], correct:3, label:'GRAMMAR', explain:'"woke" is the main action — something happened as a result. "Slamming" describes the door here' },
+    { q:'"like a crowd whispering" — this is an example of...', opts:['a metaphor','a simile','a noun phrase','an adverb'], correct:1, label:'GRAMMAR', explain:'A SIMILE — it uses "like" to compare the reed sound to a crowd. Metaphors don\'t use "like" or "as"' },
+    { q:'What type of words are: Elsa, Market Lane, MacTavish, Main Street?', opts:['common nouns','adjectives','proper nouns','verbs'], correct:2, label:'GRAMMAR', explain:'Proper nouns — specific names of people and places, always with a capital letter' },
+  ],
+  punctuation: [
+    { q:'Which sentence has a punctuation mistake?', opts:["The referee's whistle blew.","The referees whistle blew.","He hadn't heard it.","'Why?' she asked."], correct:1, label:'PUNCTUATION', explain:'"referee\'s whistle" needs an apostrophe — the whistle belongs to the referee' },
+    { q:'Which has a mistake?', opts:["'Stop!' he yelled.","'why are you here?' she asked.","'I can\'t do this,' he said.","'Really?' asked Tom."], correct:1, label:'PUNCTUATION', explain:'Speech must start with a capital letter: \'Why are you here?\' not \'why\'' },
+    { q:'Which has a mistake?', opts:["Edinburgh is in Scotland.","edinburgh is in scotland.","I love Edinburgh!","She visited Edinburgh."], correct:1, label:'PUNCTUATION', explain:'Both Edinburgh and Scotland need capitals — they\'re proper nouns (specific places)' },
+    { q:'Which is correctly written?', opts:["its really scary","it's really scary","its' really scary","It\'s' really scary"], correct:1, label:'PUNCTUATION', explain:'"it\'s" = it is (with apostrophe). "its" without apostrophe = belonging to it' },
+    { q:'Which sentence is correct?', opts:["Dont forget Olivers birthday.","Don't forget Oliver's birthday.","Don\'t forget Olivers\' birthday.","Dont forget Oliver\'s birthday."], correct:1, label:'PUNCTUATION', explain:'"Don\'t" = do not (apostrophe), "Oliver\'s" = belonging to Oliver (apostrophe)' },
+    { q:'Spot the mistake: "Why couldn\'t she be more reasonable He\'d never let the team down."', opts:['Why',"reasonable","He'd","team"], correct:1, label:'PUNCTUATION', explain:'"reasonable?" needs a question mark — it\'s a question! Then "He\'d" starts a new sentence' },
+    { q:'Which is correctly punctuated?', opts:["'I'll use it,he said.","'I'll use it,' he said.","'I'll use it' he said.","'Ill use it,' he said."], correct:1, label:'PUNCTUATION', explain:'Comma goes INSIDE the closing speech mark before "he said"' },
+    { q:'Which has a mistake?', opts:["anna ran quickly.","Anna ran quickly.","She was called Anna.","'Anna!' he shouted."], correct:0, label:'PUNCTUATION', explain:'"Anna" is a proper noun (person\'s name) and always needs a capital A' },
+    { q:'Spot the error: "A hurricane a type of very strong wind) can knock over trees."', opts:['hurricane','a type of','wind)','trees'], correct:0, label:'PUNCTUATION', explain:'The opening bracket is missing! Should be: "A hurricane (a type of very strong wind) can..."' },
+    { q:'Which has NO mistake?', opts:["Dont worry, Ill be fine.","Don't worry, I'll be fine.","Dont worry, I'll be fine.","Don't worry, Ill be fine."], correct:1, label:'PUNCTUATION', explain:'"Don\'t" = do not AND "I\'ll" = I will — both need apostrophes for missing letters' },
+  ]
+};
+
+let gMode = 'mixed';
+let gQuestions = [];
+let gIdx = 0;
+let gScore = 0;
+let gLives = 3;
+let gStreak = 0;
+let gBestStreak = 0;
+let gRescued = [];
+let gHighScore = 0;
+let gTimerInterval = null;
+let gTimeLeft = 0;
+let gAnswered = false;
+const G_TIME = 15; // seconds per question
+
+function openGame() {
+  document.getElementById('home').style.display = 'none';
+  document.getElementById('lesson').style.display = 'none';
+  document.getElementById('game').style.display = 'block';
+  showIntro();
+  window.scrollTo(0, 0);
+}
+
+function exitGame() {
+  clearInterval(gTimerInterval);
+  document.getElementById('game').style.display = 'none';
+  document.getElementById('home').style.display = 'block';
+  window.scrollTo(0, 0);
+}
+
+function showIntro() {
+  document.getElementById('g-intro').style.display = 'block';
+  document.getElementById('g-play').style.display = 'none';
+  document.getElementById('g-end').style.display = 'none';
+  document.getElementById('g-hi').textContent = gHighScore;
+  // Animate character parade
+  const parade = document.getElementById('g-parade');
+  parade.innerHTML = CHARACTERS.map(c => `<div class="g-parade-char" title="${c.name}">${c.emoji}</div>`).join('');
+}
+
+function startGame(mode) {
+  gMode = mode;
+  gScore = 0; gLives = 3; gStreak = 0; gBestStreak = 0; gRescued = [];
+  gIdx = 0; gAnswered = false;
+
+  // Build question pool
+  if (mode === 'spelling') {
+    gQuestions = shuffle([...GAME_QUESTIONS.spelling]).slice(0, 10);
+  } else if (mode === 'grammar') {
+    gQuestions = shuffle([...GAME_QUESTIONS.grammar, ...GAME_QUESTIONS.punctuation]).slice(0, 10);
+  } else {
+    // mixed
+    const all = [...GAME_QUESTIONS.spelling, ...GAME_QUESTIONS.grammar, ...GAME_QUESTIONS.punctuation];
+    gQuestions = shuffle(all).slice(0, 12);
+  }
+
+  document.getElementById('g-intro').style.display = 'none';
+  document.getElementById('g-play').style.display = 'block';
+  document.getElementById('g-end').style.display = 'none';
+  updateGameHUD();
+  showQuestion();
+}
+
+function shuffle(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+function updateGameHUD() {
+  const hearts = '❤️'.repeat(gLives) + '🖤'.repeat(3 - gLives);
+  document.getElementById('g-lives').textContent = hearts;
+  document.getElementById('g-score').textContent = `Score: ${gScore}`;
+  document.getElementById('g-streak').textContent = `🔥 ${gStreak}`;
+}
+
+function showQuestion() {
+  if (gIdx >= gQuestions.length || gLives <= 0) {
+    endGame(); return;
+  }
+  gAnswered = false;
+  const q = gQuestions[gIdx];
+  const char = CHARACTERS[gIdx % CHARACTERS.length];
+
+  // Character
+  document.getElementById('g-char-emoji').textContent = char.emoji;
+  document.getElementById('g-char-name').textContent = char.name;
+  const bubble = document.getElementById('g-char-bubble');
+  bubble.className = 'g-character-bubble';
+
+  // Question meta
+  document.getElementById('g-qnum').textContent = `Question ${gIdx + 1} of ${gQuestions.length}`;
+  document.getElementById('g-qlabel').textContent = q.label;
+  document.getElementById('g-qtext').textContent = q.q;
+  document.getElementById('g-feedback').textContent = '';
+
+  // Options
+  const optsEl = document.getElementById('g-options');
+  optsEl.innerHTML = q.opts.map((o, i) =>
+    `<button class="g-opt" onclick="pickAnswer(${i})">${o}</button>`
+  ).join('');
+
+  // Timer
+  startTimer();
+}
+
+function startTimer() {
+  clearInterval(gTimerInterval);
+  gTimeLeft = G_TIME;
+  const bar = document.getElementById('g-timer-bar');
+  bar.style.width = '100%';
+  bar.className = 'g-timer-bar';
+
+  gTimerInterval = setInterval(() => {
+    gTimeLeft -= 0.1;
+    const pct = (gTimeLeft / G_TIME) * 100;
+    bar.style.width = pct + '%';
+    if (pct < 30) bar.className = 'g-timer-bar danger';
+    else if (pct < 60) bar.className = 'g-timer-bar warn';
+    if (gTimeLeft <= 0) {
+      clearInterval(gTimerInterval);
+      if (!gAnswered) timeOut();
+    }
+  }, 100);
+}
+
+function timeOut() {
+  gAnswered = true;
+  gLives--;
+  gStreak = 0;
+  updateGameHUD();
+  document.getElementById('g-char-bubble').className = 'g-character-bubble lost';
+  document.getElementById('g-feedback').innerHTML = `⏰ Time's up! The answer was: <strong>${gQuestions[gIdx].opts[gQuestions[gIdx].correct]}</strong>`;
+  // Disable buttons
+  document.querySelectorAll('.g-opt').forEach(b => b.disabled = true);
+  if (gLives <= 0) {
+    setTimeout(endGame, 1800);
+  } else {
+    setTimeout(() => { gIdx++; showQuestion(); }, 1800);
+  }
+}
+
+function pickAnswer(chosen) {
+  if (gAnswered) return;
+  gAnswered = true;
+  clearInterval(gTimerInterval);
+  const q = gQuestions[gIdx];
+  const correct = q.correct;
+  const isRight = chosen === correct;
+
+  // Style buttons
+  document.querySelectorAll('.g-opt').forEach((b, i) => {
+    b.disabled = true;
+    if (i === correct) b.classList.add('g-correct');
+    else if (i === chosen && !isRight) b.classList.add('g-wrong');
+  });
+
+  if (isRight) {
+    gStreak++;
+    if (gStreak > gBestStreak) gBestStreak = gStreak;
+    const bonus = gStreak >= 3 ? gStreak * 10 : 10;
+    gScore += bonus;
+    gRescued.push(CHARACTERS[gIdx % CHARACTERS.length]);
+    document.getElementById('g-char-bubble').className = 'g-character-bubble rescued';
+    document.getElementById('g-feedback').innerHTML = `✅ Correct! +${bonus} points — ${q.explain}`;
+    totalStars += 1;
+    updateStars();
+    if (gStreak >= 3) showStreakPopup();
+  } else {
+    gLives--;
+    gStreak = 0;
+    document.getElementById('g-char-bubble').className = 'g-character-bubble lost';
+    document.getElementById('g-feedback').innerHTML = `❌ ${q.explain}`;
+  }
+
+  updateGameHUD();
+
+  const delay = isRight ? 1600 : 2200;
+  if (gLives <= 0) {
+    setTimeout(endGame, delay);
+  } else {
+    setTimeout(() => { gIdx++; showQuestion(); }, delay);
+  }
+}
+
+function showStreakPopup() {
+  const el = document.createElement('div');
+  el.className = 'streak-popup';
+  el.textContent = `🔥 ${gStreak} in a row!`;
+  document.body.appendChild(el);
+  setTimeout(() => el.remove(), 1100);
+}
+
+function endGame() {
+  clearInterval(gTimerInterval);
+  if (gScore > gHighScore) gHighScore = gScore;
+
+  document.getElementById('g-play').style.display = 'none';
+  document.getElementById('g-end').style.display = 'block';
+
+  const rescued = gRescued.length;
+  const total = gQuestions.length;
+  const pct = rescued / total;
+
+  let emoji, title, msg;
+  if (pct === 1) {
+    emoji = '🏆'; title = 'LEGENDARY! Every character rescued!';
+    msg = "You got every single question right — that's extraordinary! You're more than ready for the 11+. Keep practising to stay sharp!";
+  } else if (pct >= 0.7) {
+    emoji = '🎉'; title = 'Brilliant! Great rescue mission!';
+    msg = `You rescued ${rescued} out of ${total} characters — really impressive! Check which ones you missed and go over those topics in the lesson section.`;
+  } else if (pct >= 0.4) {
+    emoji = '👍'; title = 'Good effort — keep going!';
+    msg = `You rescued ${rescued} out of ${total}. You're getting there! The topics you found tricky are worth revisiting in the lesson section first, then try again.`;
+  } else {
+    emoji = '💪'; title = 'Keep practising — you\'ve got this!';
+    msg = "It was a tough game! Head back to the lesson cards to study the topics first, then come back and try again. You'll improve fast!";
+  }
+
+  document.getElementById('g-end-emoji').textContent = emoji;
+  document.getElementById('g-end-title').textContent = title;
+  document.getElementById('g-end-msg').textContent = msg;
+  document.getElementById('g-end-score').textContent = gScore;
+  document.getElementById('g-end-rescued').textContent = `${rescued}/${total}`;
+  document.getElementById('g-end-best').textContent = gBestStreak;
+
+  // Rescued parade
+  const parade = document.getElementById('g-rescued-parade');
+  parade.innerHTML = gRescued.map((c, i) =>
+    `<div class="g-rescued-char" style="animation-delay:${i * 0.08}s" title="${c.name}">${c.emoji}</div>`
+  ).join('');
+
+  // Bonus stars for game
+  totalStars += Math.floor(gScore / 20);
+  updateStars();
+}
+
+/* ============================================================ */
+
+function showComplete() {
+  const l = lessons[currentLesson];
+  const quizSteps = l.steps.filter(s => s.type === 'quiz');
+  const correct = quizSteps.filter((s, i) => {
+    const realIdx = l.steps.indexOf(s);
+    return quizAnswered[realIdx] === s.correct;
+  }).length;
+
+  let verdict = correct === quizSteps.length
+    ? ["🏆 Perfect score on the quiz!", "You nailed every question. You're clearly getting this topic!"]
+    : correct > 0
+    ? ["👏 Good effort!", "You got some right. Read back through the parts you found tricky — then try again!"]
+    : ["💪 Keep going!", "The quiz was tough. Go back through the tips and give it another try — you'll get it!"];
+
+  document.getElementById('lesson-content').innerHTML = `
+    <div class="complete-card">
+      <span class="big-emoji">${l.emoji}</span>
+      <h2>${l.title} — Complete!</h2>
+      <div class="score-row">
+        <div class="score-pill green">Quiz: ${correct}/${quizSteps.length} ✓</div>
+        <div class="score-pill blue">⭐ ${totalStars} stars total</div>
+      </div>
+      <p><strong>${verdict[0]}</strong><br>${verdict[1]}</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+        <button class="btn-secondary" onclick="openLesson('${currentLesson}')">🔄 Redo this lesson</button>
+        <button class="btn-primary" onclick="goHome()">🏠 Back to Topics</button>
+      </div>
+    </div>`;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+/* ============================================================
+   READQUEST — COMPREHENSION ADVENTURE WORLD
+   ============================================================ */
+
+const RQ_ZONES = [
+  {
+    id: 'wolves',
+    name: 'Shadow Forest 🐺',
+    tag: 'ZONE 1',
+    icon: '🌲',
+    tagColor: '#10b981',
+    bg: 'linear-gradient(135deg, #064e3b, #065f46)',
+    desc: 'Deep in the forest, wolves have been misunderstood for centuries. Read their story and battle the myths to escape the Shadow Forest!',
+    tip: '💡 Comprehension tip for this zone: Look for the MAIN POINT questions — they ask what the whole paragraph is about, not just one detail. Always read the full paragraph before answering!',
+    enemy: { name: 'Myth Wolf 🐺', emoji: '🐺' },
+    player: { emoji: '🧙' },
+    xpReward: 120, gemReward: 8,
+    badge: { emoji: '🐺', name: 'Wolf Scholar' },
+    passage: {
+      title: 'Shadows in the Snow',
+      sections: [
+        { heading: 'Who\'s Afraid of the Big Bad Wolf?', text: 'Wolf. The very name sends a shiver down the spine. Wolves are fearsome and savage, dangerous and dark. They fill our folklore. In children\'s stories, the wolf blew down the little pigs\' houses and swallowed Red Riding Hood\'s grandmother whole. In Norse mythology, a wolf tore off the hand of the god Tyr. There is a legend that the wolf is the devil in disguise, and that some men become murderous werewolves when the moon is full.' },
+        { heading: 'Dogs and Wolves', text: 'Poor wolves. They have done little to deserve their reputation. In biological terms, they are little more than large dogs, such close relations that they can easily breed with them. More than 15,000 years ago, a few wolves were domesticated and, over centuries of breeding, turned into Man\'s Best Friend. Without wolves, we would have no guide dogs or sheepdogs, no hounds or retrievers, and no doggy family pets.' },
+        { heading: 'Wild Hunters', text: 'Our own distant ancestors were hunters and competed with wolves, which were much more numerous than today. Wolves are shy, and unlikely to attack something as dangerous as a person. Like many predators, they choose the easiest prey — old, sick or wounded animals. The native peoples of North America called them brother and sister hunters, and respected them.' },
+        { heading: 'The Pack', text: 'Mostly, the packs are small — in Europe numbering only three or four individuals. Far from being cruel, they have an almost cosy family life. The pack works co-operatively to look after the cubs, which are born in spring. They bring food for the mother and her young, and even toys — such as bones — to toss about. Wolves enjoy playing — chasing, bouncing through freshly fallen snow — and even, it is said, dancing.' }
+      ]
+    },
+    questions: [
+      { q: 'What is the MAIN POINT made in the first section?', opts: ['Wolves are dangerous animals', 'Stories and legends make us think wolves are dangerous', 'There are lots of wolves in children\'s stories', 'Wolves are very old creatures'], correct: 1, tag: 'MAIN IDEA', hint: 'Think about the whole section — it\'s about WHERE the bad reputation comes from, not whether it\'s true.', explain: 'The main point is that stories and legends — not real evidence — have given wolves their frightening reputation. "They fill our folklore" is the key clue.' },
+      { q: 'What does "domesticated" mean as used in the passage?', opts: ['trapped and caged', 'tamed to live with humans', 'trained to perform tricks', 'kept in a zoo'], correct: 1, tag: 'VOCABULARY', hint: 'Think: the root word is "domus" (Latin for home). What would make a wild animal suitable for home life?', explain: '"Domesticated" means tamed/adapted to live with humans. The passage says this happened "over centuries of breeding" — turning wild wolves into pets and working dogs.' },
+      { q: 'Why did the native peoples of North America call wolves "brother and sister hunters"?', opts: ['They thought wolves were their relatives', 'Both humans and wolves hunted for food — they were equals', 'They believed wolves could speak', 'They thought only female wolves hunted'], correct: 1, tag: 'INFERENCE', hint: 'Look at what the passage says directly before this phrase — it says wolves and humans "competed" for the same prey.', explain: 'The phrase means they saw man and wolf as equals — both hunting for survival. It shows respect, not fear. The word "respected" in the next sentence confirms this.' },
+      { q: 'According to the passage, which TWO things caused wolves to disappear from Europe?', opts: ['Forests were cut down AND wolves were hunted', 'Wolves were tamed AND moved to zoos', 'Other animals hunted them AND they left for America', 'Farms replaced forests AND wolves became pets'], correct: 0, tag: 'RETRIEVAL', hint: 'Scan the passage for where it talks about wolves "disappearing" — there will be two separate reasons mentioned.', explain: 'The text says: "farms replaced forest, their habitat dwindled" (loss of forests) AND they "were hunted mercilessly." Both caused their disappearance from Europe.' },
+      { q: 'What does the writer\'s phrase "an almost cosy family life" suggest about wolf packs?', opts: ['Wolves are harmless', 'Wolf family life is surprisingly warm and caring', 'Wolves live in big comfortable dens', 'The writer thinks wolves are like pet dogs'], correct: 1, tag: 'WRITER\'S EFFECT', hint: 'Think about the word "cosy" — it\'s usually used for warm, comfortable, human settings. Why might the writer choose this word about wolves?', explain: '"Cosy" is a deliberately surprising word for wild animals — it makes us think of warmth and togetherness. The writer uses it to contrast with the savage reputation wolves have, showing they are actually nurturing.' },
+      { q: 'Based on the whole passage, what is the writer\'s overall opinion of wolves?', opts: ['Wolves are frightening and should be feared', 'Wolves are misunderstood and deserve more respect', 'Wolves are no different from pet dogs', 'The writer has no clear opinion'], correct: 1, tag: 'WRITER\'S VIEW', hint: 'Look at the language the writer uses — "poor wolves", "extraordinary creatures", "the world would be poorer without them." What feeling do these phrases give?', explain: 'Words like "poor wolves", "magnificent creatures" and "extraordinary" all show the writer admires and feels sorry for wolves. The writer believes they are misunderstood — not the dangerous beasts of folklore.' }
+    ]
+  },
+  {
+    id: 'midas',
+    name: 'Ancient Greece ⚡',
+    tag: 'ZONE 2',
+    icon: '🏛️',
+    tagColor: '#f59f00',
+    bg: 'linear-gradient(135deg, #451a03, #78350f)',
+    desc: 'Journey to Ancient Greece! King Midas has a terrible secret and only you can uncover the truth. Read his story and battle the riddles of the gods!',
+    tip: '💡 Comprehension tip: INFERENCE questions ask you to work things out from clues — the text won\'t say it directly. Ask yourself: "What does this suggest?" not "What does this say?"',
+    enemy: { name: 'Apollo ⚡', emoji: '⚡' },
+    player: { emoji: '🏺' },
+    xpReward: 150, gemReward: 10,
+    badge: { emoji: '👑', name: 'Myth Master' },
+    passage: {
+      title: 'The Story of King Midas',
+      sections: [
+        { heading: 'The Music Competition', text: 'On a particular summer\'s day, King Midas was present at a music competition. The contest was to be judged by Tmolus, a river god, and there were two contestants: a young man named Marsyas, and a very powerful god named Apollo. Marsyas was first to play. Although he was an ordinary young man, he possessed an extraordinary, magical flute. The music it made was so sweet that all who heard it were instantly bewitched. He raised the flute to his lips and, as the first notes fell on the summer air, the birds paused in their singing, the leaves were still, and wild creatures crowded around, spellbound.' },
+        { heading: 'The Verdict', text: 'Tmolus pondered deeply. There was little to choose between the two competitors. Marsyas\'s playing had touched more hearts — it was true, but that was not the point. Even if Marsyas had played ten times better than his rival, he could not be judged the winner, for Apollo would be angry if he did not win, and Apollo\'s wrath meant danger. At last, Tmolus delivered his verdict: "I declare Apollo the winner!" Without thinking, King Midas cried: "That\'s ridiculous! Marsyas played better!" Apollo glared at the king. "Indeed," was all he said.' },
+        { heading: 'The Secret', text: 'The next morning, King Midas was awoken by a strange itching in the region of his scalp. What he saw in the mirror made his eyes grow wide in horror. His ears were long and pointed, and covered in coarse, grey hair. "Everyone will laugh at me," he almost wept. "A king who is ridiculous cannot command respect, and then the people may rebel!" At last he came up with a plan: a large cap to conceal the ears, worn from dawn till dusk. The plan worked well — caps became instantly fashionable.' },
+        { heading: 'The Barber\'s Secret', text: 'The only person who knew the secret was the royal barber. The barber worked in complete privacy. "You must promise, on pain of death, to tell no-one what you have seen." As the months passed, it seemed to the barber that the ears looked more and more absurd. Eventually, it became too much to bear. He crept out of the city, and walked until he came to a lonely marsh. There, he dug a hole and whispered his secret into it: "King Midas has asses\' ears!" He had told his secret to the Earth itself, for the Earth is always silent. Yet the reeds heard, and in autumn, when the cool wind rustled through them, they whispered: "King Midas has asses\' ears!"' }
+      ]
+    },
+    questions: [
+      { q: 'Why did the barber hold his hand over his mouth when he promised the king?', opts: ['He was frightened of the ears', 'He was trying to hide a smile — he found the ears funny', 'The king asked him to be quiet', 'He had a cough'], correct: 1, tag: 'INFERENCE', hint: '"The corners begin to twitch" — what do the corners of your mouth do when you\'re trying not to laugh?', explain: 'The barber found the king\'s ears ridiculous and was trying to hide a laugh. "The corners begin to twitch" means his mouth was starting to smile. He covered it so the king wouldn\'t see.' },
+      { q: 'Why was it especially important to King Midas that his ears remained a secret?', opts: ['He was embarrassed to look silly', 'He feared people would laugh, lose respect for him, and rebel', 'The cap was uncomfortable', 'He was afraid of Apollo\'s revenge'], correct: 1, tag: 'RETRIEVAL', hint: 'The king says this in his own words in the passage — look for his direct speech about what might happen.', explain: 'The king says: "A king who is ridiculous cannot command respect, and then — who knows? The people may rise up and rebel!" It\'s about power, not just embarrassment.' },
+      { q: 'What does "wistful" mean, as in "King Midas let out a long, wistful sigh"?', opts: ['very loud', 'sad and longing, like a dream', 'sharp and angry', 'short and quick'], correct: 1, tag: 'VOCABULARY', hint: 'He just heard the most beautiful music in the world and it has ended. What feeling might that cause?', explain: '"Wistful" means a gentle, dreamy sadness — like longing for something beautiful that\'s gone. After hearing Marsyas\'s magical flute, Midas sighs with that bittersweet feeling.' },
+      { q: 'Why was Marsyas NOT declared the winner, even though he played better?', opts: ['Tmolus was corrupt', 'Apollo could not be allowed to lose — his anger was dangerous', 'The audience preferred Apollo', 'Marsyas\'s flute was broken'], correct: 1, tag: 'INFERENCE', hint: 'The passage says Tmolus was "too wise to rush to judgement, particularly when the second contestant was a powerful god, known for his quick temper."', explain: 'Tmolus knew that a powerful god\'s anger meant danger for everyone. Even if Marsyas was better, letting Apollo lose was too risky. It\'s about power, not talent.' },
+      { q: 'Why was the barber\'s secret NOT safe, even hidden in a hole in the ground?', opts: ['Someone was listening nearby', 'Animals overheard and spread it', 'The reeds — living plants — heard it and whispered it in the wind', 'The Earth told the king directly'], correct: 2, tag: 'RETRIEVAL', hint: 'The passage says "the Earth is always silent" — but what ELSE was living nearby that wasn\'t silent?', explain: 'The reeds growing in the marsh were still alive and full of life. In autumn, the wind through them made a sound "like a crowd whispering" — the exact words of the secret.' },
+      { q: 'What is the MAIN MESSAGE of this story?', opts: ['The gods are powerful and must be obeyed', 'Music has magical power', 'Secrets will always be found out eventually', 'Kings must not look ridiculous'], correct: 2, tag: 'MAIN IDEA', hint: 'Think about the whole story — what happens at the very end, and what does that teach us about keeping secrets?', explain: 'Despite all efforts — the cap, the barber\'s promise, the hole in the ground — the secret got out. The story\'s message is that no secret stays hidden forever, which is why it became a legend.' }
+    ]
+  },
+  {
+    id: 'harrison',
+    name: 'Ocean Quest 🌊',
+    tag: 'ZONE 3',
+    icon: '⚓',
+    tagColor: '#06b6d4',
+    bg: 'linear-gradient(135deg, #0c4a6e, #075985)',
+    desc: 'Set sail on a voyage of discovery! John Harrison spent his whole life solving the greatest navigation mystery of the seas. Help him get the recognition he deserves!',
+    tip: '💡 Comprehension tip: For NON-FICTION texts, the writer often shows their opinion through word choices — "astonishingly", "heartbroken", "stubborn". These are clues to how the writer FEELS.',
+    enemy: { name: 'The Board 🎩', emoji: '🎩' },
+    player: { emoji: '⚓' },
+    xpReward: 180, gemReward: 12,
+    badge: { emoji: '🧭', name: 'Navigator' },
+    passage: {
+      title: 'A Track Across the Ocean',
+      sections: [
+        { heading: 'The Problem', text: 'John Harrison was born in Yorkshire in 1693, the son of a carpenter. Hard-working and determined, he taught himself, when still young, to make fine clocks. Among the many dangers facing sailing ships was that they frequently missed their way, often wrecked on rocks. Although sailors knew how to work out their latitude (how far north or south they were), they had no reliable way of knowing their longitude — their position in terms of east and west. As a result, countless lives and millions of pounds were being lost.' },
+        { heading: 'The Prize', text: 'By 1714, Parliament decided to offer a prize of £20,000 to anyone who could "discover longitude." It was a huge amount — the equivalent of making the winner a modern millionaire. A Board of Longitude was set up, made up of judges and important people, including astronomers — scientists who studied the stars. Harrison was sure he could build a clock accurate enough to solve the problem. In 1728, he built his first marine clock, known as H-1.' },
+        { heading: 'Years of Disappointment', text: 'H-1 was remarkably accurate, though it weighed around 72 pounds. The Board gave Harrison £500 to keep working, and he went on to build H-2 and H-3. Nevertheless, however hard he tried and however accurate his clocks were, nothing was good enough. The truth was that the educated men of the Board despised Harrison — they thought of him as merely a simple mechanic from Yorkshire. They wanted an astronomer, a scientist like themselves, to win.' },
+        { heading: 'Victory at Last', text: 'In 1760, Harrison finished H-4 — an entirely new design resembling a large watch, weighing only three pounds. His son William carried it to Jamaica. When they arrived, H-4 was only five seconds slow after months at sea. The system had been proved to work almost perfectly. Astonishingly, the Board remained unconvinced, demanded more tests, and paid only half the prize. Heartbroken and angry, Harrison appealed to King George III, who was furious: "By God, Harrison, I will see you righted!" In 1773, after nearly 60 years of work, John Harrison was finally awarded the prize.' }
+      ]
+    },
+    questions: [
+      { q: 'Why was finding longitude so important to sailors?', opts: ['They wanted to win a prize', 'Without it, ships missed their way and were wrecked, killing people', 'Astronomers needed the information', 'The king demanded it'], correct: 1, tag: 'RETRIEVAL', hint: 'Look at the first section — what does the passage say was actually HAPPENING to ships because they didn\'t know their longitude?', explain: 'The passage says ships "frequently missed their way and were often wrecked on shoals of rocks." This cost "countless lives and thousands, if not millions, of pounds." That\'s why it was so urgent.' },
+      { q: 'Why did the Board of Longitude not respect Harrison, despite his accurate clocks?', opts: ['His clocks were too heavy', 'He was too stubborn', 'They looked down on him as a working-class craftsman, not a scientist', 'He never finished his work on time'], correct: 2, tag: 'INFERENCE', hint: 'The passage directly says what the Board\'s real reason was — look for where it says they "despised" Harrison and what they thought of him.', explain: 'The text says they "thought of him as merely a simple mechanic from Yorkshire" and "wanted an astronomer, a scientist like themselves, to win." It was snobbery, not about the quality of his work.' },
+      { q: 'What does the word "reliable" mean as used in the passage?', opts: ['responsible', 'traditional', 'dependable — able to be trusted', 'very old'], correct: 2, tag: 'VOCABULARY', hint: 'Think about "rely" — if you rely on something, what does that mean? Now add "-able."', explain: '"Reliable" means dependable — consistently trustworthy. Sailors needed something they could RELY on to give accurate readings every time. "Reliable" = able to be relied upon.' },
+      { q: 'Why was it significant that H-4 was only five seconds slow after a voyage to Jamaica?', opts: ['Five seconds is a long time on a ship', 'It proved the clock could keep almost perfect time on a long sea journey — solving the longitude problem', 'It meant Harrison needed to build H-5', 'It impressed the king'], correct: 1, tag: 'INFERENCE', hint: 'Think about what the clock was SUPPOSED to do — and how hard it would be to stay accurate on a rolling ship across months of ocean travel.', explain: 'The clock needed to keep the time in London exactly, even while crossing the ocean. Only five seconds of drift across a whole voyage meant the navigation method worked almost perfectly — a remarkable achievement.' },
+      { q: 'The word "astonishingly" appears before "the Board remained unconvinced." Why does the writer use this word?', opts: ['Because the Board were very clever', 'To show how surprisingly unfair and stubborn the Board were, given the proof', 'Because Harrison was astonished', 'It is just a descriptive word with no special meaning'], correct: 1, tag: 'WRITER\'S EFFECT', hint: 'The word "astonishingly" shows the writer\'s own reaction. What had just happened that makes the Board\'s response so remarkable?', explain: 'H-4 had JUST been proved to work almost perfectly — yet the Board still refused to accept it. "Astonishingly" signals the writer\'s disbelief and tells us they find the Board\'s behaviour shocking and unjust.' },
+      { q: 'How does the author feel about Harrison? Use the whole text as your evidence.', opts: ['Neutral — just presenting facts', 'Admiring and sympathetic — Harrison is portrayed as a hero treated unfairly', 'Critical — Harrison should have given up sooner', 'Confused about whether Harrison deserved the prize'], correct: 1, tag: 'WRITER\'S VIEW', hint: 'Look at words like "heartbroken", "stubborn" (used positively), "finally awarded." Do these suggest admiration or criticism?', explain: 'Words like "heartbroken", "stubborn" (a positive quality here), and King George\'s outrage all show the writer sympathises with Harrison. Calling his achievement his "great achievement" and showing 60 years of dedication confirms the author admires him.' }
+    ]
+  },
+  {
+    id: 'dogspace',
+    name: 'Village Mystery 🐕',
+    tag: 'ZONE 4',
+    icon: '🏘️',
+    tagColor: '#e64980',
+    bg: 'linear-gradient(135deg, #4a044e, #701a75)',
+    desc: 'Something very strange is happening in a quiet village — a small green dog is running through the streets! Solve the mystery of the Dog from Outer Space!',
+    tip: '💡 Comprehension tip: For FICTION, character questions are key. Ask: "How does this character FEEL?" and look for clues in what they say, do, and think — not just what the narrator tells you.',
+    enemy: { name: 'The Mystery 🔮', emoji: '🔮' },
+    player: { emoji: '🕵️' },
+    xpReward: 200, gemReward: 15,
+    badge: { emoji: '🐕', name: 'Story Detective' },
+    passage: {
+      title: 'The Dog from Outer Space',
+      sections: [
+        { heading: 'A Dreary Weekend?', text: 'Alix McCartney, visiting her grandmother for what promised to be a dreary weekend, stepped out into the silent, sunny early-morning village street. She reflected that it was absolutely not fair that she had no mobile. All her friends had one. She was going to ask her mother to fetch her home at once. Two days in this dead place was too much to bear. The street was so empty, it was as if a passing spaceship had stopped off and whisked all the people away.' },
+        { heading: 'Something Extraordinary', text: 'As if to prove it, an apparition appeared that Alix decided could only prove the presence of aliens. It was a small green dog, running very fast down the centre of the road. Wonder of wonders. Something had actually happened. The dog ran round the corner into Main Street. Alix followed it as far as the telephone box, but then lost sight of it. Alix reached the telephone box but, even before she went inside it, changed her mind. It was, she knew, a lost cause. She wandered back to her grandmother\'s house. As she reached the front door, she glimpsed a boy, aged about 16, who she knew was called Charlie Gubb. He was closing an upstairs window and he was laughing. Alix went indoors. Unaccountably, she had decided to go to the barbeque after all.' },
+        { heading: 'Jack\'s Note', text: 'Jack Philpott, awake early for almost the first time in his 12 years, slammed shut the front door and set off carrying his fishing tackle. The slamming door woke his sister Elsa. She went downstairs — the back door was open and MacTavish was not in his basket. Elsa went outside to look for him. There was an ominous-looking gap in the fence between their garden and that of number 23. She peered through it. "He\'s been chasing their cat again," she thought. Their mother was reading a scrap of paper: "Dear Mum, I have gone fishing with Dan. I done all my chores. EVEN THOUGH OTHER KIDS DO NOT HAVE TO DO CHORES. I have washed MacTavish for the stupid dog show. Sorry the bread is bent. IF YOU HAD MADE THEM IT WOULD NOT BE. Jack."' },
+        { heading: 'The Mystery Explained', text: '"Are you going to the barbeque?" asked Elsa\'s mother. "Yes," said Elsa, her mind immediately conjuring up an image of Charlie Gubb. "I\'m going as a sea-nymph and I\'ve got this shampoo that\'s going to make my hair green." "Is this it?" Her mother was holding a bottle. "It\'s empty! It was really expensive — where was it?" "By the tub Jack washed MacTavish in," said her mother. Barking outside the front door provided an answer. Elsa marched to the front door and admitted the Dog from Outer Space, who knew nothing of dog shows, or of his colour — only that he had not yet had breakfast.' }
+      ]
+    },
+    questions: [
+      { q: 'Why did Alix decide to stay in the village, rather than phone her mother?', opts: ['Her mother would have said no anyway, AND she was now curious about village life', 'She wanted to see the dog show', 'Charlie Gubb invited her to the barbeque', 'She forgot why she was going to the phone box'], correct: 0, tag: 'INFERENCE', hint: 'There are TWO reasons — look at what happens just BEFORE she changes her mind at the phone box, and what she\'s thinking when she decides to go to the barbeque.', explain: 'First, she realises "it was a lost cause" — her mother wouldn\'t let her come home. Second, seeing Charlie laughing made her think the village might be interesting after all. Both changed her mind.' },
+      { q: 'Jack wrote "I done all my chores" in his note. What is WRONG with this sentence?', opts: ['Nothing is wrong', '"I done" is incorrect — it should be "I did" or "I have done"', 'Chores should have a capital letter', '"I" should be lower case'], correct: 1, tag: 'GRAMMAR SPOT', hint: 'Think about verb tense — "done" needs a helper verb to work. On its own, "I done" is incorrect grammar.', explain: '"I done" is a grammatical error — it should be "I did" (simple past) or "I have done" (present perfect). This comes up as a grammar question in Paper 2! It\'s the kind of mistake the 11+ tests directly.' },
+      { q: 'What does "appalled" mean, as Elsa was "appalled" to see the empty shampoo bottle?', opts: ['cross', 'frightened', 'horrified and shocked', 'disappointed'], correct: 2, tag: 'VOCABULARY', hint: '"Appalled" is stronger than just being annoyed or sad — it\'s a very strong reaction. Think of the scale: disappointed → upset → horrified.', explain: '"Appalled" means horrified/shocked. Elsa had been counting on that shampoo for her costume — seeing it all used up was a genuine shock, not just mild disappointment. "Horrified" is the closest match.' },
+      { q: 'What made Elsa\'s mother suspicious about Elsa\'s sea-nymph costume?', opts: ['She found the empty bottle of hair dye', 'Elsa was hesitating and reluctant to explain fully', 'Jack\'s letter mentioned the shampoo', 'Elsa had green hair already'], correct: 1, tag: 'INFERENCE', hint: 'Look carefully at the conversation — the mother notices something about HOW Elsa is answering, before she even finds the bottle.', explain: 'The text says "Her mother detected Elsa\'s increasing hesitation." Elsa kept saying "Yes..." trailing off. Her nervous, hesitant answers made her mother suspicious — she hadn\'t found the bottle yet at that point.' },
+      { q: 'Why had Jack written some words in capital letters in his note?', opts: ['He wasn\'t sure of the spelling', 'He was so tired he lost control of his handwriting', 'He wanted to emphasise those points — he was making a complaint', 'His mother had poor eyesight'], correct: 2, tag: 'INFERENCE', hint: 'Look at WHICH things he wrote in capitals — "EVEN THOUGH OTHER KIDS DO NOT HAVE TO DO CHORES." Why those particular words?', explain: 'He capitalised things he felt strongly about — mainly his complaints. The capitals show emotion and emphasis, like shouting on the page. He was clearly fed up and wanted to make his point clearly.' },
+      { q: 'How does the writer create humour in the ending of the story?', opts: ['By making MacTavish bark very loudly', 'By showing the dog cares only about breakfast, unaware of the chaos he has caused', 'By describing Elsa being angry at Jack', 'By having Alix see the green dog again'], correct: 1, tag: 'WRITER\'S EFFECT', hint: 'Look at the final sentence carefully — what does the dog know and NOT know about what\'s happened?', explain: 'The humour comes from the contrast: all the chaos, missing shampoo, ruined costume, green dog running through the village — and MacTavish is completely oblivious, caring only that he hasn\'t had breakfast yet. The dog\'s innocence is what makes it funny.' }
+    ]
+  }
+];
+
+let rqXP = 0, rqGems = 0, rqLevel = 1;
+let rqZoneStates = {}; // { zoneId: { completed, stars, xpEarned, gemsEarned } }
+let rqEarnedBadges = [];
+let rqCurrentZone = null;
+let rqCurrentQ = 0;
+let rqPlayerHP = 100, rqEnemyHP = 100;
+let rqCorrectCount = 0;
+let rqWrongAnswers = [];
+let rqAnsweredQ = false;
+let rqHintUsed = false;
+
+function openRoblox() {
+  document.getElementById('home').style.display = 'none';
+  document.getElementById('game').style.display = 'none';
+  document.getElementById('lesson').style.display = 'none';
+  document.getElementById('readquest').style.display = 'block';
+  showRqMap();
+  window.scrollTo(0, 0);
+}
+
+function exitRoblox() {
+  document.getElementById('readquest').style.display = 'none';
+  document.getElementById('home').style.display = 'block';
+  window.scrollTo(0, 0);
+}
+
+function showRqMap() {
+  setRqView('rq-map');
+  updateRqHUD();
+  renderZones();
+  renderBadges();
+}
+
+function setRqView(id) {
+  ['rq-map','rq-zone-intro','rq-passage','rq-battle','rq-zone-complete'].forEach(v => {
+    document.getElementById(v).style.display = v === id ? 'block' : 'none';
+  });
+  window.scrollTo(0, 0);
+}
+
+function updateRqHUD() {
+  document.getElementById('rq-xp-display').textContent = rqXP;
+  document.getElementById('rq-gem-display').textContent = rqGems;
+  document.getElementById('rq-lvl-display').textContent = rqLevel;
+}
+
+function renderZones() {
+  const container = document.getElementById('rq-zones');
+  container.innerHTML = RQ_ZONES.map((z, i) => {
+    const state = rqZoneStates[z.id];
+    const prevDone = i === 0 || rqZoneStates[RQ_ZONES[i-1].id]?.completed;
+    const locked = !prevDone && i !== 0;
+    const completed = state?.completed;
+    let statusHTML = '';
+    let cls = locked ? 'locked' : completed ? 'completed' : 'unlocked';
+    if (completed) {
+      const stars = state.stars;
+      statusHTML = `<div class="rq-zone-stars">${'⭐'.repeat(stars)}${'☆'.repeat(3-stars)}</div>`;
+    } else if (locked) {
+      statusHTML = `<div class="rq-zone-status">🔒</div>`;
+    } else {
+      statusHTML = `<div class="rq-zone-status">▶️</div>`;
+    }
+    return `<div class="rq-zone-card ${cls}" onclick="${locked ? '' : `selectZone('${z.id}')`}">
+      <div class="rq-zone-icon">${z.icon}</div>
+      <div class="rq-zone-info">
+        <div class="rq-zone-tag" style="color:${z.tagColor}">${z.tag}</div>
+        <div class="rq-zone-name">${z.name}</div>
+        <div class="rq-zone-sub">${z.desc.substring(0,60)}...</div>
+        <div class="rq-zone-rewards">
+          <span class="rq-zone-reward-pill">⚡ ${z.xpReward} XP</span>
+          <span class="rq-zone-reward-pill">💎 ${z.gemReward} Gems</span>
+          <span class="rq-zone-reward-pill">🏅 ${z.badge.name}</span>
+        </div>
+      </div>
+      ${statusHTML}
+    </div>`;
+  }).join('');
+}
+
+function renderBadges() {
+  const BADGES = RQ_ZONES.map(z => z.badge);
+  document.getElementById('rq-badges').innerHTML = BADGES.map(b => {
+    const earned = rqEarnedBadges.includes(b.name);
+    return `<div class="rq-badge-item ${earned ? 'earned' : ''}">
+      <span class="rb-bdg-e">${b.emoji}</span>
+      <div class="rb-bdg-n">${b.name}</div>
+    </div>`;
+  }).join('');
+}
+
+function selectZone(zoneId) {
+  rqCurrentZone = RQ_ZONES.find(z => z.id === zoneId);
+  const z = rqCurrentZone;
+  const card = document.getElementById('rq-zone-intro-card');
+  card.style.background = z.bg;
+  document.getElementById('rq-zi-badge').textContent = z.icon;
+  document.getElementById('rq-zi-title').textContent = z.name;
+  document.getElementById('rq-zi-desc').textContent = z.desc;
+  document.getElementById('rq-zi-xp').textContent = `⚡ +${z.xpReward} XP`;
+  document.getElementById('rq-zi-gems').textContent = `💎 +${z.gemReward} Gems`;
+  document.getElementById('rq-zi-tip').textContent = z.tip;
+  document.getElementById('rq-zi-start-btn').onclick = () => showPassage();
+  setRqView('rq-zone-intro');
+}
+
+function showPassage() {
+  const z = rqCurrentZone;
+  document.getElementById('rq-pass-zone-tag').textContent = z.tag;
+  document.getElementById('rq-pass-zone-tag').style.color = z.tagColor;
+  document.getElementById('rq-pass-title').textContent = z.passage.title;
+  document.getElementById('rq-pass-header').style.background = z.bg;
+
+  let html = '';
+  z.passage.sections.forEach(s => {
+    html += `<h4>${s.heading}</h4><p>${s.text}</p>`;
+  });
+  document.getElementById('rq-passage-text').innerHTML = html;
+  setRqView('rq-passage');
+}
+
+function startBattle() {
+  rqCurrentQ = 0;
+  rqPlayerHP = 100;
+  rqEnemyHP = 100;
+  rqCorrectCount = 0;
+  rqWrongAnswers = [];
+  rqAnsweredQ = false;
+  updateBattleUI();
+  setRqView('rq-battle');
+  renderBattleQ();
+}
+
+function updateBattleUI() {
+  const z = rqCurrentZone;
+  document.getElementById('rq-player-avatar').textContent = z.player.emoji;
+  document.getElementById('rq-enemy-avatar').textContent = z.enemy.emoji;
+  document.getElementById('rq-enemy-name').textContent = z.enemy.name;
+  document.getElementById('rq-player-hp').style.width = rqPlayerHP + '%';
+  document.getElementById('rq-enemy-hp').style.width = rqEnemyHP + '%';
+}
+
+function renderBattleQ() {
+  const z = rqCurrentZone;
+  const qs = z.questions;
+  if (rqCurrentQ >= qs.length) { finishZone(); return; }
+  const q = qs[rqCurrentQ];
+  rqAnsweredQ = false;
+  rqHintUsed = false;
+
+  const pct = (rqCurrentQ / qs.length) * 100;
+  document.getElementById('rq-bp-fill').style.width = pct + '%';
+  document.getElementById('rq-battle-qnum').textContent = `Question ${rqCurrentQ+1} of ${qs.length}`;
+  document.getElementById('rq-battle-qtag').textContent = q.tag;
+  document.getElementById('rq-battle-question').textContent = q.q;
+  document.getElementById('rq-battle-feedback').textContent = '';
+  document.getElementById('rq-attack-anim').textContent = '';
+  document.getElementById('rq-hint-box').style.display = 'none';
+  document.getElementById('rq-hint-btn').disabled = false;
+
+  const opts = document.getElementById('rq-battle-opts');
+  opts.innerHTML = q.opts.map((o, i) =>
+    `<button class="rq-opt" onclick="pickRqAnswer(${i})">${o}</button>`
+  ).join('');
+}
+
+function useHint() {
+  if (rqAnsweredQ) return;
+  rqHintUsed = true;
+  document.getElementById('rq-hint-btn').disabled = true;
+  const q = rqCurrentZone.questions[rqCurrentQ];
+  document.getElementById('rq-hint-box').style.display = 'block';
+  document.getElementById('rq-hint-box').textContent = q.hint;
+}
+
+function pickRqAnswer(chosen) {
+  if (rqAnsweredQ) return;
+  rqAnsweredQ = true;
+  const q = rqCurrentZone.questions[rqCurrentQ];
+  const isRight = chosen === q.correct;
+
+  document.querySelectorAll('.rq-opt').forEach((b, i) => {
+    b.disabled = true;
+    if (i === q.correct) b.classList.add('rq-correct');
+    else if (i === chosen && !isRight) b.classList.add('rq-wrong');
+  });
+
+  if (isRight) {
+    rqCorrectCount++;
+    const xpGain = rqHintUsed ? 10 : 20;
+    rqXP += xpGain;
+    const newLvl = Math.floor(rqXP / 200) + 1;
+    if (newLvl > rqLevel) { rqLevel = newLvl; showLevelUp(); }
+    totalStars += 1; updateStars();
+    document.getElementById('rq-attack-anim').textContent = '⚔️';
+    // damage enemy
+    const dmg = rqHintUsed ? 12 : 18;
+    rqEnemyHP = Math.max(0, rqEnemyHP - dmg);
+    document.getElementById('rq-enemy-hp').style.width = rqEnemyHP + '%';
+    showDmgPopup(`-${dmg}`, true);
+    document.getElementById('rq-battle-feedback').innerHTML = `✅ <strong>Correct!</strong> +${xpGain} XP — ${q.explain}`;
+  } else {
+    rqWrongAnswers.push({ q: q.q, correct: q.opts[q.correct], explain: q.explain });
+    document.getElementById('rq-attack-anim').textContent = '💥';
+    rqPlayerHP = Math.max(0, rqPlayerHP - 20);
+    document.getElementById('rq-player-hp').style.width = rqPlayerHP + '%';
+    showDmgPopup('-20', false);
+    document.getElementById('rq-battle-feedback').innerHTML = `❌ <strong>Not quite.</strong> ${q.explain}`;
+  }
+  updateRqHUD();
+  setTimeout(() => { rqCurrentQ++; renderBattleQ(); }, 2400);
+}
+
+function showDmgPopup(text, isEnemy) {
+  const el = document.createElement('div');
+  el.className = 'rq-dmg-popup';
+  el.textContent = text;
+  el.style.color = isEnemy ? '#ef4444' : '#10b981';
+  el.style.left = isEnemy ? '70%' : '20%';
+  el.style.top = '30%';
+  document.body.appendChild(el);
+  setTimeout(() => el.remove(), 900);
+}
+
+function showLevelUp() {
+  const el = document.createElement('div');
+  el.className = 'rq-levelup';
+  el.innerHTML = `⚡ LEVEL UP!<br><span style="font-size:0.85rem;font-weight:700">You\'re now Level ${rqLevel}!</span>`;
+  document.body.appendChild(el);
+  setTimeout(() => el.remove(), 1800);
+}
+
+function finishZone() {
+  const z = rqCurrentZone;
+  const total = z.questions.length;
+  const pct = rqCorrectCount / total;
+  const stars = pct === 1 ? 3 : pct >= 0.67 ? 2 : 1;
+
+  rqZoneStates[z.id] = { completed: true, stars, xpEarned: z.xpReward, gemsEarned: z.gemReward };
+  rqXP += z.xpReward;
+  rqGems += z.gemReward;
+  totalStars += z.gemReward;
+  updateStars();
+  const newLvl = Math.floor(rqXP / 200) + 1;
+  if (newLvl > rqLevel) { rqLevel = newLvl; }
+  if (!rqEarnedBadges.includes(z.badge.name)) rqEarnedBadges.push(z.badge.name);
+
+  // Complete screen
+  document.getElementById('rq-complete-stars').textContent = '⭐'.repeat(stars) + '☆'.repeat(3-stars);
+
+  let title, msg;
+  if (stars === 3) { title = '🏆 PERFECT! Zone Conquered!'; msg = `You answered all ${total} questions correctly! You truly understand this passage — that\'s exactly what the 11+ tests. Outstanding work!`; }
+  else if (stars === 2) { title = '🎉 Zone Complete!'; msg = `You got ${rqCorrectCount} out of ${total} right. Really solid work! Check the review below for the ones you missed.`; }
+  else { title = '✅ Zone Cleared!'; msg = `You got ${rqCorrectCount} out of ${total}. You completed the zone — but there\'s room to improve. Review the questions below and try again for more stars!`; }
+
+  document.getElementById('rq-complete-title').textContent = title;
+  document.getElementById('rq-complete-msg').textContent = msg;
+
+  document.getElementById('rq-complete-rewards').innerHTML = `
+    <div class="rq-cr-pill rq-cr-xp">⚡ +${z.xpReward} XP</div>
+    <div class="rq-cr-pill rq-cr-gem">💎 +${z.gemReward} Gems</div>
+    <div class="rq-cr-pill rq-cr-badge">🏅 ${z.badge.name}</div>`;
+
+  // Review wrong answers
+  let reviewHTML = '';
+  if (rqWrongAnswers.length > 0) {
+    reviewHTML = `<div class="rq-review-section">
+      <div class="rq-review-title">📋 What to remember:</div>
+      ${rqWrongAnswers.map(w => `<div class="rq-review-item">
+        <span class="rq-review-icon">💡</span>
+        <div class="rq-review-text"><strong>Q:</strong> ${w.q.substring(0,60)}...<br>✅ ${w.explain}</div>
+      </div>`).join('')}
+    </div>`;
+  }
+  document.getElementById('rq-review-section').innerHTML = reviewHTML;
+
+  // Next zone button
+  const currentIdx = RQ_ZONES.findIndex(z2 => z2.id === z.id);
+  const nextZone = RQ_ZONES[currentIdx + 1];
+  const nextBtn = document.getElementById('rq-next-zone-btn');
+  if (nextZone) {
+    nextBtn.textContent = `Next: ${nextZone.name} →`;
+    nextBtn.onclick = () => selectZone(nextZone.id);
+    nextBtn.style.display = 'inline-block';
+  } else {
+    nextBtn.textContent = '🏆 All Zones Complete!';
+    nextBtn.onclick = showRqMap;
+  }
+
+  updateRqHUD();
+  setRqView('rq-zone-complete');
+}
+</script>
+</body>
+</html>

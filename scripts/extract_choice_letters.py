@@ -129,11 +129,7 @@ for q in questions:
     block = isolate_question(get_page_text(doc, q["page"]), int(q["questionNumber"]))
     opts = parse_options(block)
     correct = find_correct_letter(opts, q.get("answer", ""))
-    choice_map[q["id"]] = {
-        "options": opts,
-        "correctLetter": correct,
-        "answer": q.get("answer", "")
-    }
+    choice_map[q["id"]] = {"correctLetter": correct}
     if correct:
         ok += 1
         lines.append(f"OK   {q['id']}: {correct}  answer={q.get('answer','')}")

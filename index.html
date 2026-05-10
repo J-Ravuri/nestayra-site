@@ -929,6 +929,157 @@
       }
     }
 
+
+    .english-panel {
+      background: white;
+      border-radius: 30px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      margin-top: 30px;
+      animation: revealUp .7s ease both;
+    }
+
+    .english-panel-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    .english-panel-header h2 {
+      margin: 0 0 8px;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      letter-spacing: -0.04em;
+      background: linear-gradient(90deg, #0f172a, #7c3aed, #06b6d4);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .english-panel-header p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 800px;
+    }
+
+    .english-skill-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      margin: 18px 0;
+    }
+
+    .english-skill-card {
+      background: linear-gradient(135deg, #f8fafc, #eef2ff);
+      border: 1px solid #e2e8f0;
+      border-radius: 18px;
+      padding: 13px;
+      font-weight: 900;
+      color: #1e1b4b;
+      text-align: center;
+      min-height: 80px;
+      display: grid;
+      place-items: center;
+    }
+
+    .english-iframe-wrap {
+      background: #0a0010;
+      border-radius: 26px;
+      overflow: hidden;
+      border: 1px solid rgba(15, 23, 42, 0.12);
+      min-height: 860px;
+    }
+
+    .english-iframe {
+      width: 100%;
+      height: 930px;
+      border: 0;
+      display: block;
+      background: #0a0010;
+    }
+
+    @media (max-width: 980px) {
+      .english-skill-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .english-iframe {
+        height: 1020px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .english-panel {
+        padding: 16px;
+        border-radius: 24px;
+      }
+
+      .english-skill-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .english-iframe-wrap {
+        border-radius: 20px;
+      }
+
+      .english-iframe {
+        height: 1120px;
+      }
+    }
+
+
+    .english-resource-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      margin: 18px 0;
+    }
+
+    .english-resource-card {
+      border: 1px solid #e2e8f0;
+      background: linear-gradient(135deg, #ffffff, #f8fafc);
+      border-radius: 18px;
+      padding: 13px;
+      text-align: left;
+      cursor: pointer;
+      box-shadow: 0 10px 25px rgba(15,23,42,.07);
+      min-height: 126px;
+    }
+
+    .english-resource-card.active {
+      border-color: #7c3aed;
+      box-shadow: 0 0 0 4px rgba(124,58,237,.12);
+      background: linear-gradient(135deg, #eef2ff, #ecfeff);
+    }
+
+    .english-resource-card b {
+      display: block;
+      color: #0f172a;
+      margin-bottom: 5px;
+    }
+
+    .english-resource-card small {
+      display: block;
+      color: #64748b;
+      line-height: 1.35;
+      font-weight: 700;
+    }
+
+    @media (max-width: 980px) {
+      .english-resource-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 620px) {
+      .english-resource-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -947,7 +1098,8 @@
   <!-- After password: show education portal links. -->
   <nav id="unlockedNav" style="display:none">
     <a href="#educationPortal">Portal</a>
-    <a href="#fullGame">Full Game</a>
+    <a href="#fullGame">Maths Game</a>
+    <a href="#englishComprehension">English Comprehension</a>
     <button type="button" id="lockEducationTop">Lock</button>
   </nav>
 </header>
@@ -959,7 +1111,7 @@
       <div class="simple-login-mark">🎮</div>
       <div class="simple-login-note">Private Education Learning Game</div>
       <h1 class="simple-login-title">Enter Password</h1>
-      <p class="simple-login-text">Unlock the Nestayra learning game.</p>
+      <p class="simple-login-text">Unlock the Nestayra 11 Plus learning game.</p>
 
       <form class="password-form" id="educationPasswordForm">
         <label for="educationPassword">Education password</label>
@@ -979,12 +1131,12 @@
           <div>
             <p class="kicker" style="color:#67e8f9">Game unlocked</p>
             <h2>Welcome to Galaxy Obby</h2>
-            <p>Now the magic starts: complete 9-paper Maths challenges, climb boss platforms, collect rewards and use A–E answers to play fast.</p>
+            <p>Now the magic starts: complete 9-paper Maths challenges and play English comprehension quests with passage cards, hints, evidence and boss battles.</p>
 
             <div class="reward-grid">
               <div class="reward-card"><strong>🧮</strong><span>168 selected Maths questions</span></div>
               <div class="reward-card"><strong>⚡</strong><span>Fast multiple-choice battles</span></div>
-              <div class="reward-card"><strong>👑</strong><span>Boss tower and review mode</span></div>
+              <div class="reward-card"><strong>📚</strong><span>English comprehension quests</span></div>
             </div>
           </div>
 
@@ -1058,6 +1210,60 @@
           ></iframe>
         </div>
       </section>
+
+
+      <section class="english-panel" id="englishComprehension">
+        <div class="english-panel-header">
+          <div>
+            <p class="kicker">English Game</p>
+            <h2>ReadQuest Comprehension Adventure</h2>
+            <p>Children learn comprehension by playing: choose ReadQuest, GL Technique Dojo, Peter Pan practice, English Tutor or Word Explorer. The suite trains retrieval, inference, vocabulary, main idea, writer’s effect, writer’s view, tone, structure and evidence.</p>
+          </div>
+          <a class="button light" href="education-game/english/readquest.html" target="_blank" rel="noopener">Open English Game Full Screen</a>
+        </div>
+
+        
+        <div class="english-resource-grid" id="englishResourceGrid">
+          <button class="english-resource-card active" type="button" data-src="education-game/english/readquest.html">
+            <b>🎮 ReadQuest Adventure</b>
+            <small>Five comprehension worlds with boss battles, hints and XP.</small>
+          </button>
+          <button class="english-resource-card" type="button" data-src="education-game/english/gl-technique-dojo.html">
+            <b>🧠 GL Technique Dojo</b>
+            <small>Quick drills for retrieval, inference, vocabulary, tone and evidence.</small>
+          </button>
+          <button class="english-resource-card" type="button" data-src="education-game/english/peter-pan-comprehension.html">
+            <b>🏴‍☠️ Peter Pan Practice</b>
+            <small>Classic passage comprehension practice.</small>
+          </button>
+          <button class="english-resource-card" type="button" data-src="education-game/english/11plus-english-tutor.html">
+            <b>📚 English Tutor</b>
+            <small>Vocabulary, grammar and wider 11+ English support.</small>
+          </button>
+          <button class="english-resource-card" type="button" data-src="education-game/english/secret-life-of-english.html">
+            <b>🔤 Word Explorer</b>
+            <small>Build curiosity about words, meaning and language history.</small>
+          </button>
+        </div>
+
+        <div class="english-skill-grid" aria-label="Comprehension skills practised">
+          <div class="english-skill-card">🔎 Retrieval</div>
+          <div class="english-skill-card">🧠 Inference</div>
+          <div class="english-skill-card">📚 Vocabulary</div>
+          <div class="english-skill-card">✨ Writer’s Effect</div>
+          <div class="english-skill-card">🎯 Main Idea</div>
+        </div>
+
+        <div class="english-iframe-wrap">
+          <iframe
+            id="englishComprehensionFrame"
+            class="english-iframe"
+            title="ReadQuest English Comprehension Adventure"
+            src="about:blank"
+            loading="lazy"
+          ></iframe>
+        </div>
+      </section>
     </div>
   </div>
 </section>
@@ -1077,6 +1283,7 @@
   const lockedNav = document.getElementById("lockedNav");
   const unlockedNav = document.getElementById("unlockedNav");
   const gameFrame = document.getElementById("educationGameFrame");
+  const englishFrame = document.getElementById("englishComprehensionFrame");
 
   document.getElementById("year").textContent = new Date().getFullYear();
 
@@ -1088,6 +1295,7 @@
     lockedNav.style.display = "none";
     unlockedNav.style.display = "flex";
     gameFrame.src = "education-game/index.html";
+    englishFrame.src = "education-game/english/readquest.html";
     setTimeout(function () {
       document.getElementById("educationPortal").scrollIntoView({ behavior: "smooth" });
     }, 100);
@@ -1102,6 +1310,7 @@
     passwordInput.value = "";
     passwordError.textContent = "";
     gameFrame.src = "about:blank";
+    englishFrame.src = "about:blank";
     window.location.hash = "education";
   }
 
@@ -1118,6 +1327,19 @@
 
   document.getElementById("lockEducationButton").addEventListener("click", lockEducation);
   document.getElementById("lockEducationTop").addEventListener("click", lockEducation);
+
+  document.querySelectorAll(".english-resource-card").forEach(function (button) {
+    button.addEventListener("click", function () {
+      document.querySelectorAll(".english-resource-card").forEach(function (b) {
+        b.classList.remove("active");
+      });
+      button.classList.add("active");
+      if (sessionStorage.getItem("nestayraEducationUnlocked") === "true") {
+        englishFrame.src = button.dataset.src;
+      }
+    });
+  });
+
 
   if (sessionStorage.getItem("nestayraEducationUnlocked") === "true") {
     unlockEducation();

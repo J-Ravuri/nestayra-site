@@ -295,3 +295,47 @@ The game uses `education-game/choice_map.js` to mark A-E choices.
 Each selected question has a `correctLetter`, so clicking A, B, C, D or E is marked against the selected choice letter. It no longer compares the clicked letter against the written answer value such as `30`, `40%` or `£18`.
 
 The `choice_map.js` file stores only correct letters, not copied option text.
+
+
+## English comprehension game
+
+The protected Education portal now includes an English comprehension section:
+
+```text
+education-game/english-comprehension.html
+```
+
+It is embedded after unlock and guarded by the same Education password session.
+
+The game uses the uploaded ReadQuest comprehension information and teaches:
+- Retrieval
+- Inference
+- Vocabulary in context
+- Main idea
+- Writer's effect
+- Writer's view
+- Evidence-based answering
+
+The child reads passage cards, uses hints, answers multiple-choice questions, fights boss rounds, earns XP/gems, and sees skill feedback.
+
+
+## English comprehension suite upgrade
+
+The Education portal now includes every uploaded English comprehension/learning resource:
+
+```text
+education-game/english/readquest.html
+education-game/english/gl-technique-dojo.html
+education-game/english/peter-pan-comprehension.html
+education-game/english/11plus-english-tutor.html
+education-game/english/secret-life-of-english.html
+```
+
+The English section includes a selector so the child can switch between:
+- ReadQuest Adventure
+- GL Technique Dojo
+- Peter Pan Practice
+- English Tutor
+- Word Explorer
+
+The GL Technique Dojo explicitly practises retrieval, inference, vocabulary in context, writer's effect, main idea, evidence, tone/mood and structure.
