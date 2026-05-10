@@ -53,14 +53,21 @@ function setPaper(p){state.paper=p;makeDeck();render()}
 function startTimer(){clearInterval(state.timerId);state.timer=state.mode==="TikTok 10"?40:state.mode==="Boss Tower"?32:0;if(state.timer>0){state.timerId=setInterval(()=>{if(!state.locked&&state.screen==="game"){state.timer--;if(state.timer<=5&&state.timer>0)beep(440,.035,"square");if(state.timer<=0)mark(false,true);render()}},1000)}}
 function q(){return state.deck[state.index]}
 function normalize(s){return String(s||"").toLowerCase().trim().replace(/[−–—]/g,"-").replace(/²/g,"2").replace(/³/g,"3").replace(/×/g,"x").replace(/degrees?|degree|fahrenheit|celsius/g,"").replace(/([0-9])\s*°?\s*[cf]\b/g,"$1").replace(/metres|meters/g,"m").replace(/litres/g,"l").replace(/minutes|minute|mins|min/g,"m").replace(/seconds|second|secs|sec/g,"s").replace(/hours|hour|hrs|hr/g,"h").replace(/pounds?/g,"£").replace(/\s+/g,"").replace(/[£°',()]/g,"").replace(/and/g,"")}
-function isCorrect(){if(hasChoiceKey()&&state.selected){return selectedLetterCorrect()}return normalize(state.typed||state.selected)===normalize(q().answer)}
+function isCorrect(){
+  if (state.selected) {
+    let m = choiceInfo();
+    if (m && m.correctLetter) return selectedLetterCorrect();
+    return false;
+  }
+  return normalize(state.typed)===normalize(q().answer);
+}
 
 function choiceInfo(){return (window.CHOICE_MAP&&q&&q()&&window.CHOICE_MAP[q().id])?window.CHOICE_MAP[q().id]:null}
 function hasChoiceKey(){let m=choiceInfo();return !!(m&&m.correctLetter)}
 function selectedLetterCorrect(){let m=choiceInfo();return !!(m&&m.correctLetter&&state.selected&&state.selected.toUpperCase()===m.correctLetter.toUpperCase())}
-function choiceStatusText(){let m=choiceInfo();if(!m)return "Run extractor for A-E auto-marking.";if(m.correctLetter)return "Auto-marking A-E choices enabled.";return "A-E key not found for this question; use typed answer or peek answer."}
+function choiceStatusText(){let m=choiceInfo();if(m&&m.correctLetter)return "A-E multiple-choice marking enabled.";return "A-E key missing for this question; use typed fallback or peek answer."}
 
-function selectLetter(l){if(state.locked)return;state.selected=l;state.typed=l;beep(520,.05);vibrate(18);render()}
+function selectLetter(l){if(state.locked)return;state.selected=l;state.typed="";beep(520,.05);vibrate(18);render()}
 function updateTyped(v){state.typed=v;state.selected="";render()}
 function check(){if(state.locked)return;if(!state.typed&&!state.selected){toast("Pick A-E or type an answer");beep(180,.1);return}mark(isCorrect(),false)}
 function mark(ok,timeout=false){if(state.locked)return;state.locked=true;state.lastCorrect=ok;state.totalPlayed++;if(ok){let ns=state.streak+1;state.score++;state.streak=ns;state.bestStreak=Math.max(state.bestStreak,ns);let reward=25+Math.min(ns*7,80)+(isBoss()?50:0);state.coins+=reward;state.xp+=35+(isBoss()?35:0);state.totalCorrect++;removeReview(q().id);beep(900,.12);vibrate(40);pop(ns>=5?`🔥 ${ns}x`:"JUMP!");if(ns%3===0){state.coins+=30;toast("Treasure chest! +30 coins");confetti(80)}else toast(`+${reward} coins`);levelUp();claimDailyMaybe()}else{state.streak=0;state.hearts=Math.max(0,state.hearts-1);addReview(q().id);beep(timeout?160:220,.18,"sawtooth");vibrate([40,30,40]);toast(timeout?"⏰ Time up!":"Saved to Review Dojo")}save();render()}

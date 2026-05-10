@@ -1,0 +1,34 @@
+CHOICE MAPPING TESTS: 32/32 passed
+
+PASS - choice_map has 168 entries
+PASS - every selected question has A-E correctLetter
+PASS - choice_map stores only correctLetter
+PASS - direct A-E answer-key questions map to same letter
+PASS - selectLetter no longer writes typed answer
+PASS - isCorrect uses selectedLetterCorrect
+PASS - isCorrect no longer compares selected letter to answer value
+PASS - game direct access guard preserved
+PASS - main page still loads game after unlock
+PASS - simple home still present
+PASS - 9 papers present
+PASS - Paper 1-24 maps to E
+PASS - Paper 1-41 maps to E
+PASS - Paper 1-46 maps to C
+PASS - Paper 1-48 maps to E
+PASS - Paper 1-50 maps to E
+PASS - Paper 2-27 maps to A
+PASS - Paper 2-45 maps to D
+PASS - Paper 2-46 maps to D
+PASS - Paper 2-47 maps to C
+PASS - Paper 3-16 maps to A
+PASS - Paper 3-37 maps to D
+PASS - Paper 3-38 maps to E
+PASS - Paper 3-41 maps to D
+PASS - Paper 4-50 maps to C
+PASS - Paper 5-18 maps to B
+PASS - Paper 6-47 maps to D
+PASS - Paper 8-46 maps to D
+PASS - Paper 9-4 maps to B
+PASS - Paper 9-11 maps to D
+PASS - Paper 9-19 maps to B
+PASS - Paper 9-40 maps to A

@@ -286,3 +286,12 @@ The public/home page is intentionally simple. Before password entry it only show
 - a clean password form
 
 All gaming visuals, learning content, and the embedded full game appear only after the correct password is entered.
+
+
+## Multiple-choice answer mapping
+
+The game uses `education-game/choice_map.js` to mark A-E choices.
+
+Each selected question has a `correctLetter`, so clicking A, B, C, D or E is marked against the selected choice letter. It no longer compares the clicked letter against the written answer value such as `30`, `40%` or `£18`.
+
+The `choice_map.js` file stores only correct letters, not copied option text.
