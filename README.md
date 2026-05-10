@@ -261,3 +261,8 @@ Total selected Maths questions included:
 ```text
 168
 ```
+
+
+## Live page cleanup
+
+The PDF setup note has been removed from the live webpage. PDF rendering instructions remain in this README only.
