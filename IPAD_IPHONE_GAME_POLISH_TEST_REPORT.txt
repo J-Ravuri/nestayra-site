@@ -1,0 +1,17 @@
+IPAD IPHONE GAME POLISH TESTS: 15/15 passed
+
+PASS - main iPad/iPhone CSS present
+PASS - simple password home still present
+PASS - mobile quick nav chips present
+PASS - portal dashboard present
+PASS - study path present
+PASS - math iframe still loads after unlock
+PASS - english iframe still loads after unlock
+PASS - English selector still present
+PASS - Math mobile CSS present
+PASS - all English games have iOS polish
+PASS - all English games still guarded
+PASS - choice map still exists
+PASS - questions still exists
+PASS - 168 maths questions still present
+PASS - all 9 maths papers still present

@@ -1,0 +1,64 @@
+FINAL PERFECT QA TESTS: 62/62 passed
+
+PASS - root index exists
+PASS - logo exists
+PASS - math game exists
+PASS - questions.js exists
+PASS - choice_map.js exists
+PASS - main has no duplicate ids
+PASS - math game has no duplicate ids
+PASS - main local refs exist
+PASS - math local refs exist
+PASS - readquest.html local refs exist
+PASS - peter-pan-comprehension.html local refs exist
+PASS - 11plus-english-tutor.html local refs exist
+PASS - secret-life-of-english.html local refs exist
+PASS - gl-technique-dojo.html local refs exist
+PASS - simple password home text present
+PASS - password configured
+PASS - game iframe blank before unlock
+PASS - english iframe blank before unlock
+PASS - math iframe loads after unlock
+PASS - english active card loads after unlock
+PASS - lock clears math frame
+PASS - lock clears english frame
+PASS - direct math guard exists
+PASS - all english files guarded
+PASS - 168 maths questions
+PASS - all 9 maths papers present
+PASS - choice map has 168 entries
+PASS - every question has valid A-E correctLetter
+PASS - choice map stores only correctLetter
+PASS - selecting letter does not type answer
+PASS - isCorrect uses selected letter map
+PASS - no selected-letter-to-answer-value comparison
+PASS - keyboard shortcuts added
+PASS - Paper 1-24 correctLetter E
+PASS - Paper 2-45 correctLetter D
+PASS - Paper 2-47 correctLetter C
+PASS - Paper 3-38 correctLetter E
+PASS - Paper 4-50 correctLetter C
+PASS - Paper 6-47 correctLetter D
+PASS - Paper 8-46 correctLetter D
+PASS - Paper 9-11 correctLetter D
+PASS - Paper 9-19 correctLetter B
+PASS - readquest.html exists
+PASS - gl-technique-dojo.html exists
+PASS - peter-pan-comprehension.html exists
+PASS - 11plus-english-tutor.html exists
+PASS - secret-life-of-english.html exists
+PASS - English skill covered: Retrieval
+PASS - English skill covered: Inference
+PASS - English skill covered: Vocabulary
+PASS - English skill covered: Main Idea
+PASS - English skill covered: Evidence
+PASS - English skill covered: Tone
+PASS - English skill covered: Structure
+PASS - ReadQuest has 5 zones
+PASS - ReadQuest has 20+ questions
+PASS - English resource selector exists
+PASS - iPad/iPhone CSS present
+PASS - math mobile CSS present
+PASS - English iOS polish present
+PASS - mobile quick chips present
+PASS - study path present

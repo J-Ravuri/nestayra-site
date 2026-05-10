@@ -1080,6 +1080,472 @@
       }
     }
 
+
+    /* iPad + iPhone premium game polish */
+    :root {
+      --safe-top: env(safe-area-inset-top, 0px);
+      --safe-bottom: env(safe-area-inset-bottom, 0px);
+    }
+
+    html, body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+      -webkit-text-size-adjust: 100%;
+      touch-action: manipulation;
+    }
+
+    button,
+    a,
+    input {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    input,
+    button {
+      font-size: 16px;
+    }
+
+    header {
+      padding-top: calc(14px + var(--safe-top));
+    }
+
+    .logo strong {
+      letter-spacing: 0.02em;
+    }
+
+    .education-section {
+      min-height: calc(100dvh - 84px);
+    }
+
+    .education-lock-card {
+      backdrop-filter: blur(18px);
+    }
+
+    .simple-login-mark {
+      animation: softPulse 2.4s ease-in-out infinite;
+    }
+
+    @keyframes softPulse {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-4px) scale(1.035); }
+    }
+
+    .mobile-game-strip {
+      display: none;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 2px 0 14px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .mobile-game-strip::-webkit-scrollbar {
+      display: none;
+    }
+
+    .mobile-chip {
+      flex: 0 0 auto;
+      scroll-snap-align: start;
+      border-radius: 999px;
+      padding: 10px 13px;
+      background: rgba(15, 23, 42, 0.08);
+      color: #0f172a;
+      font-weight: 900;
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .portal-dashboard {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin: 18px 0 22px;
+    }
+
+    .portal-stat-card {
+      background: rgba(255,255,255,0.94);
+      border: 1px solid rgba(15,23,42,0.08);
+      border-radius: 22px;
+      padding: 15px;
+      box-shadow: 0 16px 40px rgba(15,23,42,.09);
+      color: #0f172a;
+    }
+
+    .portal-stat-card strong {
+      display: block;
+      font-size: 1.6rem;
+      line-height: 1;
+      margin-bottom: 5px;
+    }
+
+    .portal-stat-card span {
+      color: #64748b;
+      font-weight: 900;
+      font-size: .82rem;
+    }
+
+    .study-path {
+      background: white;
+      border: 1px solid rgba(15,23,42,0.08);
+      border-radius: 30px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      margin: 24px 0 28px;
+    }
+
+    .study-path h2 {
+      margin: 0 0 6px;
+      color: #0f172a;
+      letter-spacing: -0.04em;
+      font-size: clamp(1.7rem, 4vw, 2.6rem);
+    }
+
+    .study-path p {
+      margin: 0 0 18px;
+      color: #64748b;
+      font-weight: 800;
+    }
+
+    .path-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .path-card {
+      background: linear-gradient(135deg, #f8fafc, #eef2ff);
+      border: 1px solid #e2e8f0;
+      border-radius: 22px;
+      padding: 15px;
+      min-height: 138px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .path-card b {
+      color: #0f172a;
+      font-size: 1.05rem;
+      line-height: 1.15;
+    }
+
+    .path-card small {
+      color: #64748b;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+
+    .path-card .path-emoji {
+      font-size: 2rem;
+    }
+
+    .game-panel,
+    .english-panel {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .game-panel::before,
+    .english-panel::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 7px;
+      background: linear-gradient(90deg, var(--cyan), var(--pink), var(--gold));
+    }
+
+    .game-panel-header,
+    .english-panel-header {
+      padding-top: 8px;
+    }
+
+    .game-iframe-wrap,
+    .english-iframe-wrap {
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.04), 0 22px 55px rgba(15,23,42,.18);
+    }
+
+    .game-iframe,
+    .english-iframe {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .button {
+      min-height: 44px;
+    }
+
+    .english-resource-card,
+    .english-skill-card,
+    .education-card,
+    .path-card,
+    .portal-stat-card {
+      transition: transform .14s ease, box-shadow .14s ease;
+    }
+
+    @media (hover:hover) {
+      .english-resource-card:hover,
+      .education-card:hover,
+      .path-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 22px 55px rgba(15,23,42,.12);
+      }
+    }
+
+    @media (max-width: 1180px) {
+      .education-wrap {
+        max-width: 100%;
+      }
+
+      .game-iframe {
+        height: 980px;
+      }
+
+      .english-iframe {
+        height: 1060px;
+      }
+    }
+
+    @media (min-width: 768px) and (max-width: 1180px) {
+      body {
+        background:
+          radial-gradient(circle at 12% 12%, rgba(34,211,238,.20), transparent 32%),
+          radial-gradient(circle at 88% 80%, rgba(236,72,153,.16), transparent 35%),
+          linear-gradient(135deg, #f8fafc, #eef2ff 55%, #ecfeff);
+      }
+
+      header {
+        padding-left: 26px;
+        padding-right: 26px;
+      }
+
+      .education-section {
+        padding: 34px 20px;
+      }
+
+      .education-lock-card {
+        max-width: 620px;
+        padding: 38px;
+      }
+
+      .post-unlock-game-banner {
+        border-radius: 34px;
+      }
+
+      .portal-dashboard {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .path-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .education-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .english-resource-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .english-skill-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 767px) {
+      header {
+        position: sticky;
+        padding: calc(12px + var(--safe-top)) 14px 12px;
+        gap: 10px;
+      }
+
+      .logo {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .logo img {
+        height: 42px;
+      }
+
+      .logo strong {
+        font-size: .92rem;
+      }
+
+      nav {
+        width: 100%;
+        justify-content: center;
+        gap: 12px;
+      }
+
+      nav a,
+      nav button {
+        font-size: .92rem;
+      }
+
+      .education-section {
+        min-height: calc(100dvh - 104px);
+        padding: 22px 12px calc(22px + var(--safe-bottom));
+      }
+
+      .education-lock-card {
+        max-width: 420px;
+        border-radius: 28px;
+        padding: 24px 16px;
+      }
+
+      .simple-login-mark {
+        width: 66px;
+        height: 66px;
+        border-radius: 22px;
+        font-size: 2rem;
+      }
+
+      .simple-login-title {
+        font-size: clamp(2rem, 12vw, 2.8rem);
+      }
+
+      .simple-login-text {
+        font-size: .98rem;
+      }
+
+      .password-form {
+        padding: 16px;
+        border-radius: 20px;
+      }
+
+      .password-row {
+        grid-template-columns: 1fr;
+      }
+
+      .password-row input,
+      .password-row button {
+        width: 100%;
+        min-height: 48px;
+      }
+
+      .mobile-game-strip {
+        display: flex;
+      }
+
+      .unlock-success {
+        border-radius: 16px;
+        font-size: .92rem;
+      }
+
+      .post-unlock-game-banner {
+        border-radius: 26px;
+        padding: 20px;
+        margin: 16px 0 20px;
+      }
+
+      .post-unlock-game-banner h2 {
+        font-size: clamp(2rem, 11vw, 3.4rem);
+      }
+
+      .post-unlock-game-banner p {
+        font-size: .98rem;
+      }
+
+      .reward-grid,
+      .portal-dashboard,
+      .path-grid,
+      .education-grid,
+      .english-resource-grid,
+      .english-skill-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .portal-dashboard {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 9px;
+      }
+
+      .portal-stat-card {
+        border-radius: 18px;
+        padding: 12px;
+      }
+
+      .portal-stat-card strong {
+        font-size: 1.35rem;
+      }
+
+      .study-path,
+      .game-panel,
+      .english-panel {
+        border-radius: 24px;
+        padding: 16px;
+        margin-top: 18px;
+      }
+
+      .path-card {
+        min-height: auto;
+        gap: 10px;
+      }
+
+      .game-panel-header,
+      .english-panel-header {
+        gap: 12px;
+      }
+
+      .game-panel-header h2,
+      .english-panel-header h2 {
+        font-size: clamp(1.8rem, 9vw, 2.5rem);
+      }
+
+      .game-panel-header p,
+      .english-panel-header p {
+        font-size: .96rem;
+      }
+
+      .game-panel-header .button,
+      .english-panel-header .button {
+        width: 100%;
+      }
+
+      .game-iframe-wrap,
+      .english-iframe-wrap {
+        border-radius: 18px;
+        min-height: 82dvh;
+        margin-left: -4px;
+        margin-right: -4px;
+      }
+
+      .game-iframe {
+        height: 1180px;
+      }
+
+      .english-iframe {
+        height: 1250px;
+      }
+
+      .english-resource-card {
+        min-height: auto;
+      }
+
+      footer {
+        padding-bottom: calc(28px + var(--safe-bottom));
+        font-size: .9rem;
+      }
+    }
+
+    @media (max-width: 390px) {
+      .game-iframe {
+        height: 1280px;
+      }
+
+      .english-iframe {
+        height: 1360px;
+      }
+
+      .portal-dashboard {
+        grid-template-columns: 1fr;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -1111,7 +1577,7 @@
       <div class="simple-login-mark">🎮</div>
       <div class="simple-login-note">Private Education Learning Game</div>
       <h1 class="simple-login-title">Enter Password</h1>
-      <p class="simple-login-text">Unlock the Nestayra 11 Plus learning game.</p>
+      <p class="simple-login-text">Enter your password to start the learning game.</p>
 
       <form class="password-form" id="educationPasswordForm">
         <label for="educationPassword">Education password</label>
@@ -1124,7 +1590,15 @@
     </div>
 
     <div class="education-content" id="educationContent">
-      <div class="unlock-success">Education section unlocked. Welcome to Nestayra 11 Plus Learning.</div>
+      <div class="unlock-success">Education section unlocked. Welcome to Nestayra Learning.</div>
+
+      <div class="mobile-game-strip" aria-label="Quick game navigation">
+        <a class="mobile-chip" href="#fullGame">🧮 Maths</a>
+        <a class="mobile-chip" href="#englishComprehension">📚 English</a>
+        <a class="mobile-chip" href="#studyPath">🎯 Study Path</a>
+        <a class="mobile-chip" href="#englishComprehension">🧠 Comprehension</a>
+      </div>
+
 
       <div class="post-unlock-game-banner">
         <div class="post-unlock-game-inner">
@@ -1150,6 +1624,25 @@
       </div>
 
 
+
+
+      <div class="portal-dashboard" aria-label="Learning dashboard">
+        <div class="portal-stat-card"><strong>168</strong><span>Maths questions</span></div>
+        <div class="portal-stat-card"><strong>9</strong><span>Maths papers</span></div>
+        <div class="portal-stat-card"><strong>5+</strong><span>English games</span></div>
+        <div class="portal-stat-card"><strong>A–E</strong><span>No typing needed</span></div>
+      </div>
+
+      <section class="study-path" id="studyPath">
+        <h2>Best 20-minute 11+ mission</h2>
+        <p>A focused routine for iPad or iPhone: short, game-like, and test-prep friendly.</p>
+        <div class="path-grid">
+          <article class="path-card"><div class="path-emoji">🧮</div><b>1. Maths Sprint</b><small>Play 10 quick multiple-choice questions. Aim for accuracy first, then speed.</small></article>
+          <article class="path-card"><div class="path-emoji">📚</div><b>2. ReadQuest</b><small>Read one passage zone. Use hints to learn evidence-based answering.</small></article>
+          <article class="path-card"><div class="path-emoji">🧠</div><b>3. Technique Dojo</b><small>Practise retrieval, inference, vocabulary, tone and writer’s effect.</small></article>
+          <article class="path-card"><div class="path-emoji">🔥</div><b>4. Review Mistakes</b><small>Replay weak questions and build a streak before stopping.</small></article>
+        </div>
+      </section>
 
       <section class="portal-hero" id="educationPortal">
         <div>
@@ -1295,7 +1788,8 @@
     lockedNav.style.display = "none";
     unlockedNav.style.display = "flex";
     gameFrame.src = "education-game/index.html";
-    englishFrame.src = "education-game/english/readquest.html";
+    const activeEnglishCard = document.querySelector(".english-resource-card.active");
+    englishFrame.src = activeEnglishCard ? activeEnglishCard.dataset.src : "education-game/english/readquest.html";
     setTimeout(function () {
       document.getElementById("educationPortal").scrollIntoView({ behavior: "smooth" });
     }, 100);
@@ -1325,8 +1819,10 @@
     passwordError.textContent = "Incorrect password. Please try again.";
   });
 
-  document.getElementById("lockEducationButton").addEventListener("click", lockEducation);
-  document.getElementById("lockEducationTop").addEventListener("click", lockEducation);
+  const lockEducationButton = document.getElementById("lockEducationButton");
+  const lockEducationTop = document.getElementById("lockEducationTop");
+  if (lockEducationButton) lockEducationButton.addEventListener("click", lockEducation);
+  if (lockEducationTop) lockEducationTop.addEventListener("click", lockEducation);
 
   document.querySelectorAll(".english-resource-card").forEach(function (button) {
     button.addEventListener("click", function () {

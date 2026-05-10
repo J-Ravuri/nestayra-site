@@ -339,3 +339,23 @@ The English section includes a selector so the child can switch between:
 - Word Explorer
 
 The GL Technique Dojo explicitly practises retrieval, inference, vocabulary in context, writer's effect, main idea, evidence, tone/mood and structure.
+
+
+## iPad and iPhone design upgrade
+
+The portal has been tuned for iPad and iPhone:
+
+- simple password-only home screen
+- large touch targets
+- mobile quick navigation chips
+- responsive study path cards
+- responsive Maths and English iframes
+- improved iOS safe-area handling
+- better game-like dashboard after unlock
+- 20-minute test-prep mission flow
+
+Suggested child routine:
+1. Maths Sprint
+2. ReadQuest passage
+3. GL Technique Dojo
+4. Review mistakes
