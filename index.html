@@ -430,9 +430,13 @@
     <img src="logo.png" alt="Nestayra Logo" />
     <strong>NESTAYRA EDUCATION</strong>
   </div>
+
+  <!-- Before password: show only this Education link. -->
   <nav id="lockedNav">
-    <a href="#education">Education Login</a>
+    <a href="#education">Education</a>
   </nav>
+
+  <!-- After password: show education portal links. -->
   <nav id="unlockedNav" style="display:none">
     <a href="#educationPortal">Portal</a>
     <a href="#fullGame">Full Game</a>
@@ -447,7 +451,7 @@
       <div class="lock-icon">🔒</div>
       <p class="kicker">Protected Education Area</p>
       <h1>11 Plus Maths & English Portal</h1>
-      <p>Enter the education password to unlock the full portal and the full multiple-choice 11 Plus game.</p>
+      <p>Enter the education password to unlock the full portal. No Maths or English game content is visible until the password is entered.</p>
 
       <form class="password-form" id="educationPasswordForm">
         <label for="educationPassword">Education password</label>
@@ -474,7 +478,7 @@
 
         <div class="feature-card">
           <h2>Full Galaxy Obby Game</h2>
-          <p>The embedded game is the full multiple-choice no-type version created earlier. It loads inside this protected Education portal.</p>
+          <p>The embedded game is the full multiple-choice no-type version created earlier, with Paper 1 to Paper 9 Maths question sets included. It loads only after the protected Education portal is unlocked.</p>
         </div>
       </section>
 
@@ -506,7 +510,7 @@
           <div>
             <p class="kicker">Full Game</p>
             <h2>11 Plus Galaxy Obby</h2>
-            <p>This is the full multiple-choice no-type game. Children can choose A, B, C, D or E rather than typing answer values.</p>
+            <p>This is the full multiple-choice no-type game with all 9 selected Maths practice papers included. Children can choose A, B, C, D or E rather than typing answer values.</p>
           </div>
           <a class="button light" href="education-game/index.html" target="_blank" rel="noopener">Open Game Full Screen</a>
         </div>
@@ -522,7 +526,7 @@
         </div>
 
         <div class="setup-note">
-          To use the exact PDF-page game live, put your authorised rendered question images in <code>education-game/gl-pages/</code>. Locally, run <code>python scripts/render_gl_pages.py</code> and <code>python scripts/extract_choice_letters.py</code>.
+          For the exact PDF-page game, keep the PDF private and generate page images locally. Put your authorised PDF at <code>source/GL-Revision-Maths.pdf</code>, then run <code>python scripts/render_gl_pages.py</code> and <code>python scripts/extract_choice_letters.py</code>. This creates images in <code>education-game/gl-pages/</code> and updates <code>education-game/choice_map.js</code>.
         </div>
       </section>
     </div>
