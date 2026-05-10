@@ -1,10 +1,12 @@
-STATIC TESTS: 8/8 passed
+STATIC TESTS: 10/10 passed
 
-PASS - has education nav
-PASS - has password
-PASS - has game title
-PASS - has password logic
-PASS - has option buttons
-PASS - has original questions
-PASS - preserves contact email
-PASS - has logo reference
+PASS - education section has lock card
+PASS - education content initially hidden
+PASS - password exists
+PASS - maths game exists
+PASS - english game exists
+PASS - subject tabs exist
+PASS - A-E multiple choice style game exists
+PASS - lock button exists
+PASS - contact email preserved
+PASS - logo preserved

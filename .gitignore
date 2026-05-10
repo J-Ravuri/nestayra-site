@@ -1,0 +1,46 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.idea
+*.idea/*
+# Build output
+dist/
+build/
+.cache/
+.parcel-cache/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Python local server/cache
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Optional local test artifacts
+TEST_REPORT_LOCAL.txt

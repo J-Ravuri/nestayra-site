@@ -191,6 +191,106 @@
       margin: 0 auto;
     }
 
+    .education-lock-card {
+      max-width: 760px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 32px;
+      padding: 34px;
+      box-shadow: 0 24px 70px rgba(15, 23, 42, 0.14);
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      text-align: center;
+    }
+
+    .lock-icon {
+      width: 74px;
+      height: 74px;
+      margin: 0 auto 18px;
+      border-radius: 24px;
+      display: grid;
+      place-items: center;
+      font-size: 2.2rem;
+      background: linear-gradient(135deg, #dbeafe, #ecfeff);
+    }
+
+    .education-lock-card h2 {
+      margin: 0 0 14px;
+      color: var(--navy);
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      line-height: 1.04;
+      letter-spacing: -0.04em;
+    }
+
+    .education-lock-card p {
+      margin: 0 auto 24px;
+      max-width: 620px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .password-form {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 22px;
+      padding: 22px;
+      text-align: left;
+    }
+
+    .password-form label {
+      display: block;
+      font-weight: 900;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+
+    .password-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .password-row input {
+      flex: 1;
+      min-width: 230px;
+      border: 1px solid #cbd5e1;
+      border-radius: 14px;
+      padding: 14px 16px;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    .password-row input:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.14);
+    }
+
+    .password-row button,
+    .game-button,
+    .subject-tab,
+    .game-option {
+      border: 0;
+      border-radius: 14px;
+      padding: 14px 20px;
+      background: var(--navy);
+      color: white;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .password-error {
+      margin: 12px 0 0;
+      color: #dc2626;
+      font-weight: 800;
+    }
+
+    .education-content {
+      display: none;
+    }
+
+    .education-content.unlocked {
+      display: block;
+    }
+
     .education-intro {
       display: grid;
       grid-template-columns: 1.05fr 0.95fr;
@@ -253,6 +353,15 @@
       max-width: 420px;
     }
 
+    .unlock-success {
+      background: #dcfce7;
+      color: #166534;
+      border-radius: 18px;
+      padding: 14px 18px;
+      font-weight: 900;
+      margin-bottom: 24px;
+    }
+
     .education-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -290,103 +399,21 @@
       font-size: 0.98rem;
     }
 
-    .guest-gate {
-      background: white;
-      border-radius: 30px;
-      padding: 30px;
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(15, 23, 42, 0.08);
-      margin-top: 34px;
-    }
-
-    .gate-header {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      margin-bottom: 22px;
-    }
-
-    .gate-header h3 {
-      font-size: clamp(1.7rem, 3vw, 2.4rem);
-      margin: 0 0 8px;
-      color: var(--navy);
-    }
-
-    .gate-header p {
-      margin: 0;
-      color: var(--muted);
-      max-width: 760px;
-    }
-
-    .password-form {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-radius: 22px;
-      padding: 22px;
-    }
-
-    .password-form label {
-      display: block;
-      font-weight: 900;
-      color: var(--navy);
-      margin-bottom: 10px;
-    }
-
-    .password-row {
+    .subject-tabs {
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
+      margin: 18px 0;
     }
 
-    .password-row input {
-      flex: 1;
-      min-width: 230px;
-      border: 1px solid #cbd5e1;
-      border-radius: 14px;
-      padding: 14px 16px;
-      font-size: 1rem;
-      outline: none;
+    .subject-tab {
+      background: #e0e7ff;
+      color: #1e1b4b;
     }
 
-    .password-row input:focus {
-      border-color: #2563eb;
-      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.14);
-    }
-
-    .password-row button,
-    .game-button {
-      border: 0;
-      border-radius: 14px;
-      padding: 14px 20px;
+    .subject-tab.active {
       background: var(--navy);
       color: white;
-      font-weight: 900;
-      cursor: pointer;
-    }
-
-    .password-error {
-      margin: 12px 0 0;
-      color: #dc2626;
-      font-weight: 800;
-    }
-
-    .education-game {
-      display: none;
-    }
-
-    .education-game.unlocked {
-      display: block;
-    }
-
-    .unlock-success {
-      background: #dcfce7;
-      color: #166534;
-      border-radius: 18px;
-      padding: 14px 18px;
-      font-weight: 900;
-      margin-bottom: 18px;
     }
 
     .game-shell {
@@ -398,6 +425,7 @@
       border-radius: 30px;
       padding: 20px;
       overflow: hidden;
+      margin-top: 30px;
     }
 
     .game-top {
@@ -439,7 +467,7 @@
 
     .game-stats {
       display: grid;
-      grid-template-columns: repeat(4, 86px);
+      grid-template-columns: repeat(5, 82px);
       gap: 8px;
       text-align: center;
     }
@@ -453,11 +481,11 @@
 
     .game-stat strong {
       display: block;
-      font-size: 1.25rem;
+      font-size: 1.2rem;
     }
 
     .game-stat span {
-      font-size: 0.72rem;
+      font-size: 0.68rem;
       color: #cbd5e1;
       text-transform: uppercase;
       font-weight: 900;
@@ -657,6 +685,7 @@
         grid-template-columns: 1fr;
       }
 
+      .education-lock-card,
       .guest-gate {
         padding: 20px;
       }
@@ -733,114 +762,118 @@
 
 <section class="education-section" id="education">
   <div class="education-wrap">
-    <div class="education-intro">
-      <div>
-        <p class="kicker">Education Support</p>
-        <h2>11 Plus learning made fun</h2>
-        <p>Nestayra Education helps children revise through short, motivating, game-style practice. The protected area below includes an interactive 11 Plus demo game for families and students.</p>
-      </div>
 
-      <div class="edu-feature-card">
-        <h3>Galaxy Obby Learning</h3>
-        <p>Children answer 11 Plus-style questions, build streaks, earn coins and climb the obby track while practising Maths and English skills.</p>
-      </div>
-    </div>
-
-    <div class="education-grid">
-      <article class="education-card">
-        <div class="education-icon">🎯</div>
-        <h3>11 Plus Prep</h3>
-        <p>Short practice sessions for GL-style Maths, English, reasoning and exam confidence.</p>
-      </article>
-      <article class="education-card">
-        <div class="education-icon">🧮</div>
-        <h3>Maths Fluency</h3>
-        <p>Speed, accuracy and step-by-step problem solving with child-friendly feedback.</p>
-      </article>
-      <article class="education-card">
-        <div class="education-icon">📚</div>
-        <h3>English Skills</h3>
-        <p>Vocabulary, comprehension, grammar, punctuation and creative writing support.</p>
-      </article>
-      <article class="education-card">
-        <div class="education-icon">🎮</div>
-        <h3>Game Learning</h3>
-        <p>Roblox-inspired rewards and TikTok-style short rounds to keep revision engaging.</p>
-      </article>
-    </div>
-
-    <div class="guest-gate">
-      <div class="gate-header">
-        <div>
-          <p class="kicker">Protected Student Area</p>
-          <h3>11 Plus Galaxy Obby</h3>
-          <p>Enter the education password to unlock the learning game. Password: <strong>Shauri11Plus</strong></p>
-        </div>
-      </div>
+    <div class="education-lock-card" id="educationLock">
+      <div class="lock-icon">🔒</div>
+      <p class="kicker">Protected Education Area</p>
+      <h2>11 Plus Maths & English Games</h2>
+      <p>Enter the education password to unlock the full Education section, including Maths and English practice games.</p>
 
       <form class="password-form" id="educationPasswordForm">
         <label for="educationPassword">Education password</label>
         <div class="password-row">
           <input id="educationPassword" type="password" placeholder="Enter password" autocomplete="current-password" />
-          <button type="submit">Unlock Game</button>
+          <button type="submit">Unlock Education</button>
         </div>
         <p class="password-error" id="educationPasswordError" aria-live="polite"></p>
       </form>
+    </div>
 
-      <div class="education-game" id="educationGame">
-        <div class="unlock-success">Game unlocked. Welcome to 11 Plus Galaxy Obby!</div>
+    <div class="education-content" id="educationContent">
+      <div class="unlock-success">Education section unlocked. Welcome to Nestayra 11 Plus Learning.</div>
 
-        <div class="game-shell">
-          <div class="game-top">
-            <div class="game-brand">
-              <div class="game-avatar" id="gameAvatar">🤖</div>
-              <div class="game-title">
-                <h4>11 Plus Galaxy Obby</h4>
-                <p>Answer, jump, earn coins and build your streak.</p>
-              </div>
-            </div>
+      <div class="education-intro">
+        <div>
+          <p class="kicker">Education Support</p>
+          <h2>11 Plus learning made fun</h2>
+          <p>Nestayra Education helps children revise through short, motivating, game-style practice. Choose Maths or English, answer multiple-choice questions and build streaks.</p>
+        </div>
 
-            <div class="game-stats">
-              <div class="game-stat"><strong id="gameScore">0</strong><span>Score</span></div>
-              <div class="game-stat"><strong id="gameCoins">0</strong><span>Coins</span></div>
-              <div class="game-stat"><strong id="gameStreak">0</strong><span>Streak</span></div>
-              <div class="game-stat"><strong id="gameLives">3</strong><span>Lives</span></div>
+        <div class="edu-feature-card">
+          <h3>Galaxy Obby Learning</h3>
+          <p>Children answer 11 Plus-style questions, build streaks, earn coins and climb the obby track while practising Maths and English skills.</p>
+        </div>
+      </div>
+
+      <div class="education-grid">
+        <article class="education-card">
+          <div class="education-icon">🎯</div>
+          <h3>11 Plus Prep</h3>
+          <p>Short practice sessions for GL-style Maths, English, reasoning and exam confidence.</p>
+        </article>
+        <article class="education-card">
+          <div class="education-icon">🧮</div>
+          <h3>Maths Fluency</h3>
+          <p>Speed, accuracy and step-by-step problem solving with child-friendly feedback.</p>
+        </article>
+        <article class="education-card">
+          <div class="education-icon">📚</div>
+          <h3>English Skills</h3>
+          <p>Vocabulary, comprehension, grammar, punctuation and creative writing support.</p>
+        </article>
+        <article class="education-card">
+          <div class="education-icon">🎮</div>
+          <h3>Game Learning</h3>
+          <p>Roblox-inspired rewards and TikTok-style short rounds to keep revision engaging.</p>
+        </article>
+      </div>
+
+      <div class="subject-tabs">
+        <button class="subject-tab active" type="button" data-subject="maths">🧮 Maths Game</button>
+        <button class="subject-tab" type="button" data-subject="english">📚 English Game</button>
+        <button class="game-button light" type="button" id="lockEducationButton">Lock Education</button>
+      </div>
+
+      <div class="game-shell">
+        <div class="game-top">
+          <div class="game-brand">
+            <div class="game-avatar" id="gameAvatar">🤖</div>
+            <div class="game-title">
+              <h4 id="gameTitle">11 Plus Maths Galaxy Obby</h4>
+              <p id="gameSubtitle">Answer, jump, earn coins and build your streak.</p>
             </div>
           </div>
 
-          <div class="obby-track">
-            <div class="obby-fill" id="obbyFill"></div>
-            <div class="obby-runner" id="obbyRunner">🤖</div>
+          <div class="game-stats">
+            <div class="game-stat"><strong id="gameScore">0</strong><span>Score</span></div>
+            <div class="game-stat"><strong id="gameCoins">0</strong><span>Coins</span></div>
+            <div class="game-stat"><strong id="gameStreak">0</strong><span>Streak</span></div>
+            <div class="game-stat"><strong id="gameLives">3</strong><span>Lives</span></div>
+            <div class="game-stat"><strong id="gameSubject">Maths</strong><span>Mode</span></div>
+          </div>
+        </div>
+
+        <div class="obby-track">
+          <div class="obby-fill" id="obbyFill"></div>
+          <div class="obby-runner" id="obbyRunner">🤖</div>
+        </div>
+
+        <div class="game-layout">
+          <div class="game-question">
+            <span class="question-tag" id="questionTag">Maths</span>
+            <h4 id="questionText">Question loading...</h4>
+            <div class="options" id="options"></div>
+            <div class="game-feedback" id="gameFeedback"></div>
           </div>
 
-          <div class="game-layout">
-            <div class="game-question">
-              <span class="question-tag" id="questionTag">Maths</span>
-              <h4 id="questionText">Question loading...</h4>
-              <div class="options" id="options"></div>
-              <div class="game-feedback" id="gameFeedback"></div>
+          <aside class="game-side">
+            <div class="game-panel">
+              <h5>🎯 Mission</h5>
+              <p id="missionText">Get 5 correct answers to complete today’s mini challenge.</p>
             </div>
-
-            <aside class="game-side">
-              <div class="game-panel">
-                <h5>🎯 Mission</h5>
-                <p>Get 5 correct answers to complete today’s mini challenge.</p>
-              </div>
-              <div class="game-panel">
-                <h5>🔥 Streak Bonus</h5>
-                <p>Every 3 correct answers gives bonus coins.</p>
-              </div>
-              <div class="game-panel">
-                <h5>🧠 Parent note</h5>
-                <p>This public demo uses original practice questions, not copied exam-paper content.</p>
-              </div>
-              <div class="game-actions">
-                <button class="game-button" type="button" id="nextQuestionButton">Next Question</button>
-                <button class="game-button light" type="button" id="restartGameButton">Restart Game</button>
-                <button class="game-button light" type="button" id="lockGameButton">Lock Game</button>
-              </div>
-            </aside>
-          </div>
+            <div class="game-panel">
+              <h5>🔥 Streak Bonus</h5>
+              <p>Every 3 correct answers gives bonus coins.</p>
+            </div>
+            <div class="game-panel">
+              <h5>🧠 Parent note</h5>
+              <p>This public game uses original practice questions, not copied exam-paper content.</p>
+            </div>
+            <div class="game-actions">
+              <button class="game-button" type="button" id="nextQuestionButton">Next Question</button>
+              <button class="game-button light" type="button" id="restartGameButton">Restart Game</button>
+            </div>
+          </aside>
         </div>
       </div>
     </div>
@@ -863,65 +896,126 @@
 <script>
   const EDUCATION_PASSWORD = "Shauri11Plus";
 
-  const gameQuestions = [
-    {
-      tag: "Maths · Percentages",
-      question: "A jacket costs £40 and is reduced by 25%. What is the sale price?",
-      options: ["£10", "£20", "£30", "£35"],
-      answer: "£30",
-      explain: "25% of £40 is £10, so £40 - £10 = £30."
-    },
-    {
-      tag: "English · Vocabulary",
-      question: "Which word is closest in meaning to reluctant?",
-      options: ["Eager", "Unwilling", "Ancient", "Fragile"],
-      answer: "Unwilling",
-      explain: "Reluctant means unwilling or hesitant."
-    },
-    {
-      tag: "Maths · Fractions",
-      question: "What is 3/8 of 40?",
-      options: ["5", "10", "15", "20"],
-      answer: "15",
-      explain: "40 ÷ 8 = 5, and 5 × 3 = 15."
-    },
-    {
-      tag: "English · Inference",
-      question: "A character slams the door and throws down their bag. What can we infer?",
-      options: ["They are angry", "They are asleep", "They are eating", "They are reading"],
-      answer: "They are angry",
-      explain: "The actions suggest anger or frustration."
-    },
-    {
-      tag: "Maths · Time",
-      question: "A lesson starts at 10:35 and lasts 45 minutes. What time does it end?",
-      options: ["11:05", "11:10", "11:20", "11:30"],
-      answer: "11:20",
-      explain: "10:35 plus 45 minutes is 11:20."
-    },
-    {
-      tag: "English · Figurative Language",
-      question: "Which sentence uses personification?",
-      options: ["The moon smiled down.", "The dog barked.", "The car is red.", "The book is heavy."],
-      answer: "The moon smiled down.",
-      explain: "The moon is given the human action of smiling."
-    },
-    {
-      tag: "Maths · Ratio",
-      question: "There are 2 red counters for every 3 blue counters. If there are 10 red counters, how many blue counters are there?",
-      options: ["10", "12", "15", "20"],
-      answer: "15",
-      explain: "Red doubled from 2 to 10, so blue also scales from 3 to 15."
-    },
-    {
-      tag: "English · Grammar",
-      question: "Choose the correct sentence.",
-      options: ["The boys was playing.", "The boys were playing.", "The boys is playing.", "The boys am playing."],
-      answer: "The boys were playing.",
-      explain: "Boys is plural, so we use were."
-    }
-  ];
+  const questionBanks = {
+    maths: [
+      {
+        tag: "Maths · Percentages",
+        question: "A jacket costs £40 and is reduced by 25%. What is the sale price?",
+        options: ["£10", "£20", "£30", "£35"],
+        answer: "£30",
+        explain: "25% of £40 is £10, so £40 - £10 = £30."
+      },
+      {
+        tag: "Maths · Fractions",
+        question: "What is 3/8 of 40?",
+        options: ["5", "10", "15", "20"],
+        answer: "15",
+        explain: "40 ÷ 8 = 5, and 5 × 3 = 15."
+      },
+      {
+        tag: "Maths · Time",
+        question: "A lesson starts at 10:35 and lasts 45 minutes. What time does it end?",
+        options: ["11:05", "11:10", "11:20", "11:30"],
+        answer: "11:20",
+        explain: "10:35 plus 45 minutes is 11:20."
+      },
+      {
+        tag: "Maths · Ratio",
+        question: "There are 2 red counters for every 3 blue counters. If there are 10 red counters, how many blue counters are there?",
+        options: ["10", "12", "15", "20"],
+        answer: "15",
+        explain: "Red doubled from 2 to 10, so blue also scales from 3 to 15."
+      },
+      {
+        tag: "Maths · Area",
+        question: "A rectangle is 8 cm long and 5 cm wide. What is its area?",
+        options: ["13 cm²", "26 cm²", "40 cm²", "80 cm²"],
+        answer: "40 cm²",
+        explain: "Area = length × width, so 8 × 5 = 40 cm²."
+      },
+      {
+        tag: "Maths · Decimals",
+        question: "Which number is closest to 1?",
+        options: ["0.89", "0.98", "1.25", "1.8"],
+        answer: "0.98",
+        explain: "0.98 is only 0.02 away from 1."
+      },
+      {
+        tag: "Maths · Angles",
+        question: "Angles on a straight line add up to what?",
+        options: ["90°", "120°", "180°", "360°"],
+        answer: "180°",
+        explain: "Angles on a straight line always add up to 180°."
+      },
+      {
+        tag: "Maths · Money",
+        question: "Three books cost £4 each. You pay with £20. How much change do you get?",
+        options: ["£4", "£6", "£8", "£12"],
+        answer: "£8",
+        explain: "3 × £4 = £12, and £20 - £12 = £8."
+      }
+    ],
+    english: [
+      {
+        tag: "English · Vocabulary",
+        question: "Which word is closest in meaning to reluctant?",
+        options: ["Eager", "Unwilling", "Ancient", "Fragile"],
+        answer: "Unwilling",
+        explain: "Reluctant means unwilling or hesitant."
+      },
+      {
+        tag: "English · Inference",
+        question: "A character slams the door and throws down their bag. What can we infer?",
+        options: ["They are angry", "They are asleep", "They are eating", "They are reading"],
+        answer: "They are angry",
+        explain: "The actions suggest anger or frustration."
+      },
+      {
+        tag: "English · Figurative Language",
+        question: "Which sentence uses personification?",
+        options: ["The moon smiled down.", "The dog barked.", "The car is red.", "The book is heavy."],
+        answer: "The moon smiled down.",
+        explain: "The moon is given the human action of smiling."
+      },
+      {
+        tag: "English · Grammar",
+        question: "Choose the correct sentence.",
+        options: ["The boys was playing.", "The boys were playing.", "The boys is playing.", "The boys am playing."],
+        answer: "The boys were playing.",
+        explain: "Boys is plural, so we use were."
+      },
+      {
+        tag: "English · Antonyms",
+        question: "What is the antonym of generous?",
+        options: ["Kind", "Selfish", "Helpful", "Friendly"],
+        answer: "Selfish",
+        explain: "An antonym is an opposite. Selfish is the opposite of generous."
+      },
+      {
+        tag: "English · Punctuation",
+        question: "Which sentence uses the apostrophe correctly?",
+        options: ["Its raining today.", "It’s raining today.", "Its’ raining today.", "I’ts raining today."],
+        answer: "It’s raining today.",
+        explain: "It’s means it is."
+      },
+      {
+        tag: "English · Synonyms",
+        question: "Which word is a synonym for abundant?",
+        options: ["Scarce", "Plentiful", "Tiny", "Empty"],
+        answer: "Plentiful",
+        explain: "Abundant means plentiful or more than enough."
+      },
+      {
+        tag: "English · Similes",
+        question: "Which sentence contains a simile?",
+        options: ["The classroom was a zoo.", "The stars danced.", "She was as quiet as a mouse.", "The wind whispered."],
+        answer: "She was as quiet as a mouse.",
+        explain: "A simile compares using like or as."
+      }
+    ]
+  };
 
+  let activeSubject = "maths";
   let currentQuestion = 0;
   let score = 0;
   let coins = 0;
@@ -932,7 +1026,8 @@
   const form = document.getElementById("educationPasswordForm");
   const passwordInput = document.getElementById("educationPassword");
   const passwordError = document.getElementById("educationPasswordError");
-  const game = document.getElementById("educationGame");
+  const educationLock = document.getElementById("educationLock");
+  const educationContent = document.getElementById("educationContent");
 
   const questionTag = document.getElementById("questionTag");
   const questionText = document.getElementById("questionText");
@@ -942,8 +1037,12 @@
   const coinsEl = document.getElementById("gameCoins");
   const streakEl = document.getElementById("gameStreak");
   const livesEl = document.getElementById("gameLives");
+  const subjectEl = document.getElementById("gameSubject");
   const obbyFill = document.getElementById("obbyFill");
   const obbyRunner = document.getElementById("obbyRunner");
+  const gameTitle = document.getElementById("gameTitle");
+  const gameSubtitle = document.getElementById("gameSubtitle");
+  const missionText = document.getElementById("missionText");
 
   document.getElementById("year").textContent = new Date().getFullYear();
 
@@ -952,13 +1051,24 @@
 
     if (passwordInput.value.trim() === EDUCATION_PASSWORD) {
       passwordError.textContent = "";
-      form.style.display = "none";
-      game.classList.add("unlocked");
-      startGame();
+      educationLock.style.display = "none";
+      educationContent.classList.add("unlocked");
+      startGame("maths");
       return;
     }
 
     passwordError.textContent = "Incorrect password. Please try again.";
+  });
+
+  document.querySelectorAll(".subject-tab").forEach(function (button) {
+    button.addEventListener("click", function () {
+      const subject = button.dataset.subject;
+      document.querySelectorAll(".subject-tab").forEach(function (tab) {
+        tab.classList.remove("active");
+      });
+      button.classList.add("active");
+      startGame(subject);
+    });
   });
 
   document.getElementById("nextQuestionButton").addEventListener("click", function () {
@@ -967,33 +1077,53 @@
       return;
     }
 
-    currentQuestion = (currentQuestion + 1) % gameQuestions.length;
+    currentQuestion = (currentQuestion + 1) % getQuestions().length;
     answered = false;
     renderQuestion();
   });
 
-  document.getElementById("restartGameButton").addEventListener("click", startGame);
+  document.getElementById("restartGameButton").addEventListener("click", function () {
+    startGame(activeSubject);
+  });
 
-  document.getElementById("lockGameButton").addEventListener("click", function () {
-    game.classList.remove("unlocked");
-    form.style.display = "block";
+  document.getElementById("lockEducationButton").addEventListener("click", function () {
+    educationContent.classList.remove("unlocked");
+    educationLock.style.display = "block";
     passwordInput.value = "";
     passwordError.textContent = "";
   });
 
-  function startGame() {
+  function getQuestions() {
+    return questionBanks[activeSubject];
+  }
+
+  function startGame(subject) {
+    activeSubject = subject;
     currentQuestion = 0;
     score = 0;
     coins = 0;
     streak = 0;
     lives = 3;
     answered = false;
+
+    if (activeSubject === "maths") {
+      gameTitle.textContent = "11 Plus Maths Galaxy Obby";
+      gameSubtitle.textContent = "Practise numbers, fractions, ratios, time and problem solving.";
+      missionText.textContent = "Get 5 correct Maths answers to complete the mini challenge.";
+      subjectEl.textContent = "Maths";
+    } else {
+      gameTitle.textContent = "11 Plus English Galaxy Obby";
+      gameSubtitle.textContent = "Practise vocabulary, grammar, inference and figurative language.";
+      missionText.textContent = "Get 5 correct English answers to complete the mini challenge.";
+      subjectEl.textContent = "English";
+    }
+
     renderQuestion();
     updateStats();
   }
 
   function renderQuestion() {
-    const q = gameQuestions[currentQuestion];
+    const q = getQuestions()[currentQuestion];
     questionTag.textContent = q.tag;
     questionText.textContent = q.question;
     feedbackEl.className = "game-feedback";
@@ -1018,7 +1148,7 @@
     if (answered) return;
     answered = true;
 
-    const q = gameQuestions[currentQuestion];
+    const q = getQuestions()[currentQuestion];
     const allButtons = optionsEl.querySelectorAll("button");
 
     allButtons.forEach(function (btn) {
@@ -1062,7 +1192,7 @@
   }
 
   function updateProgress() {
-    const progress = ((currentQuestion + (answered ? 1 : 0)) / gameQuestions.length) * 100;
+    const progress = ((currentQuestion + (answered ? 1 : 0)) / getQuestions().length) * 100;
     obbyFill.style.width = progress + "%";
     obbyRunner.style.left = progress + "%";
   }
