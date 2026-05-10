@@ -1,0 +1,21 @@
+COMPREHENSION QUEST ACADEMY TESTS: 19/19 passed
+
+PASS - academy file exists
+PASS - academy guarded
+PASS - RACE method present
+PASS - modes present
+PASS - Mistake Lab present
+PASS - evidence checkbox present
+PASS - A-E-N answers present
+PASS - 9 missions present
+PASS - comprehension question count 360
+PASS - Paper 1 Q1 answer B
+PASS - Paper 2 Q1 answer D
+PASS - Paper 7 Q1 answer C
+PASS - Paper 9 Q56 included
+PASS - main selector includes academy
+PASS - main has active academy card
+PASS - English iframe can load academy
+PASS - all English files guarded
+PASS - math game preserved
+PASS - simple home preserved

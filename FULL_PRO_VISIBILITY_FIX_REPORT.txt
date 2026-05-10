@@ -1,0 +1,17 @@
+FULL PRO VISIBILITY FIX TESTS: 15/15 passed
+
+PASS - Full Pro file exists
+PASS - Full Pro guarded
+PASS - Full Pro launch card present
+PASS - top nav has Full Pro link
+PASS - English section exists
+PASS - English section moved above Maths game
+PASS - launch card above Maths game
+PASS - Full Pro card active
+PASS - iframe can load Full Pro
+PASS - 128 paper page images present
+PASS - paper page images referenced in Full Pro
+PASS - answers in Full Pro
+PASS - simple password home still present
+PASS - Maths game preserved
+PASS - choice map preserved

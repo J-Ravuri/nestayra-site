@@ -1,0 +1,18 @@
+ULTRA CLEAR FULL PRO TESTS: 16/16 passed
+
+PASS - index exists
+PASS - full pro file exists
+PASS - homepage password only before unlock
+PASS - only one iframe
+PASS - iframe src starts blank
+PASS - unlock loads full pro
+PASS - no old English selector
+PASS - no old dashboards
+PASS - no maths tab clutter
+PASS - full screen button visible
+PASS - full pro guarded
+PASS - full pro paper data present
+PASS - 128 page images present
+PASS - page images referenced
+PASS - logo exists
+PASS - maths files preserved but hidden from homepage

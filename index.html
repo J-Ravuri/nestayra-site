@@ -1546,6 +1546,173 @@
       }
     }
 
+
+    .pro-launch-card {
+      background: linear-gradient(135deg, #111827, #312e81 48%, #0e7490);
+      color: white;
+      border-radius: 30px;
+      padding: 24px;
+      box-shadow: 0 28px 90px rgba(15,23,42,.25);
+      border: 1px solid rgba(255,255,255,.16);
+      margin: 24px 0;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .pro-launch-card h2 {
+      margin: 0 0 8px;
+      font-size: clamp(1.9rem, 5vw, 3.3rem);
+      line-height: .95;
+      letter-spacing: -.05em;
+    }
+
+    .pro-launch-card p {
+      margin: 0;
+      color: #dbeafe;
+      font-weight: 850;
+      max-width: 760px;
+    }
+
+    .pro-launch-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .pro-launch-actions .button {
+      background: linear-gradient(135deg, #22d3ee, #facc15);
+      color: #07111f;
+      min-width: 150px;
+    }
+
+    @media (max-width: 760px) {
+      .pro-launch-card {
+        grid-template-columns: 1fr;
+        border-radius: 24px;
+        padding: 18px;
+      }
+      .pro-launch-actions {
+        justify-content: stretch;
+      }
+      .pro-launch-actions .button {
+        width: 100%;
+      }
+    }
+
+
+    .english-comprehension-spotlight {
+      position: relative;
+      overflow: hidden;
+      margin: 22px 0;
+      padding: clamp(18px, 4vw, 30px);
+      border-radius: 32px;
+      color: white;
+      background:
+        radial-gradient(circle at 12% 12%, rgba(34,211,238,.34), transparent 28%),
+        radial-gradient(circle at 88% 18%, rgba(236,72,153,.28), transparent 32%),
+        linear-gradient(135deg, #020617, #172554 48%, #312e81);
+      border: 1px solid rgba(255,255,255,.18);
+      box-shadow: 0 28px 90px rgba(15,23,42,.28);
+    }
+
+    .english-comprehension-spotlight::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px);
+      background-size: 42px 42px;
+      opacity: .7;
+      pointer-events: none;
+    }
+
+    .english-comprehension-spotlight-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .english-comprehension-spotlight h2 {
+      margin: 0 0 8px;
+      font-size: clamp(2rem, 5vw, 4.2rem);
+      line-height: .92;
+      letter-spacing: -.06em;
+      color: white;
+    }
+
+    .english-comprehension-spotlight p {
+      margin: 0;
+      color: #dbeafe;
+      font-weight: 850;
+      max-width: 800px;
+      line-height: 1.45;
+    }
+
+    .english-comprehension-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .english-comprehension-actions .button {
+      background: linear-gradient(135deg, #22d3ee, #facc15);
+      color: #06101b;
+      box-shadow: 0 16px 38px rgba(34,211,238,.22);
+    }
+
+    .english-comprehension-actions .button.secondary-lite {
+      background: rgba(255,255,255,.12);
+      color: white;
+      border: 1px solid rgba(255,255,255,.22);
+      box-shadow: none;
+    }
+
+    .english-pro-jump-note {
+      margin-top: 12px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .english-pro-mini {
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 18px;
+      padding: 12px;
+      color: white;
+      font-weight: 900;
+    }
+
+    .english-pro-mini span {
+      display: block;
+      color: #cbd5e1;
+      font-size: .82rem;
+      margin-top: 3px;
+    }
+
+    @media (max-width: 860px) {
+      .english-comprehension-spotlight-inner {
+        grid-template-columns: 1fr;
+      }
+      .english-comprehension-actions {
+        justify-content: stretch;
+      }
+      .english-comprehension-actions .button {
+        width: 100%;
+      }
+      .english-pro-jump-note {
+        grid-template-columns: 1fr;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -1563,8 +1730,10 @@
 
   <!-- After password: show education portal links. -->
   <nav id="unlockedNav" style="display:none">
+    <a href="#englishComprehensionStart">English Pro</a>
     <a href="#educationPortal">Portal</a>
     <a href="#fullGame">Maths Game</a>
+    <a href="#fullComprehensionPro">Full Pro</a>
     <a href="#englishComprehension">English Comprehension</a>
     <button type="button" id="lockEducationTop">Lock</button>
   </nav>
@@ -1590,13 +1759,13 @@
     </div>
 
     <div class="education-content" id="educationContent">
-      <div class="unlock-success">Education section unlocked. Welcome to Nestayra Learning.</div>
+      <div class="unlock-success">Education section unlocked. Welcome to Nestayra 11 Plus Learning.</div>
 
       <div class="mobile-game-strip" aria-label="Quick game navigation">
         <a class="mobile-chip" href="#fullGame">🧮 Maths</a>
-        <a class="mobile-chip" href="#englishComprehension">📚 English</a>
+        <a class="mobile-chip" href="#englishComprehension">📚 English Pro</a>
         <a class="mobile-chip" href="#studyPath">🎯 Study Path</a>
-        <a class="mobile-chip" href="#englishComprehension">🧠 Comprehension</a>
+        <a class="mobile-chip" href="#fullComprehensionPro">🧠 Full Pro</a>
       </div>
 
 
@@ -1644,6 +1813,40 @@
         </div>
       </section>
 
+
+      <section class="pro-launch-card" id="fullComprehensionPro">
+        <div>
+          <p class="kicker" style="color:#67e8f9">English Pro Game</p>
+          <h2>Summary Coach Game is ready</h2>
+          <p>Read the full paper pages in the game, find proof, pick the technique, then answer A–E/N with instant marking and Mistake Lab.</p>
+        </div>
+        <div class="pro-launch-actions">
+          <a class="button" href="#englishComprehension">Play English Pro</a>
+          <a class="button light" href="education-game/english/full-comprehension-pro.html" target="_blank" rel="noopener">Open Full Screen</a>
+        </div>
+      </section>
+
+
+      <section class="english-comprehension-spotlight" id="englishComprehensionStart">
+        <div class="english-comprehension-spotlight-inner">
+          <div>
+            <p class="kicker" style="color:#67e8f9">English comprehension game</p>
+            <h2>Summary Coach Game</h2>
+            <p>This is the main English tutor-game: read the page, say what it is about, write a short summary, then answer A–E/N.</p>
+            <div class="english-pro-jump-note" aria-label="Summary Coach Game features">
+              <div class="english-pro-mini">🔎 Find proof<span>Evidence before answer</span></div>
+              <div class="english-pro-mini">🧠 Learn skills<span>Inference, vocabulary, writer effect</span></div>
+              <div class="english-pro-mini">🏆 Earn XP<span>Streaks and accuracy</span></div>
+              <div class="english-pro-mini">🧪 Mistake Lab<span>Replay weak questions</span></div>
+            </div>
+          </div>
+          <div class="english-comprehension-actions">
+            <a class="button" href="#englishComprehension">Play English Pro Below</a>
+            <a class="button secondary-lite" href="education-game/english/full-comprehension-pro.html" target="_blank" rel="noopener">Open Full Screen</a>
+          </div>
+        </div>
+      </section>
+
       <section class="portal-hero" id="educationPortal">
         <div>
           <p class="kicker">Education Support</p>
@@ -1683,41 +1886,27 @@
         </article>
       </div>
 
-      <section class="game-panel" id="fullGame">
-        <div class="game-panel-header">
-          <div>
-            <p class="kicker">Full Game</p>
-            <h2>11 Plus Galaxy Obby</h2>
-            <p>This is the full multiple-choice no-type game with all 9 selected Maths practice papers included. Children can choose A, B, C, D or E rather than typing answer values.</p>
-          </div>
-          <a class="button light" href="education-game/index.html" target="_blank" rel="noopener">Open Game Full Screen</a>
-        </div>
-
-        <div class="game-iframe-wrap">
-          <iframe
-            id="educationGameFrame"
-            class="game-iframe"
-            title="11 Plus Galaxy Obby Game"
-            src="about:blank"
-            loading="lazy"
-          ></iframe>
-        </div>
-      </section>
-
-
       <section class="english-panel" id="englishComprehension">
         <div class="english-panel-header">
           <div>
             <p class="kicker">English Game</p>
-            <h2>ReadQuest Comprehension Adventure</h2>
-            <p>Children learn comprehension by playing: choose ReadQuest, GL Technique Dojo, Peter Pan practice, English Tutor or Word Explorer. The suite trains retrieval, inference, vocabulary, main idea, writer’s effect, writer’s view, tone, structure and evidence.</p>
+            <h2>Summary Coach Game</h2>
+            <p>Start with Summary Coach Game. It shows the full paper pages, teaches the right technique, checks A–E/N answers, rewards evidence-first reading and saves mistakes for replay.</p>
           </div>
-          <a class="button light" href="education-game/english/readquest.html" target="_blank" rel="noopener">Open English Game Full Screen</a>
+          <a class="button light" href="education-game/english/full-comprehension-pro.html" target="_blank" rel="noopener">Open English Game Full Screen</a>
         </div>
 
         
         <div class="english-resource-grid" id="englishResourceGrid">
-          <button class="english-resource-card active" type="button" data-src="education-game/english/readquest.html">
+          <button class="english-resource-card active" type="button" data-src="education-game/english/full-comprehension-pro.html">
+            <b>🎮 Summary Coach Game</b>
+            <small>Full paper pages, evidence-first coaching, techniques, instant marking and Mistake Lab.</small>
+          </button>
+          <button class="english-resource-card" type="button" data-src="education-game/english/comprehension-quest-academy.html">
+            <b>🏆 Summary Coach Game</b>
+            <small>Master GL-style comprehension with RACE method, evidence checks, boss mode and Mistake Lab.</small>
+          </button>
+          <button class="english-resource-card" type="button" data-src="education-game/english/readquest.html">
             <b>🎮 ReadQuest Adventure</b>
             <small>Five comprehension worlds with boss battles, hints and XP.</small>
           </button>
@@ -1757,6 +1946,29 @@
           ></iframe>
         </div>
       </section>
+
+      <section class="game-panel" id="fullGame">
+        <div class="game-panel-header">
+          <div>
+            <p class="kicker">Full Game</p>
+            <h2>11 Plus Galaxy Obby</h2>
+            <p>This is the full multiple-choice no-type game with all 9 selected Maths practice papers included. Children can choose A, B, C, D or E rather than typing answer values.</p>
+          </div>
+          <a class="button light" href="education-game/index.html" target="_blank" rel="noopener">Open Game Full Screen</a>
+        </div>
+
+        <div class="game-iframe-wrap">
+          <iframe
+            id="educationGameFrame"
+            class="game-iframe"
+            title="11 Plus Galaxy Obby Game"
+            src="about:blank"
+            loading="lazy"
+          ></iframe>
+        </div>
+      </section>
+
+
     </div>
   </div>
 </section>
@@ -1789,7 +2001,7 @@
     unlockedNav.style.display = "flex";
     gameFrame.src = "education-game/index.html";
     const activeEnglishCard = document.querySelector(".english-resource-card.active");
-    englishFrame.src = activeEnglishCard ? activeEnglishCard.dataset.src : "education-game/english/readquest.html";
+    if (englishFrame) englishFrame.src = activeEnglishCard ? activeEnglishCard.dataset.src : "education-game/english/full-comprehension-pro.html";
     setTimeout(function () {
       document.getElementById("educationPortal").scrollIntoView({ behavior: "smooth" });
     }, 100);
@@ -1804,7 +2016,7 @@
     passwordInput.value = "";
     passwordError.textContent = "";
     gameFrame.src = "about:blank";
-    englishFrame.src = "about:blank";
+    if (englishFrame) englishFrame.src = "about:blank";
     window.location.hash = "education";
   }
 

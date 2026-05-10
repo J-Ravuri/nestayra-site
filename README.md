@@ -359,3 +359,129 @@ Suggested child routine:
 2. ReadQuest passage
 3. GL Technique Dojo
 4. Review mistakes
+
+
+## Comprehension Quest Academy
+
+A new protected English game has been added:
+
+```text
+education-game/english/comprehension-quest-academy.html
+```
+
+It uses the uploaded Pack 1, Pack 2 and Pack 3 answer keys for Practice Papers 1-9. The game focuses on comprehension-style questions and trains the RACE method:
+
+- Read the question
+- Analyse the skill type
+- Collect evidence
+- Eliminate traps
+
+Modes included:
+- Training
+- Battle
+- Boss
+- Mistake Lab
+
+The child should keep the original paper/booklet beside the game, read the passage, find proof, then choose A-E/N in the game.
+
+
+## Comprehension mastery QA upgrade
+
+Comprehension Quest Academy now includes:
+- explicit skill lessons for every comprehension skill
+- evidence-first habit training
+- RACE method reminders
+- session summary
+- 5-streak celebration
+- weak-skill Mistake Lab grouping
+- iPhone/iPad friendly cards and touch targets
+
+The game does not copy passage/question text. It uses paper/question references and the uploaded answer-key letters, so the child practises with the original paper beside the game.
+
+
+## Full Comprehension Pro
+
+The English section now includes:
+
+```text
+education-game/english/full-comprehension-pro.html
+```
+
+This protected game includes rendered full paper pages for Practice Papers 1-8, answer-key marking, pro technique coaching, evidence-first habit training, zoom/page controls, XP, streaks and Mistake Lab.
+
+The child reads the full paper page inside the game, finds proof, selects the technique, then answers A-E/N.
+
+
+## Visibility fix for Full Comprehension Pro
+
+Full Comprehension Pro is now shown immediately after unlock, before the Maths iframe, with a large launch card and a direct top navigation link.
+
+Main file:
+
+```text
+education-game/english/full-comprehension-pro.html
+```
+
+Paper page images:
+
+```text
+education-game/english/paper-pages/P1/
+...
+education-game/english/paper-pages/P8/
+```
+
+
+## Full all-sections version with visible English Pro
+
+This version keeps the previous portal sections, Maths game, and other English games.
+
+It adds a clear Full Comprehension Pro spotlight after unlock and keeps Full Comprehension Pro as the first/default English game.
+
+Main English file:
+
+```text
+education-game/english/full-comprehension-pro.html
+```
+
+
+## Comprehension Coach simplification
+
+The Full Comprehension Pro game has been simplified for children.
+
+It is now called Comprehension Coach Game and uses this clearer flow:
+1. Read the question
+2. Find proof on the page
+3. Learn the simple skill tip
+4. Choose A-E/N
+5. Check and learn from feedback
+
+Main file remains:
+
+```text
+education-game/english/full-comprehension-pro.html
+```
+
+
+## Summary Coach format
+
+The English comprehension game now uses only the requested format:
+
+1. Child reads the comprehension page
+2. Child writes what it is about
+3. Child writes a short 1-2 sentence summary
+4. Child confirms proof
+5. Child answers A-E/N
+
+This is designed to improve understanding before answering questions.
+
+
+## Parent summary guide added
+
+The Summary Coach game now includes parent-friendly model summaries and key points for all Paper 1-8 comprehension passages.
+
+The parent summary card contains only:
+- Understanding
+- Short summary
+- Key points
+
+It is shown before the child writes their own summary, so the parent can check whether the child understood the passage.
