@@ -1,0 +1,10 @@
+STATIC TESTS: 8/8 passed
+
+PASS - has education nav
+PASS - has password
+PASS - has game title
+PASS - has password logic
+PASS - has option buttons
+PASS - has original questions
+PASS - preserves contact email
+PASS - has logo reference
