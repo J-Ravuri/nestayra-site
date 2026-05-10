@@ -1,0 +1,20 @@
+SIMPLE HOME BEST GAME TESTS: 18/18 passed
+
+PASS - simple password title present
+PASS - simple login note present
+PASS - old visible game landing removed
+PASS - old leaderboard preview removed
+PASS - premium game magic after unlock present
+PASS - reward grid after unlock present
+PASS - challenge board after unlock present
+PASS - password still Shauri11Plus
+PASS - unlock logic still present
+PASS - game iframe still starts blank
+PASS - game iframe loads only in unlock
+PASS - locked nav only education
+PASS - game exists
+PASS - questions.js exists
+PASS - choice_map.js exists
+PASS - direct game guard still exists
+PASS - 168 questions still present
+PASS - all 9 papers still present

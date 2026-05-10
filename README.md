@@ -276,3 +276,13 @@ The password page has been redesigned as a kid-friendly Galaxy Obby landing scre
 ## Premium Roblox-style landing
 
 The locked front page has been upgraded into a kid-friendly game landing screen with obby preview, challenge preview, reward cards, avatar previews and a stronger gaming look and feel.
+
+
+## Final homepage behaviour
+
+The public/home page is intentionally simple. Before password entry it only shows:
+- Nestayra Education header
+- one Education link
+- a clean password form
+
+All gaming visuals, learning content, and the embedded full game appear only after the correct password is entered.
