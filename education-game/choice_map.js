@@ -12,7 +12,7 @@ window.CHOICE_MAP = {
     "correctLetter": "A"
   },
   "Paper 1-39": {
-    "correctLetter": "D"
+    "correctLetter": "E"
   },
   "Paper 1-41": {
     "correctLetter": "E"
@@ -48,7 +48,7 @@ window.CHOICE_MAP = {
     "correctLetter": "A"
   },
   "Paper 2-31": {
-    "correctLetter": "B"
+    "correctLetter": ""
   },
   "Paper 2-35": {
     "correctLetter": "B"
@@ -63,22 +63,22 @@ window.CHOICE_MAP = {
     "correctLetter": "A"
   },
   "Paper 2-45": {
-    "correctLetter": "D"
+    "correctLetter": ""
   },
   "Paper 2-46": {
-    "correctLetter": "D"
+    "correctLetter": ""
   },
   "Paper 2-47": {
-    "correctLetter": "C"
+    "correctLetter": ""
   },
   "Paper 2-48": {
     "correctLetter": "E"
   },
   "Paper 3-16": {
-    "correctLetter": "A"
+    "correctLetter": ""
   },
   "Paper 3-17": {
-    "correctLetter": "C"
+    "correctLetter": ""
   },
   "Paper 3-22": {
     "correctLetter": "A"
@@ -93,10 +93,10 @@ window.CHOICE_MAP = {
     "correctLetter": "A"
   },
   "Paper 3-37": {
-    "correctLetter": "D"
+    "correctLetter": ""
   },
   "Paper 3-38": {
-    "correctLetter": "E"
+    "correctLetter": ""
   },
   "Paper 3-41": {
     "correctLetter": "D"
@@ -105,7 +105,7 @@ window.CHOICE_MAP = {
     "correctLetter": "B"
   },
   "Paper 3-45": {
-    "correctLetter": "C"
+    "correctLetter": ""
   },
   "Paper 3-46": {
     "correctLetter": "D"
@@ -117,16 +117,16 @@ window.CHOICE_MAP = {
     "correctLetter": "C"
   },
   "Paper 3-50": {
-    "correctLetter": "E"
+    "correctLetter": ""
   },
   "Paper 4-15": {
     "correctLetter": "D"
   },
   "Paper 4-26": {
-    "correctLetter": "A"
+    "correctLetter": "C"
   },
   "Paper 4-29": {
-    "correctLetter": "E"
+    "correctLetter": ""
   },
   "Paper 4-31": {
     "correctLetter": "D"
@@ -135,10 +135,10 @@ window.CHOICE_MAP = {
     "correctLetter": "B"
   },
   "Paper 4-33": {
-    "correctLetter": "C"
+    "correctLetter": ""
   },
   "Paper 4-34": {
-    "correctLetter": "C"
+    "correctLetter": ""
   },
   "Paper 4-35": {
     "correctLetter": "E"
@@ -153,7 +153,7 @@ window.CHOICE_MAP = {
     "correctLetter": "C"
   },
   "Paper 4-50": {
-    "correctLetter": "C"
+    "correctLetter": ""
   },
   "Paper 5-1": {
     "correctLetter": "D"
@@ -162,7 +162,7 @@ window.CHOICE_MAP = {
     "correctLetter": "B"
   },
   "Paper 5-7": {
-    "correctLetter": "D"
+    "correctLetter": ""
   },
   "Paper 5-10": {
     "correctLetter": "B"
@@ -174,10 +174,10 @@ window.CHOICE_MAP = {
     "correctLetter": "E"
   },
   "Paper 5-15": {
-    "correctLetter": "B"
+    "correctLetter": "A"
   },
   "Paper 5-18": {
-    "correctLetter": "B"
+    "correctLetter": ""
   },
   "Paper 5-21": {
     "correctLetter": "C"
@@ -189,7 +189,7 @@ window.CHOICE_MAP = {
     "correctLetter": "B"
   },
   "Paper 5-30": {
-    "correctLetter": "B"
+    "correctLetter": "E"
   },
   "Paper 5-34": {
     "correctLetter": "A"
@@ -198,7 +198,7 @@ window.CHOICE_MAP = {
     "correctLetter": "A"
   },
   "Paper 5-36": {
-    "correctLetter": "D"
+    "correctLetter": ""
   },
   "Paper 5-37": {
     "correctLetter": "B"
@@ -222,22 +222,22 @@ window.CHOICE_MAP = {
     "correctLetter": "B"
   },
   "Paper 5-48": {
-    "correctLetter": "A"
+    "correctLetter": "D"
   },
   "Paper 5-50": {
-    "correctLetter": "E"
+    "correctLetter": "D"
   },
   "Paper 6-1": {
     "correctLetter": "A"
   },
   "Paper 6-2": {
-    "correctLetter": "B"
+    "correctLetter": "A"
   },
   "Paper 6-3": {
     "correctLetter": "B"
   },
   "Paper 6-4": {
-    "correctLetter": "E"
+    "correctLetter": ""
   },
   "Paper 6-5": {
     "correctLetter": "B"
@@ -252,10 +252,10 @@ window.CHOICE_MAP = {
     "correctLetter": "E"
   },
   "Paper 6-17": {
-    "correctLetter": "E"
+    "correctLetter": ""
   },
   "Paper 6-18": {
-    "correctLetter": "D"
+    "correctLetter": ""
   },
   "Paper 6-19": {
     "correctLetter": "A"
@@ -267,19 +267,19 @@ window.CHOICE_MAP = {
     "correctLetter": "B"
   },
   "Paper 6-26": {
-    "correctLetter": "A"
+    "correctLetter": ""
   },
   "Paper 6-29": {
     "correctLetter": "C"
   },
   "Paper 6-30": {
-    "correctLetter": "A"
+    "correctLetter": ""
   },
   "Paper 6-31": {
     "correctLetter": "C"
   },
   "Paper 6-32": {
-    "correctLetter": "B"
+    "correctLetter": "C"
   },
   "Paper 6-33": {
     "correctLetter": "B"
@@ -294,7 +294,7 @@ window.CHOICE_MAP = {
     "correctLetter": "C"
   },
   "Paper 6-40": {
-    "correctLetter": "A"
+    "correctLetter": "E"
   },
   "Paper 6-42": {
     "correctLetter": "B"
@@ -309,10 +309,10 @@ window.CHOICE_MAP = {
     "correctLetter": "E"
   },
   "Paper 6-47": {
-    "correctLetter": "D"
+    "correctLetter": ""
   },
   "Paper 6-49": {
-    "correctLetter": "B"
+    "correctLetter": ""
   },
   "Paper 6-50": {
     "correctLetter": "E"
@@ -330,13 +330,13 @@ window.CHOICE_MAP = {
     "correctLetter": "A"
   },
   "Paper 7-20": {
-    "correctLetter": "D"
+    "correctLetter": ""
   },
   "Paper 7-24": {
-    "correctLetter": "E"
+    "correctLetter": ""
   },
   "Paper 7-25": {
-    "correctLetter": "D"
+    "correctLetter": ""
   },
   "Paper 7-27": {
     "correctLetter": "A"
@@ -372,10 +372,10 @@ window.CHOICE_MAP = {
     "correctLetter": "B"
   },
   "Paper 8-3": {
-    "correctLetter": "D"
+    "correctLetter": ""
   },
   "Paper 8-4": {
-    "correctLetter": "E"
+    "correctLetter": ""
   },
   "Paper 8-6": {
     "correctLetter": "B"
@@ -387,7 +387,7 @@ window.CHOICE_MAP = {
     "correctLetter": "D"
   },
   "Paper 8-15": {
-    "correctLetter": "D"
+    "correctLetter": "B"
   },
   "Paper 8-16": {
     "correctLetter": "E"
@@ -408,7 +408,7 @@ window.CHOICE_MAP = {
     "correctLetter": "A"
   },
   "Paper 8-34": {
-    "correctLetter": "E"
+    "correctLetter": ""
   },
   "Paper 8-36": {
     "correctLetter": "C"
@@ -417,10 +417,10 @@ window.CHOICE_MAP = {
     "correctLetter": "E"
   },
   "Paper 8-44": {
-    "correctLetter": "A"
+    "correctLetter": ""
   },
   "Paper 8-46": {
-    "correctLetter": "D"
+    "correctLetter": ""
   },
   "Paper 8-47": {
     "correctLetter": "D"
@@ -432,13 +432,13 @@ window.CHOICE_MAP = {
     "correctLetter": "E"
   },
   "Paper 9-4": {
-    "correctLetter": "B"
+    "correctLetter": ""
   },
   "Paper 9-6": {
-    "correctLetter": "C"
+    "correctLetter": ""
   },
   "Paper 9-11": {
-    "correctLetter": "D"
+    "correctLetter": ""
   },
   "Paper 9-12": {
     "correctLetter": "A"
@@ -447,7 +447,7 @@ window.CHOICE_MAP = {
     "correctLetter": "C"
   },
   "Paper 9-19": {
-    "correctLetter": "B"
+    "correctLetter": ""
   },
   "Paper 9-20": {
     "correctLetter": "B"
@@ -459,7 +459,7 @@ window.CHOICE_MAP = {
     "correctLetter": "D"
   },
   "Paper 9-28": {
-    "correctLetter": "D"
+    "correctLetter": ""
   },
   "Paper 9-31": {
     "correctLetter": "B"
@@ -471,7 +471,7 @@ window.CHOICE_MAP = {
     "correctLetter": "B"
   },
   "Paper 9-34": {
-    "correctLetter": "E"
+    "correctLetter": ""
   },
   "Paper 9-35": {
     "correctLetter": "B"
@@ -498,7 +498,7 @@ window.CHOICE_MAP = {
     "correctLetter": "B"
   },
   "Paper 9-47": {
-    "correctLetter": "C"
+    "correctLetter": ""
   },
   "Paper 9-48": {
     "correctLetter": "C"
