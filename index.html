@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shauri English Skill Arena</title>
+
+  <title>Shauri English Boss Arena</title>
 
   <style>
     :root {
-      --bg: #06101f;
+      --navy: #06101f;
       --ink: #0f172a;
       --muted: #64748b;
       --white: #ffffff;
@@ -39,7 +40,15 @@
       margin: 0;
       min-height: 100vh;
       color: var(--ink);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
       background:
         radial-gradient(circle at 8% 8%, rgba(34, 211, 238, 0.28), transparent 28%),
         radial-gradient(circle at 90% 10%, rgba(236, 72, 153, 0.20), transparent 32%),
@@ -81,7 +90,7 @@
       justify-content: space-between;
       gap: 14px;
       flex-wrap: wrap;
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(255, 255, 255, 0.92);
       border-bottom: 1px solid rgba(15, 23, 42, 0.08);
       backdrop-filter: blur(18px);
     }
@@ -91,9 +100,9 @@
       align-items: center;
       gap: 10px;
       font-weight: 1000;
-      color: #06101f;
+      color: var(--navy);
       letter-spacing: -0.03em;
-      font-size: 1.05rem;
+      font-size: 1.08rem;
     }
 
     .brand-icon {
@@ -130,7 +139,7 @@
 
     nav a.primary {
       color: white;
-      background: #06101f;
+      background: var(--navy);
     }
 
     .page {
@@ -143,7 +152,9 @@
     .hero,
     .panel,
     .card,
-    .game-card {
+    .game-card,
+    .mission,
+    .speech {
       background: rgba(255, 255, 255, 0.96);
       border: 1px solid rgba(15, 23, 42, 0.08);
       box-shadow: var(--shadow);
@@ -183,10 +194,10 @@
 
     h1 {
       margin: 0;
-      font-size: clamp(2.2rem, 7vw, 4.9rem);
+      font-size: clamp(2.25rem, 7vw, 5rem);
       line-height: 0.9;
       letter-spacing: -0.085em;
-      color: #06101f;
+      color: var(--navy);
     }
 
     h2 {
@@ -194,12 +205,12 @@
       font-size: clamp(1.65rem, 4vw, 3rem);
       line-height: 0.95;
       letter-spacing: -0.055em;
-      color: #06101f;
+      color: var(--navy);
     }
 
     h3 {
       margin: 0 0 8px;
-      color: #06101f;
+      color: var(--navy);
       font-size: 1.13rem;
     }
 
@@ -239,7 +250,7 @@
       padding: 0 18px;
       font-weight: 1000;
       cursor: pointer;
-      background: #06101f;
+      background: var(--navy);
       color: white;
       text-decoration: none;
       display: inline-flex;
@@ -292,7 +303,7 @@
     .hero-content {
       position: relative;
       z-index: 2;
-      max-width: 850px;
+      max-width: 860px;
     }
 
     .badge {
@@ -321,7 +332,7 @@
       grid-template-columns: repeat(4, 1fr);
       gap: 10px;
       margin-top: 20px;
-      max-width: 880px;
+      max-width: 900px;
     }
 
     .stat {
@@ -335,7 +346,7 @@
     .stat strong {
       display: block;
       font-size: 1.25rem;
-      color: #06101f;
+      color: var(--navy);
       margin-bottom: 2px;
     }
 
@@ -544,12 +555,13 @@
     }
 
     .boss-tip b {
-      color: #06101f;
+      color: var(--navy);
     }
 
-    .tech-grid,
+    .power-grid,
     .mission-grid,
-    .power-grid {
+    .boss-grid,
+    .confidence {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 14px;
@@ -594,7 +606,7 @@
 
     .mission strong {
       display: block;
-      color: #06101f;
+      color: var(--navy);
       font-size: 1.06rem;
       margin-bottom: 6px;
     }
@@ -602,13 +614,6 @@
     .mission p {
       margin: 6px 0 0;
       font-size: 0.95rem;
-    }
-
-    .confidence {
-      margin-top: 18px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
     }
 
     .speech {
@@ -621,7 +626,7 @@
 
     .speech strong {
       display: block;
-      color: #06101f;
+      color: var(--navy);
       margin-bottom: 6px;
       font-size: 1.1rem;
     }
@@ -645,9 +650,9 @@
 
       .player-strip,
       .arena,
-      .tech-grid,
-      .mission-grid,
       .power-grid,
+      .mission-grid,
+      .boss-grid,
       .confidence,
       .score-grid {
         grid-template-columns: 1fr;
@@ -674,7 +679,7 @@
 <header>
   <div class="brand">
     <div class="brand-icon">🎮</div>
-    <span>Shauri English Arena</span>
+    <span>Shauri English Boss Arena</span>
   </div>
 
   <nav id="navLocked">
@@ -682,10 +687,10 @@
   </nav>
 
   <nav id="navUnlocked" style="display:none">
-    <a class="primary" href="#arena">Game</a>
+    <a class="primary" href="#arena">Boss Game</a>
     <a href="#powerups">Power Skills</a>
-    <a href="#missions">Practice Plan</a>
-    <a href="#confidence">Boost</a>
+    <a href="#bossplan">How to Play</a>
+    <a href="#boost">Boost</a>
     <button id="lockBtn" type="button">Lock</button>
   </nav>
 </header>
@@ -694,7 +699,7 @@
   <section class="login-card" id="loginCard">
     <div class="login-icon">🧠</div>
     <h1>Enter Password</h1>
-    <p>Unlock Shauri’s English Comprehension Skill Arena.</p>
+    <p>Unlock Shauri’s personal English comprehension training world.</p>
 
     <form id="passwordForm">
       <div class="password-row">
@@ -709,43 +714,44 @@
     <section class="hero">
       <div class="hero-content">
         <span class="badge">Shauri-only English arena</span>
-        <h1>Comprehension Champion Mode</h1>
+        <h1>Shauri’s English Boss Arena</h1>
         <p>
-          Shauri, this is your English training world. Your mission is to learn the skill,
-          spot the question type, find the proof, and answer like a champion. Every mistake is XP.
+          Bro, this is your personal 11 Plus English training world. Your mission is simple:
+          read like a detective, spot the skill, find the proof, and beat every comprehension boss.
+          No guessing. No panic. Just calm proof-hunter thinking.
         </p>
 
         <div class="player-strip">
           <div class="stat">
             <strong>Read</strong>
-            <span>Understand first</span>
+            <span>Understand the story</span>
           </div>
           <div class="stat">
             <strong>Spot</strong>
-            <span>Find the skill</span>
+            <span>Find the question skill</span>
           </div>
           <div class="stat">
             <strong>Prove</strong>
-            <span>Use text evidence</span>
+            <span>Use exact words</span>
           </div>
           <div class="stat">
-            <strong>Level Up</strong>
-            <span>Learn from errors</span>
+            <strong>Win</strong>
+            <span>Answer like a boss</span>
           </div>
         </div>
       </div>
     </section>
 
     <div class="quick-rule">
-      <strong>Read it. Spot it. Prove it. Choose it.</strong>
-      <span>Game rule: no proof = no answer yet.</span>
+      <strong>Read it. Spot it. Prove it. Win it.</strong>
+      <span>Boss rule: no proof = no answer yet.</span>
     </div>
 
     <section class="panel" id="arena">
-      <span class="badge">Technique game</span>
-      <h2>Choose the Right Skill</h2>
+      <span class="badge">Boss game</span>
+      <h2>Choose the Right Power Skill</h2>
       <p>
-        Read the mission. Pick the technique Shauri should use.
+        Read the boss mission. Pick the technique Shauri should use.
         This trains the brain before real comprehension tests.
       </p>
 
@@ -772,8 +778,8 @@
             <div class="feedback" id="feedback"></div>
 
             <div class="game-actions">
-              <button class="btn gold" id="nextBtn" type="button">Next Mission</button>
-              <button class="btn light" id="resetBtn" type="button">Reset XP</button>
+              <button class="btn gold" id="nextBtn" type="button">Next Boss</button>
+              <button class="btn light" id="resetBtn" type="button">Fresh Run</button>
             </div>
           </div>
         </div>
@@ -801,8 +807,8 @@
           </div>
 
           <div class="boss-tip" id="bossTip">
-            <b>Champion tip:</b>
-            First spot the type of question. Then use the correct power skill.
+            <b>Rank:</b> Rookie Reader<br><br>
+            <b>Champion tip:</b> First spot the skill. Then find proof.
           </div>
         </aside>
       </div>
@@ -816,7 +822,7 @@
       <div class="power-grid">
         <div class="card">
           <div class="card-icon">📝</div>
-          <h3>Summary First</h3>
+          <h3>Summary Sword</h3>
           <ul>
             <li>Say: “This passage is about...”</li>
             <li>Find the main event, problem or idea.</li>
@@ -826,7 +832,7 @@
 
         <div class="card">
           <div class="card-icon">👀</div>
-          <h3>Narrator Check</h3>
+          <h3>Narrator Radar</h3>
           <ul>
             <li>First person: I, me, my, we, our.</li>
             <li>Third person: he, she, they, names.</li>
@@ -836,7 +842,7 @@
 
         <div class="card">
           <div class="card-icon">🎬</div>
-          <h3>Flow of Events</h3>
+          <h3>Sequence Tracker</h3>
           <ul>
             <li>At the start...</li>
             <li>Then...</li>
@@ -847,7 +853,7 @@
 
         <div class="card">
           <div class="card-icon">🔎</div>
-          <h3>Proof Hunt</h3>
+          <h3>Proof Hunter</h3>
           <ul>
             <li>Point to exact words in the text.</li>
             <li>Do not choose what only sounds nice.</li>
@@ -857,7 +863,7 @@
 
         <div class="card">
           <div class="card-icon">🧠</div>
-          <h3>Inference</h3>
+          <h3>Inference Ninja</h3>
           <ul>
             <li>Inference means working it out from clues.</li>
             <li>Use: clue + proof = answer.</li>
@@ -867,7 +873,7 @@
 
         <div class="card">
           <div class="card-icon">📚</div>
-          <h3>Vocabulary in Context</h3>
+          <h3>Vocabulary Warrior</h3>
           <ul>
             <li>Read the sentence before and after.</li>
             <li>Try each option in the sentence.</li>
@@ -877,7 +883,7 @@
 
         <div class="card">
           <div class="card-icon">🌈</div>
-          <h3>Metaphor</h3>
+          <h3>Metaphor Master</h3>
           <ul>
             <li>One thing is described as another thing.</li>
             <li>Example: “The classroom was a zoo.”</li>
@@ -887,7 +893,7 @@
 
         <div class="card">
           <div class="card-icon">🧍</div>
-          <h3>Personification</h3>
+          <h3>Personification Power</h3>
           <ul>
             <li>A thing is given human actions or feelings.</li>
             <li>Example: “The wind whispered.”</li>
@@ -897,7 +903,7 @@
 
         <div class="card">
           <div class="card-icon">✨</div>
-          <h3>Simile</h3>
+          <h3>Simile Scanner</h3>
           <ul>
             <li>Compares using like or as.</li>
             <li>Example: “as quiet as a mouse.”</li>
@@ -907,7 +913,7 @@
 
         <div class="card">
           <div class="card-icon">🎭</div>
-          <h3>Mood and Tone</h3>
+          <h3>Mood Detector</h3>
           <ul>
             <li>Funny, tense, excited, sad, calm?</li>
             <li>Find words that create the feeling.</li>
@@ -917,7 +923,7 @@
 
         <div class="card">
           <div class="card-icon">⚡</div>
-          <h3>Contrast</h3>
+          <h3>Contrast Crusher</h3>
           <ul>
             <li>Contrast means opposite or sharp change.</li>
             <li>Example: noise to silence.</li>
@@ -927,7 +933,7 @@
 
         <div class="card">
           <div class="card-icon">🎯</div>
-          <h3>Exact Answer</h3>
+          <h3>Exact Answer Boss</h3>
           <ul>
             <li>When = time.</li>
             <li>Where = place.</li>
@@ -938,14 +944,14 @@
       </div>
     </section>
 
-    <section class="panel" id="missions">
-      <span class="badge">Practice plan</span>
-      <h2>How Shauri Should Use This Before a Test</h2>
+    <section class="panel" id="bossplan">
+      <span class="badge">How to play</span>
+      <h2>Shauri’s 6-Step Winning Routine</h2>
 
       <div class="mission-grid">
         <div class="mission">
           <strong>Step 1 — Warm Up</strong>
-          <p>Play 5 technique missions in the game above.</p>
+          <p>Play 5 boss missions above.</p>
           <p><b>Goal:</b> remember which skill to use.</p>
         </div>
 
@@ -981,24 +987,61 @@
       </div>
     </section>
 
-    <section class="panel" id="confidence">
-      <span class="badge">Confidence boost</span>
+    <section class="panel">
+      <span class="badge">Boss traps</span>
+      <h2>Traps Shauri Must Beat</h2>
+
+      <div class="boss-grid">
+        <div class="mission">
+          <strong>Trap 1 — Sounds Nice</strong>
+          <p>An answer may sound good but not be proved.</p>
+          <p><b>Beat it:</b> find exact proof first.</p>
+        </div>
+
+        <div class="mission">
+          <strong>Trap 2 — Too Much Highlighting</strong>
+          <p>If everything is highlighted, nothing stands out.</p>
+          <p><b>Beat it:</b> highlight only proof phrases.</p>
+        </div>
+
+        <div class="mission">
+          <strong>Trap 3 — Wrong Question Type</strong>
+          <p>When means time. Where means place. Why means reason.</p>
+          <p><b>Beat it:</b> read the question word first.</p>
+        </div>
+
+        <div class="mission">
+          <strong>Trap 4 — Vocabulary Guess</strong>
+          <p>A word can change meaning in context.</p>
+          <p><b>Beat it:</b> read before and after.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="boost">
+      <span class="badge">Champion boost</span>
       <h2>Shauri, Read This Before You Start</h2>
 
       <div class="confidence">
         <div class="speech">
-          <strong>You are not just doing homework.</strong>
-          <p>You are training your brain to spot clues, avoid traps and prove your answers.</p>
+          <strong>You are not guessing anymore.</strong>
+          <p>
+            You are training like a proof hunter. Every answer must come from the passage.
+            If you can prove it, you can win it.
+          </p>
         </div>
 
         <div class="speech">
-          <strong>You do not need to be perfect.</strong>
-          <p>Every mistake shows one thing to improve. That is how champions level up.</p>
+          <strong>Mistakes are not bad.</strong>
+          <p>
+            Mistakes are secret XP. Each mistake shows one trap. Learn the trap,
+            then beat it next time.
+          </p>
         </div>
       </div>
 
       <div class="quick-rule">
-        <strong>I can improve. I can prove. I can level up.</strong>
+        <strong>I can read. I can prove. I can level up.</strong>
         <span>Slow proof beats fast guessing.</span>
       </div>
     </section>
@@ -1014,11 +1057,11 @@
 
   const missions = [
     {
-      level: "Level 1",
-      skill: "Summary",
+      level: "Rookie Reader",
+      skill: "Summary Sword",
       title: "The question is about the whole passage.",
       scenario: "Shauri has read a fiction passage. Before answering, he is not fully sure what the story is mainly about.",
-      question: "What should he do first?",
+      question: "What should Shauri do first?",
       choices: [
         "Start answering quickly before he forgets.",
         "Say one short sentence: “This passage is about...”",
@@ -1026,14 +1069,14 @@
         "Skip to the last question."
       ],
       answer: 1,
-      feedback: "Correct. Summary first helps Shauri understand the whole passage before answering."
+      feedback: "Summary Sword unlocked. Before questions, Shauri must know what the passage is really about."
     },
     {
-      level: "Level 2",
+      level: "Narrator Radar",
       skill: "Narrator",
       title: "The passage says “I”, “me” and “my”.",
       scenario: "Shauri notices words like “I wanted fish and chips” and “my mum said...” in the story.",
-      question: "What should he understand?",
+      question: "What should Shauri understand?",
       choices: [
         "The narrator is inside the story.",
         "The narrator is outside the story.",
@@ -1041,14 +1084,14 @@
         "The story is non-fiction."
       ],
       answer: 0,
-      feedback: "Correct. I, me, my, we and our usually mean first-person narrator."
+      feedback: "Narrator Radar activated. I, me, my, we and our usually mean the narrator is inside the story."
     },
     {
-      level: "Level 3",
+      level: "Proof Hunter",
       skill: "Proof",
       title: "The answer sounds right, but there is no proof.",
       scenario: "Shauri likes an option because it sounds sensible, but he cannot point to the proof words.",
-      question: "What should he do?",
+      question: "What should Shauri do?",
       choices: [
         "Choose it because it sounds sensible.",
         "Pick the longest answer.",
@@ -1056,14 +1099,14 @@
         "Guess and move on."
       ],
       answer: 2,
-      feedback: "Correct. In 11 Plus comprehension, proof beats a nice-sounding answer."
+      feedback: "Proof Hunter move. A nice-sounding answer is not enough — the passage must prove it."
     },
     {
-      level: "Level 4",
+      level: "Sequence Tracker",
       skill: "Sequence",
       title: "The question asks what happened next.",
       scenario: "The passage has several events. Shauri is unsure whether the answer happened before or after the main event.",
-      question: "What technique should he use?",
+      question: "What technique should Shauri use?",
       choices: [
         "Look only at the first sentence.",
         "Track start → then → end.",
@@ -1071,14 +1114,14 @@
         "Ignore time words."
       ],
       answer: 1,
-      feedback: "Correct. Sequence questions need the order of events."
+      feedback: "Sequence Tracker unlocked. Sequence questions need the exact order of events."
     },
     {
-      level: "Level 5",
+      level: "Vocabulary Warrior",
       skill: "Vocabulary",
       title: "A word has more than one meaning.",
       scenario: "Shauri sees a tricky word. He knows one meaning, but it may mean something different in this sentence.",
-      question: "What should he do?",
+      question: "What should Shauri do?",
       choices: [
         "Use the meaning he already knows only.",
         "Read the sentence before and after, then test the options.",
@@ -1086,13 +1129,13 @@
         "Skip vocabulary questions."
       ],
       answer: 1,
-      feedback: "Correct. Vocabulary in context means the sentence decides the meaning."
+      feedback: "Vocabulary Warrior move. The sentence decides the meaning, not just memory."
     },
     {
-      level: "Level 6",
+      level: "Metaphor Master",
       skill: "Metaphor",
       title: "The writer says, “The playground was a battlefield.”",
-      scenario: "The playground is not really a battlefield. The writer is using a language technique.",
+      scenario: "The playground is not really a battlefield. The writer is using a strong language picture.",
       question: "What should Shauri understand?",
       choices: [
         "This is a metaphor showing the playground was noisy, chaotic or full of conflict.",
@@ -1101,10 +1144,10 @@
         "This means the playground was empty."
       ],
       answer: 0,
-      feedback: "Correct. A metaphor says one thing is another to create a strong picture."
+      feedback: "Metaphor Master unlocked. A metaphor creates a strong picture by saying one thing is another."
     },
     {
-      level: "Level 7",
+      level: "Personification Power",
       skill: "Personification",
       title: "The writer says, “The wind whispered through the trees.”",
       scenario: "The wind cannot really whisper like a person.",
@@ -1116,10 +1159,10 @@
         "Narrator change"
       ],
       answer: 1,
-      feedback: "Correct. Personification gives a thing human action or feeling."
+      feedback: "Personification Power unlocked. The writer makes a thing act alive to create mood or image."
     },
     {
-      level: "Level 8",
+      level: "Simile Scanner",
       skill: "Simile",
       title: "The writer says, “He ran like a rocket.”",
       scenario: "The words compare the boy to a rocket using like.",
@@ -1131,14 +1174,14 @@
         "This is a punctuation question."
       ],
       answer: 0,
-      feedback: "Correct. A simile uses like or as to compare."
+      feedback: "Simile Scanner activated. A simile uses like or as to compare."
     },
     {
-      level: "Level 9",
+      level: "Mood Detector",
       skill: "Mood",
       title: "The passage feels tense and scary.",
       scenario: "Shauri needs to prove the mood, not just guess it.",
-      question: "What should he look for?",
+      question: "What should Shauri look for?",
       choices: [
         "Feeling words and details that create tension.",
         "Only the longest sentence.",
@@ -1146,10 +1189,10 @@
         "A random word he likes."
       ],
       answer: 0,
-      feedback: "Correct. Mood must be proved by the writer's words and details."
+      feedback: "Mood Detector unlocked. Mood must be proved by the writer’s words and details."
     },
     {
-      level: "Level 10",
+      level: "Inference Ninja",
       skill: "Inference",
       title: "A character slams the door and refuses to speak.",
       scenario: "The passage does not directly say the character is angry.",
@@ -1161,10 +1204,10 @@
         "The character is eating dinner."
       ],
       answer: 0,
-      feedback: "Correct. Inference means using clues to work out what is suggested."
+      feedback: "Inference Ninja move. Use clues plus proof — never random guessing."
     },
     {
-      level: "Level 11",
+      level: "Contrast Crusher",
       skill: "Contrast",
       title: "The passage changes from loud noise to sudden silence.",
       scenario: "Shauri sees two opposite ideas placed close together.",
@@ -1176,14 +1219,14 @@
         "Metaphor only"
       ],
       answer: 0,
-      feedback: "Correct. Contrast means a strong opposite or sharp change."
+      feedback: "Contrast Crusher unlocked. Contrast means a strong opposite or sharp change."
     },
     {
-      level: "Boss",
+      level: "Exact Answer Boss",
       skill: "Exact Answer",
       title: "The question asks for two things.",
       scenario: "Shauri finds one correct detail and wants to move on quickly.",
-      question: "What should he remember?",
+      question: "What should Shauri remember?",
       choices: [
         "One detail is enough.",
         "Give two separate things because the question asks for two.",
@@ -1191,7 +1234,7 @@
         "Choose any two random words."
       ],
       answer: 1,
-      feedback: "Correct. If the question asks for two things, give two clear things."
+      feedback: "Exact Answer Boss defeated. If the question asks for two things, give two clear things."
     }
   ];
 
@@ -1238,10 +1281,13 @@
     let rank = "Rookie Reader";
     if (xp >= 80) rank = "Proof Hunter";
     if (xp >= 160) rank = "Inference Ninja";
-    if (xp >= 260) rank = "Language Boss";
-    if (xp >= 400) rank = "Comprehension Champion";
+    if (xp >= 260) rank = "Writer’s Trick Master";
+    if (xp >= 400) rank = "Comprehension Boss";
+    if (xp >= 600) rank = "11 Plus Champion";
 
-    bossTip.innerHTML = "<b>Rank:</b> " + rank + "<br><br><b>Champion tip:</b> First spot the skill, then find proof.";
+    bossTip.innerHTML =
+      "<b>Rank:</b> " + rank +
+      "<br><br><b>Champion tip:</b> First spot the skill, then find proof.";
   }
 
   function renderMission() {
@@ -1296,12 +1342,30 @@
       const gain = 10 + Math.min(streak * 2, 20);
       xp += gain;
 
+      let streakMessage = "";
+      if (streak === 3) {
+        streakMessage = "<br><br>🔥 3-streak! Shauri is heating up.";
+      }
+      if (streak === 5) {
+        streakMessage = "<br><br>🏆 5-streak! Boss mode unlocked.";
+      }
+      if (streak >= 8) {
+        streakMessage = "<br><br>🚀 Monster streak! Shauri is playing like a champion.";
+      }
+
       feedback.className = "feedback show good";
-      feedback.innerHTML = "✅ Correct! " + mission.feedback + "<br><br>+" + gain + " XP. Nice work, Shauri.";
+      feedback.innerHTML =
+        "✅ Boom! Correct, Shauri. " +
+        mission.feedback +
+        "<br><br>+" + gain + " XP. That was proof-hunter thinking." +
+        streakMessage;
     } else {
       streak = 0;
       feedback.className = "feedback show bad";
-      feedback.innerHTML = "❌ Not this time. " + mission.feedback + "<br><br>That mistake is useful XP if you remember the rule.";
+      feedback.innerHTML =
+        "❌ Not yet, bro — but this is useful XP. " +
+        mission.feedback +
+        "<br><br>Check the rule, learn the trap, and smash the next one.";
     }
 
     saveStats();
@@ -1322,7 +1386,7 @@
     saveStats();
     updateStats();
     feedback.className = "feedback show good";
-    feedback.textContent = "Stats reset. Fresh run, Shauri. New mission starts now.";
+    feedback.textContent = "Fresh run started. New mission, Shauri. Let’s level up.";
   });
 
   function unlock() {
