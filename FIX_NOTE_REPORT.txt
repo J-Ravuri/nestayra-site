@@ -1,4 +1,0 @@
-FIX NOTE UPDATE
-Changed files:
-- index.html
-- README.md

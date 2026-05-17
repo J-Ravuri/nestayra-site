@@ -1,1 +1,0 @@
-window.CHOICE_MAP = {};
