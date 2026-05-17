@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nestayra 11 Plus Technique Arena</title>
+  <title>Shauri English Skill Arena</title>
 
   <style>
     :root {
@@ -54,10 +54,10 @@
       inset: 0;
       z-index: -1;
       background-image:
-        linear-gradient(rgba(15, 23, 42, 0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+        linear-gradient(rgba(15, 23, 42, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(15, 23, 42, 0.045) 1px, transparent 1px);
       background-size: 42px 42px;
-      mask-image: linear-gradient(to bottom, rgba(0,0,0,.8), transparent 85%);
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,.78), transparent 85%);
     }
 
     button,
@@ -134,7 +134,7 @@
     }
 
     .page {
-      width: min(1180px, 100%);
+      width: min(1200px, 100%);
       margin: 0 auto;
       padding: clamp(18px, 4vw, 42px);
     }
@@ -183,9 +183,9 @@
 
     h1 {
       margin: 0;
-      font-size: clamp(2.2rem, 7vw, 4.7rem);
+      font-size: clamp(2.2rem, 7vw, 4.9rem);
       line-height: 0.9;
-      letter-spacing: -0.08em;
+      letter-spacing: -0.085em;
       color: #06101f;
     }
 
@@ -281,7 +281,7 @@
       content: "XP";
       position: absolute;
       right: clamp(18px, 4vw, 42px);
-      bottom: -18px;
+      bottom: -20px;
       font-size: clamp(5rem, 16vw, 11rem);
       color: rgba(37, 99, 235, 0.08);
       font-weight: 1000;
@@ -312,7 +312,7 @@
     }
 
     .hero p {
-      max-width: 790px;
+      max-width: 820px;
       font-size: 1.05rem;
     }
 
@@ -321,7 +321,7 @@
       grid-template-columns: repeat(4, 1fr);
       gap: 10px;
       margin-top: 20px;
-      max-width: 860px;
+      max-width: 880px;
     }
 
     .stat {
@@ -334,7 +334,7 @@
 
     .stat strong {
       display: block;
-      font-size: 1.3rem;
+      font-size: 1.25rem;
       color: #06101f;
       margin-bottom: 2px;
     }
@@ -547,7 +547,9 @@
       color: #06101f;
     }
 
-    .tech-grid {
+    .tech-grid,
+    .mission-grid,
+    .power-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 14px;
@@ -580,13 +582,6 @@
       font-weight: 790;
       line-height: 1.45;
       margin: 6px 0;
-    }
-
-    .missions {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-      margin-top: 16px;
     }
 
     .mission {
@@ -631,19 +626,6 @@
       font-size: 1.1rem;
     }
 
-    .maths-box {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
-      background: #f8fafc;
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      padding: 16px;
-      margin-top: 14px;
-    }
-
     footer {
       text-align: center;
       color: var(--muted);
@@ -664,7 +646,8 @@
       .player-strip,
       .arena,
       .tech-grid,
-      .missions,
+      .mission-grid,
+      .power-grid,
       .confidence,
       .score-grid {
         grid-template-columns: 1fr;
@@ -691,7 +674,7 @@
 <header>
   <div class="brand">
     <div class="brand-icon">🎮</div>
-    <span>Nestayra Technique Arena</span>
+    <span>Shauri English Arena</span>
   </div>
 
   <nav id="navLocked">
@@ -700,9 +683,9 @@
 
   <nav id="navUnlocked" style="display:none">
     <a class="primary" href="#arena">Game</a>
-    <a href="#techniques">Tips</a>
-    <a href="#missions">Practice</a>
-    <a href="#maths">Maths</a>
+    <a href="#powerups">Power Skills</a>
+    <a href="#missions">Practice Plan</a>
+    <a href="#confidence">Boost</a>
     <button id="lockBtn" type="button">Lock</button>
   </nav>
 </header>
@@ -711,7 +694,7 @@
   <section class="login-card" id="loginCard">
     <div class="login-icon">🧠</div>
     <h1>Enter Password</h1>
-    <p>Unlock Shauri’s Roblox-style 11 Plus comprehension technique arena.</p>
+    <p>Unlock Shauri’s English Comprehension Skill Arena.</p>
 
     <form id="passwordForm">
       <div class="password-row">
@@ -725,45 +708,45 @@
   <section id="portal">
     <section class="hero">
       <div class="hero-content">
-        <span class="badge">Roblox-style revision</span>
-        <h1>Comprehension Technique Arena</h1>
+        <span class="badge">Shauri-only English arena</span>
+        <h1>Comprehension Champion Mode</h1>
         <p>
-          Shauri, this is your training arena. You are not just reading — you are learning how to attack
-          every comprehension question like a proof hunter.
+          Shauri, this is your English training world. Your mission is to learn the skill,
+          spot the question type, find the proof, and answer like a champion. Every mistake is XP.
         </p>
 
         <div class="player-strip">
           <div class="stat">
-            <strong>Level 1</strong>
-            <span>Understand</span>
+            <strong>Read</strong>
+            <span>Understand first</span>
           </div>
           <div class="stat">
-            <strong>Level 2</strong>
-            <span>Find proof</span>
+            <strong>Spot</strong>
+            <span>Find the skill</span>
           </div>
           <div class="stat">
-            <strong>Level 3</strong>
-            <span>Choose strategy</span>
+            <strong>Prove</strong>
+            <span>Use text evidence</span>
           </div>
           <div class="stat">
-            <strong>Boss</strong>
-            <span>Answer exactly</span>
+            <strong>Level Up</strong>
+            <span>Learn from errors</span>
           </div>
         </div>
       </div>
     </section>
 
     <div class="quick-rule">
-      <strong>Understand → Prove → Answer</strong>
+      <strong>Read it. Spot it. Prove it. Choose it.</strong>
       <span>Game rule: no proof = no answer yet.</span>
     </div>
 
     <section class="panel" id="arena">
       <span class="badge">Technique game</span>
-      <h2>Choose the Right Strategy</h2>
+      <h2>Choose the Right Skill</h2>
       <p>
-        Read the mission card. Pick how Shauri should approach the question.
-        This trains the thinking before he starts real comprehensions.
+        Read the mission. Pick the technique Shauri should use.
+        This trains the brain before real comprehension tests.
       </p>
 
       <div class="arena">
@@ -796,7 +779,7 @@
         </div>
 
         <aside class="score-card">
-          <h3>Player Stats</h3>
+          <h3>Shauri Stats</h3>
 
           <div class="score-grid">
             <div class="score-box">
@@ -819,24 +802,25 @@
 
           <div class="boss-tip" id="bossTip">
             <b>Champion tip:</b>
-            Read the question type first. Then choose the technique.
+            First spot the type of question. Then use the correct power skill.
           </div>
         </aside>
       </div>
     </section>
 
-    <section class="panel" id="techniques">
-      <span class="badge">Memory cards</span>
-      <h2>Techniques Shauri Must Remember</h2>
+    <section class="panel" id="powerups">
+      <span class="badge">Power skills</span>
+      <h2>Shauri’s English Power-Ups</h2>
+      <p>Read these before practice. These are the skills that unlock higher comprehension marks.</p>
 
-      <div class="tech-grid">
+      <div class="power-grid">
         <div class="card">
           <div class="card-icon">📝</div>
           <h3>Summary First</h3>
           <ul>
             <li>Say: “This passage is about...”</li>
+            <li>Find the main event, problem or idea.</li>
             <li>If you cannot summarise, read again.</li>
-            <li>Summary stops random guessing.</li>
           </ul>
         </div>
 
@@ -844,9 +828,9 @@
           <div class="card-icon">👀</div>
           <h3>Narrator Check</h3>
           <ul>
-            <li>Inside story: I, me, my, we, our.</li>
-            <li>Outside story: he, she, they, names.</li>
-            <li>This tells you who is speaking.</li>
+            <li>First person: I, me, my, we, our.</li>
+            <li>Third person: he, she, they, names.</li>
+            <li>Ask: who is telling the story?</li>
           </ul>
         </div>
 
@@ -857,7 +841,7 @@
             <li>At the start...</li>
             <li>Then...</li>
             <li>At the end...</li>
-            <li>This helps sequence questions.</li>
+            <li>Great for sequence questions.</li>
           </ul>
         </div>
 
@@ -865,29 +849,9 @@
           <div class="card-icon">🔎</div>
           <h3>Proof Hunt</h3>
           <ul>
-            <li>Point to the exact proof words.</li>
+            <li>Point to exact words in the text.</li>
             <li>Do not choose what only sounds nice.</li>
-            <li>Proof wins. Guessing loses.</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <div class="card-icon">🎭</div>
-          <h3>Mood and Feeling</h3>
-          <ul>
-            <li>Funny, worried, excited, proud, chaotic?</li>
-            <li>Find words that show the feeling.</li>
-            <li>Do not invent the mood.</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <div class="card-icon">📚</div>
-          <h3>Vocabulary in Context</h3>
-          <ul>
-            <li>Read before and after the word.</li>
-            <li>Try each option in the sentence.</li>
-            <li>Choose the closest meaning.</li>
+            <li>Proof beats guessing every time.</li>
           </ul>
         </div>
 
@@ -895,9 +859,69 @@
           <div class="card-icon">🧠</div>
           <h3>Inference</h3>
           <ul>
-            <li>Inference means working it out.</li>
-            <li>Use clue + proof = answer.</li>
-            <li>Never invent a personality trait.</li>
+            <li>Inference means working it out from clues.</li>
+            <li>Use: clue + proof = answer.</li>
+            <li>Never invent a feeling or personality.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">📚</div>
+          <h3>Vocabulary in Context</h3>
+          <ul>
+            <li>Read the sentence before and after.</li>
+            <li>Try each option in the sentence.</li>
+            <li>Choose the closest meaning.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🌈</div>
+          <h3>Metaphor</h3>
+          <ul>
+            <li>One thing is described as another thing.</li>
+            <li>Example: “The classroom was a zoo.”</li>
+            <li>Ask: what picture or feeling does it create?</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🧍</div>
+          <h3>Personification</h3>
+          <ul>
+            <li>A thing is given human actions or feelings.</li>
+            <li>Example: “The wind whispered.”</li>
+            <li>Ask: why did the writer make it seem alive?</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">✨</div>
+          <h3>Simile</h3>
+          <ul>
+            <li>Compares using like or as.</li>
+            <li>Example: “as quiet as a mouse.”</li>
+            <li>Ask: what does the comparison show?</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🎭</div>
+          <h3>Mood and Tone</h3>
+          <ul>
+            <li>Funny, tense, excited, sad, calm?</li>
+            <li>Find words that create the feeling.</li>
+            <li>Do not guess. Prove the mood.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">⚡</div>
+          <h3>Contrast</h3>
+          <ul>
+            <li>Contrast means opposite or sharp change.</li>
+            <li>Example: noise to silence.</li>
+            <li>Look for but, however, although.</li>
           </ul>
         </div>
 
@@ -908,90 +932,74 @@
             <li>When = time.</li>
             <li>Where = place.</li>
             <li>Two things = two things.</li>
-            <li>Answer exactly what is asked.</li>
+            <li>Answer what is asked.</li>
           </ul>
         </div>
       </div>
     </section>
 
     <section class="panel" id="missions">
-      <span class="badge">Practice missions</span>
-      <h2>7 Fiction Practice Missions</h2>
-      <p>Before each passage, Shauri should read the matching mission focus.</p>
+      <span class="badge">Practice plan</span>
+      <h2>How Shauri Should Use This Before a Test</h2>
 
-      <div class="missions">
+      <div class="mission-grid">
         <div class="mission">
-          <strong>Exercise 14 — Running Regime</strong>
-          <p><b>Focus:</b> time, motivation, determination.</p>
-          <p><b>Question to ask:</b> What changes from start to end?</p>
+          <strong>Step 1 — Warm Up</strong>
+          <p>Play 5 technique missions in the game above.</p>
+          <p><b>Goal:</b> remember which skill to use.</p>
         </div>
 
         <div class="mission">
-          <strong>Exercise 15 — Shopping Trip</strong>
-          <p><b>Focus:</b> independence and setting.</p>
-          <p><b>Question to ask:</b> Why is this an adventure?</p>
+          <strong>Step 2 — Read the Passage</strong>
+          <p>Say one sentence: “This passage is about...”</p>
+          <p><b>Goal:</b> understand before answering.</p>
         </div>
 
         <div class="mission">
-          <strong>Exercise 16 — Best Hideaway</strong>
-          <p><b>Focus:</b> place description and special features.</p>
-          <p><b>Question to ask:</b> Why does it feel secret and exciting?</p>
+          <strong>Step 3 — Highlight Proof</strong>
+          <p>Highlight only 5–8 useful phrases.</p>
+          <p><b>Goal:</b> no over-highlighting.</p>
         </div>
 
         <div class="mission">
-          <strong>Exercise 17 — Fishy Dinner</strong>
-          <p><b>Focus:</b> narrator, humour, what children want.</p>
-          <p><b>Question to ask:</b> What do the children really care about?</p>
+          <strong>Step 4 — Answer</strong>
+          <p>Every answer must have proof from the text.</p>
+          <p><b>Goal:</b> no random guessing.</p>
         </div>
 
         <div class="mission">
-          <strong>Exercise 18 — Headstrong Hebe</strong>
-          <p><b>Focus:</b> character behaviour and unusual details.</p>
-          <p><b>Question to ask:</b> What makes Hebe unusual?</p>
+          <strong>Step 5 — Review Mistakes</strong>
+          <p>Ask: what trap caught me?</p>
+          <p><b>Goal:</b> mistake becomes XP.</p>
         </div>
 
         <div class="mission">
-          <strong>Exercise 19 — Summer Strawberries</strong>
-          <p><b>Focus:</b> cause and effect.</p>
-          <p><b>Question to ask:</b> Why is the farmer watching carefully?</p>
-        </div>
-
-        <div class="mission">
-          <strong>Exercise 20 — Chickens</strong>
-          <p><b>Focus:</b> humour and chaos.</p>
-          <p><b>Question to ask:</b> How are the chickens useful but troublesome?</p>
+          <strong>Step 6 — Level Up</strong>
+          <p>Write one rule for next time.</p>
+          <p><b>Goal:</b> apply it in the next passage.</p>
         </div>
       </div>
     </section>
 
-    <section class="panel">
+    <section class="panel" id="confidence">
       <span class="badge">Confidence boost</span>
       <h2>Shauri, Read This Before You Start</h2>
 
       <div class="confidence">
         <div class="speech">
-          <strong>You are not guessing anymore.</strong>
-          <p>You are training to become a proof hunter. Every answer must come from the passage.</p>
+          <strong>You are not just doing homework.</strong>
+          <p>You are training your brain to spot clues, avoid traps and prove your answers.</p>
         </div>
 
         <div class="speech">
-          <strong>Mistakes are XP.</strong>
-          <p>If you understand why a mistake happened, you level up for the next comprehension.</p>
+          <strong>You do not need to be perfect.</strong>
+          <p>Every mistake shows one thing to improve. That is how champions level up.</p>
         </div>
       </div>
 
       <div class="quick-rule">
-        <strong>Read it. Prove it. Choose it.</strong>
-        <span>That is how comprehension champions play.</span>
-      </div>
-    </section>
-
-    <section class="panel" id="maths">
-      <span class="badge">Maths still available</span>
-      <h2>Maths Practice</h2>
-      <div class="maths-box">
-        <p>English comprehension is the main focus now, but Maths practice can stay available here.</p>
-        <a class="btn gold" href="education-game/index.html">Open Maths Game</a>
+        <strong>I can improve. I can prove. I can level up.</strong>
+        <span>Slow proof beats fast guessing.</span>
       </div>
     </section>
   </section>
@@ -1008,8 +1016,8 @@
     {
       level: "Level 1",
       skill: "Summary",
-      title: "The question asks about the whole passage.",
-      scenario: "Shauri has read a short fiction passage. Before answering, he is not fully sure what the story is mainly about.",
+      title: "The question is about the whole passage.",
+      scenario: "Shauri has read a fiction passage. Before answering, he is not fully sure what the story is mainly about.",
       question: "What should he do first?",
       choices: [
         "Start answering quickly before he forgets.",
@@ -1018,7 +1026,7 @@
         "Skip to the last question."
       ],
       answer: 1,
-      feedback: "Correct. Summary first helps the brain understand the whole story before answering."
+      feedback: "Correct. Summary first helps Shauri understand the whole passage before answering."
     },
     {
       level: "Level 2",
@@ -1038,8 +1046,8 @@
     {
       level: "Level 3",
       skill: "Proof",
-      title: "The answer sounds right, but Shauri cannot find proof.",
-      scenario: "Shauri likes option B because it sounds sensible, but he cannot point to the words in the passage.",
+      title: "The answer sounds right, but there is no proof.",
+      scenario: "Shauri likes an option because it sounds sensible, but he cannot point to the proof words.",
       question: "What should he do?",
       choices: [
         "Choose it because it sounds sensible.",
@@ -1082,56 +1090,116 @@
     },
     {
       level: "Level 6",
-      skill: "Mood",
-      title: "The question asks about the mood.",
-      scenario: "The passage feels funny and chaotic, but Shauri is not sure how to prove it.",
-      question: "What should he look for?",
+      skill: "Metaphor",
+      title: "The writer says, “The playground was a battlefield.”",
+      scenario: "The playground is not really a battlefield. The writer is using a language technique.",
+      question: "What should Shauri understand?",
       choices: [
-        "Feeling words and funny or chaotic details.",
-        "Only names.",
-        "Only the title.",
-        "Random long words."
+        "This is a metaphor showing the playground was noisy, chaotic or full of conflict.",
+        "This means soldiers were really there.",
+        "This is a spelling mistake.",
+        "This means the playground was empty."
       ],
       answer: 0,
-      feedback: "Correct. Mood must be proved by words and details in the text."
+      feedback: "Correct. A metaphor says one thing is another to create a strong picture."
     },
     {
       level: "Level 7",
+      skill: "Personification",
+      title: "The writer says, “The wind whispered through the trees.”",
+      scenario: "The wind cannot really whisper like a person.",
+      question: "What technique is this?",
+      choices: [
+        "Simile",
+        "Personification",
+        "Fact retrieval",
+        "Narrator change"
+      ],
+      answer: 1,
+      feedback: "Correct. Personification gives a thing human action or feeling."
+    },
+    {
+      level: "Level 8",
+      skill: "Simile",
+      title: "The writer says, “He ran like a rocket.”",
+      scenario: "The words compare the boy to a rocket using like.",
+      question: "What should Shauri think?",
+      choices: [
+        "This is a simile showing he ran very fast.",
+        "This is a metaphor showing he turned into a rocket.",
+        "This is about the narrator.",
+        "This is a punctuation question."
+      ],
+      answer: 0,
+      feedback: "Correct. A simile uses like or as to compare."
+    },
+    {
+      level: "Level 9",
+      skill: "Mood",
+      title: "The passage feels tense and scary.",
+      scenario: "Shauri needs to prove the mood, not just guess it.",
+      question: "What should he look for?",
+      choices: [
+        "Feeling words and details that create tension.",
+        "Only the longest sentence.",
+        "Only the first name.",
+        "A random word he likes."
+      ],
+      answer: 0,
+      feedback: "Correct. Mood must be proved by the writer's words and details."
+    },
+    {
+      level: "Level 10",
+      skill: "Inference",
+      title: "A character slams the door and refuses to speak.",
+      scenario: "The passage does not directly say the character is angry.",
+      question: "What can Shauri infer?",
+      choices: [
+        "The character is probably angry or upset.",
+        "The character is definitely asleep.",
+        "The character loves doors.",
+        "The character is eating dinner."
+      ],
+      answer: 0,
+      feedback: "Correct. Inference means using clues to work out what is suggested."
+    },
+    {
+      level: "Level 11",
+      skill: "Contrast",
+      title: "The passage changes from loud noise to sudden silence.",
+      scenario: "Shauri sees two opposite ideas placed close together.",
+      question: "What skill is being tested?",
+      choices: [
+        "Contrast",
+        "Spelling",
+        "First-person narrator",
+        "Metaphor only"
+      ],
+      answer: 0,
+      feedback: "Correct. Contrast means a strong opposite or sharp change."
+    },
+    {
+      level: "Boss",
       skill: "Exact Answer",
       title: "The question asks for two things.",
       scenario: "Shauri finds one correct detail and wants to move on quickly.",
       question: "What should he remember?",
       choices: [
         "One detail is enough.",
-        "Give two things because the question asks for two.",
+        "Give two separate things because the question asks for two.",
         "Write a long paragraph instead.",
         "Choose any two random words."
       ],
       answer: 1,
-      feedback: "Correct. If the question asks for two things, give two separate things."
-    },
-    {
-      level: "Boss",
-      skill: "Highlighting",
-      title: "Shauri highlights nearly every line.",
-      scenario: "The page looks colourful, but the important proof does not stand out.",
-      question: "What is the better technique?",
-      choices: [
-        "Highlight everything so it looks complete.",
-        "Highlight only 5–8 useful proof phrases.",
-        "Do not highlight anything ever.",
-        "Highlight only the title."
-      ],
-      answer: 1,
-      feedback: "Correct. Good highlighting is selective. Names, times, places, reasons and proof only."
+      feedback: "Correct. If the question asks for two things, give two clear things."
     }
   ];
 
   let current = 0;
-  let xp = Number(localStorage.getItem("shauri_xp") || 0);
-  let streak = Number(localStorage.getItem("shauri_streak") || 0);
-  let correct = Number(localStorage.getItem("shauri_correct") || 0);
-  let total = Number(localStorage.getItem("shauri_total") || 0);
+  let xp = Number(localStorage.getItem("shauri_english_xp") || 0);
+  let streak = Number(localStorage.getItem("shauri_english_streak") || 0);
+  let correct = Number(localStorage.getItem("shauri_english_correct") || 0);
+  let total = Number(localStorage.getItem("shauri_english_total") || 0);
   let answered = false;
 
   const loginCard = document.getElementById("loginCard");
@@ -1150,14 +1218,15 @@
   const choices = document.getElementById("choices");
   const feedback = document.getElementById("feedback");
   const levelPill = document.getElementById("levelPill");
+  const bossTip = document.getElementById("bossTip");
 
   document.getElementById("year").textContent = new Date().getFullYear();
 
   function saveStats() {
-    localStorage.setItem("shauri_xp", xp);
-    localStorage.setItem("shauri_streak", streak);
-    localStorage.setItem("shauri_correct", correct);
-    localStorage.setItem("shauri_total", total);
+    localStorage.setItem("shauri_english_xp", xp);
+    localStorage.setItem("shauri_english_streak", streak);
+    localStorage.setItem("shauri_english_correct", correct);
+    localStorage.setItem("shauri_english_total", total);
   }
 
   function updateStats() {
@@ -1165,6 +1234,14 @@
     document.getElementById("streak").textContent = streak;
     document.getElementById("correct").textContent = correct;
     document.getElementById("total").textContent = total;
+
+    let rank = "Rookie Reader";
+    if (xp >= 80) rank = "Proof Hunter";
+    if (xp >= 160) rank = "Inference Ninja";
+    if (xp >= 260) rank = "Language Boss";
+    if (xp >= 400) rank = "Comprehension Champion";
+
+    bossTip.innerHTML = "<b>Rank:</b> " + rank + "<br><br><b>Champion tip:</b> First spot the skill, then find proof.";
   }
 
   function renderMission() {
@@ -1220,11 +1297,11 @@
       xp += gain;
 
       feedback.className = "feedback show good";
-      feedback.innerHTML = "✅ Correct! " + mission.feedback + "<br><br>+" + gain + " XP. Nice work, bro.";
+      feedback.innerHTML = "✅ Correct! " + mission.feedback + "<br><br>+" + gain + " XP. Nice work, Shauri.";
     } else {
       streak = 0;
       feedback.className = "feedback show bad";
-      feedback.innerHTML = "❌ Not this time. " + mission.feedback + "<br><br>Mistake = XP if you learn the rule.";
+      feedback.innerHTML = "❌ Not this time. " + mission.feedback + "<br><br>That mistake is useful XP if you remember the rule.";
     }
 
     saveStats();
@@ -1245,7 +1322,7 @@
     saveStats();
     updateStats();
     feedback.className = "feedback show good";
-    feedback.textContent = "Stats reset. Fresh run, champion.";
+    feedback.textContent = "Stats reset. Fresh run, Shauri. New mission starts now.";
   });
 
   function unlock() {
